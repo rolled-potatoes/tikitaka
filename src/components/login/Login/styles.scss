@@ -1,0 +1,66 @@
+@import 'styles/utils.scss';
+.login-page{
+        border-radius: 10px;
+        margin-right: auto;
+        height: 500px;
+        width: 800px;
+        margin-left: auto;
+        padding: 20px;
+        margin-top: 80px;
+        background: white;
+                .login-text{
+                        margin-left: 2rem;
+                        font-size: 2.5rem;
+                        font-weight: 700;
+                        letter-spacing: 10px;
+                }
+        
+        .bottom{
+                display: flex;
+                
+                .left{
+                        flex: 1;
+                        .local{
+                                border-radius: 10px;
+        
+                                border : 1px solid $oc-gray-7;
+                                width: 350px;
+                                height: 350px;
+                                padding: 40px;
+                                .input-id, .input-pw, .button{
+                                        width:100%;
+                                        height: 3rem;
+                                        padding: 10px;
+                                }
+                                .input-id{
+                                        margin-bottom: 10px;
+                                }
+                                .input-pw{
+                                        margin-bottom: 10px;
+                                }
+                        }
+                        
+        
+                }
+                .right{
+                        width: 350px;
+                        flex: 1;
+                        height: 350px;
+                        border : 1px solid $oc-gray-7;
+        border-radius: 10px;
+
+                        .api-login{
+                                height: 100%;
+                                padding: 20px;
+                                .api-naver{
+                                        border : 1px solid $oc-gray-7;
+                                        height: 30%;
+                                }
+                                .api-naver +.api-naver {
+                                        margin-top: 5px;
+                                }
+                        }
+                }
+        }
+        
+}

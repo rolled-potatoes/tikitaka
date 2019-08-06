@@ -1,5 +1,11 @@
-
-        .Button-container {
-
+@import '../../../styles/utils';
+.button{
+        font-size: 1.2rem;
+        color: black;
+        display: inline-flex;
+        padding:0.5rem;
+        cursor: pointer;
+        &:hover{
+                border-bottom: 1px solid #0ff;
         }
-    
+}

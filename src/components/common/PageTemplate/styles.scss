@@ -1,5 +1,9 @@
+@import 'styles/utils.scss';
 
-        .PageTemplate-container {
-
-        }
-    
+main{
+        position: relative;
+        top: 4rem;
+        background: $oc-gray-3;
+        overflow: scroll;
+        min-height: calc(100vh - 15rem);
+}

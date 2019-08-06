@@ -1,0 +1,33 @@
+@import '../../../styles/utils';
+
+.footer{
+        position: relative;
+        top:4rem;
+        align-items: center;
+        width: 100%;
+        .footer-button{
+                justify-content: center;
+                display: flex;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid $oc-gray-5;
+        }
+        .notice{
+                justify-content: center;
+                display: flex;
+                position: relative;
+                left: -11%;
+                border-bottom: 1px solid $oc-gray-5;
+
+        }
+        .button +.button{
+                margin-left: 4rem;
+        }
+        .aboutus{
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                text-align: center;
+                font-size: 0.8rem;
+                background: $oc-blue-2;
+        }
+}
