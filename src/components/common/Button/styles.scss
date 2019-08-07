@@ -6,6 +6,11 @@
         padding:0.5rem;
         cursor: pointer;
         &:hover{
-                border-bottom: 1px solid #0ff;
+                border-bottom: 1px solid $oc-cyan-8;
         }
+}
+
+.find{
+        font-size: 8px;
+        float: right;
 }

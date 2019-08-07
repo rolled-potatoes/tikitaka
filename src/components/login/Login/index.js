@@ -17,7 +17,7 @@ const Login = ({ }) => (
         <div className={cx('local')}>
           <input placeholder="email" className={cx('input-id')}/>
           <input placeholder='Password' className={cx('input-pw')}/>
-          <Button>아이디 | 비밀번호 찾기</Button>
+          <Button theme={'find'}>아이디 | 비밀번호 찾기</Button>
           <Button>로그인</Button>
           <Button>회원가입</Button>
         </div>
