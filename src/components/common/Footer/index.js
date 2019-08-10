@@ -18,9 +18,6 @@ const Footer = ({ }) => (
         <li>공지 1</li>
         <li>공지 2</li>
         <li>공지 3</li>
-        <li>공지 4</li>
-        <li>공지 5</li>
-        <li>공지 6</li>
       </ul>
     </div>
     <div className={cx('aboutus')}>
