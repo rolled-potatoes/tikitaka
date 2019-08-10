@@ -20,10 +20,11 @@ const Header = ({ }) => {
           <Button to="/">프로젝트</Button>
           <Button to="/">프리랜서</Button>
           <Button to="/">프로젝트 등록</Button>
+          <Button to="/">My Page</Button>
         </div>
         <div className={cx('client')}>
           <Button to="/login" disabled>로그인</Button>
-          <Button to="/">회원가입</Button>
+          <Button to="/sign" disabled>회원가입</Button>
         </div>
       </div>
     </header>
