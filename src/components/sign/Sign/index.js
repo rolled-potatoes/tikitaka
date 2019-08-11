@@ -7,7 +7,7 @@ const cx = classnames.bind(styles)
 
 
 const Sign = ({}) => (
-  <div className ={cx('sign page')}>
+  <div className ={cx('sign-page')}>
     <h1 className={cx('sign-text')}>회원가입</h1>
     <h2 className={cx('welcome')}>티키타카에 오신 것을 환영합니다.</h2>
     <div className={cx('table')}>
@@ -28,8 +28,8 @@ const Sign = ({}) => (
        <td className={cx('inpassword')}><input type="text" name="mbpassword"></input></td>
       </tr>
       <tr className={cx('passwordtable2')}> 
-       <th className={cx('pasword2')}>비밀번호 확인</th>
-       <td className={cx('inpassword2')}><input type="text" name="mbpassword2"></input></td>
+       <th className={cx('pasword2')}>비밀번호 확인         </th>
+       <td className={cx('inpassword2')}><input type="text" name="mbpassword2" ></input></td>
       </tr>
       <tr className={cx('nametable')}> 
        <th className={cx('name')}>이름</th>
