@@ -3,6 +3,7 @@ import {Route,Switch} from 'react-router-dom'
 import MainPage from './pages/MainPage'
 import LoginPage from './pages/LoginPage'
 import SignPage from './pages/SignPage'
+import MyPagePage from './pages/MyPagePage'
 const App =()=>{
   return(
     <div>
@@ -10,6 +11,7 @@ const App =()=>{
         <Route exact path ='/' component={MainPage}></Route>
         <Route exact path='/login' component={LoginPage}/>
         <Route exact path='/sign' component={SignPage}/>
+        <Route exact path='/mypage' component={MyPagePage}/>
       </Switch>
     </div>
   )
