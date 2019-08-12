@@ -13,41 +13,43 @@ const googleImg = require('imgs/google.jpg')
 const kakaoImg = require('imgs/kakao.jpg')
 
 const Login = ({ }) => (
-  <div className={cx('login-page')}>
+  <div className={cx('login-wrapper')}>
+    <div className={cx('login-page')}>
       <h1 className={cx('login-text')}>로그인</h1>
-    <div className={cx('bottom')}>
-      <div className={cx('left')}>
-        <div className={cx('local')}>
-          <input placeholder="email" className={cx('input-id')}/>
-          <input placeholder='Password' className={cx('input-pw')}/>
-          <Button theme={'find'}>아이디 | 비밀번호 찾기</Button>
-          <Button theme={'login colorbtn'}>로그인</Button>
-          <Button theme={'login colorbtn'}>회원가입</Button>
-        </div>
-      </div>
-
-      <div className={cx('right')}>
-        <div className={cx('api-login')}>
-          <div className={cx('api-naver')}>
-            <Button theme={'apibtn'}>
-              <img src ={naverImg}/>
-            </Button>
-          
-          </div>
-          <div className={cx('api-naver')}>
-            <Button theme={'apibtn'}>
-              <img src={googleImg}/>
-            </Button>
-            
-          </div>
-          <div className={cx('api-naver')}>
-            <Button theme={'apibtn'}>
-              <img src={kakaoImg}/>
-            </Button>
-            
+      <div className={cx('bottom')}>
+        <div className={cx('left')}>
+          <div className={cx('local')}>
+            <input placeholder="email" className={cx('input-id')} />
+            <input placeholder='Password' className={cx('input-pw')} />
+            <Button theme={'find'}>아이디 | 비밀번호 찾기</Button>
+            <Button theme={'login colorbtn'}>로그인</Button>
+            <Button theme={'login colorbtn'}>회원가입</Button>
           </div>
         </div>
 
+        <div className={cx('right')}>
+          <div className={cx('api-login')}>
+            <div className={cx('api-naver')}>
+              <Button theme={'apibtn'}>
+                <img src={naverImg} />
+              </Button>
+
+            </div>
+            <div className={cx('api-naver')}>
+              <Button theme={'apibtn'}>
+                <img src={googleImg} />
+              </Button>
+
+            </div>
+            <div className={cx('api-naver')}>
+              <Button theme={'apibtn'}>
+                <img src={kakaoImg} />
+              </Button>
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
