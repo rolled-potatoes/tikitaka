@@ -17,7 +17,7 @@ const Header = ({ }) => {
           </Link>
         </div>
         <div className={cx('menu')}>
-          <Button to="/">프로젝트</Button>
+          <Button to="/project/1" disabled>프로젝트</Button>
           <Button to="/">프리랜서</Button>
           <Button to="/">프로젝트 등록</Button>
         </div>
