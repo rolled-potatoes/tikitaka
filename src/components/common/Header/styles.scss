@@ -1,6 +1,6 @@
 @import 'styles/utils.scss';
 .header{
-        background: white;
+        background:ivory;
         position: fixed;
         width: 100%;
         height: 4rem;
@@ -18,18 +18,35 @@
                                 width: 1.7rem;
                                 vertical-align: middle;
                         }
-                        font-size: 1.4rem;
+                        font-size: 1.5rem;
+                        font-weight:bolder;
                 }
                 .menu{
                         margin-right: auto;
                         margin-left: auto;
-                        .button + .button{
-                                margin-left: 7rem;
+                        .button{
+                                padding-left:4rem;
+                                padding-right:4rem;
                         }
+                        .button+.button{
+                                padding-right:4rem;
+                                padding-left:4rem;
+                                border-left: 1px solid darkgoldenrod; 
+
+                                                }
                 }
                 .client{
-                        margin-left: auto;
-
+                        
+                        margin-left: 150px;
+                        .button{
+                                font-size: 0.9rem;
+                                padding-right:1rem;
+                                padding-left:1rem;
+                        }
+                        .button+.button{
+                                border-left: 0.5px solid gray;
+                        }
+                        
                 }
                 @include media("<wide"){
                         width: 100%;

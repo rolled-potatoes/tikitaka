@@ -32,19 +32,19 @@ const Login = ({ }) => (
             <Button theme={'apibtn'}>
               <img src ={naverImg}/>
             </Button>
-            네이버 계정 로그인
+          
           </div>
           <div className={cx('api-naver')}>
             <Button theme={'apibtn'}>
               <img src={googleImg}/>
             </Button>
-            구글 계정 로그인
+            
           </div>
           <div className={cx('api-naver')}>
             <Button theme={'apibtn'}>
               <img src={kakaoImg}/>
             </Button>
-            카카오 계정 로그인
+            
           </div>
         </div>
 
