@@ -7,7 +7,8 @@
         overflow: scroll;
         min-height: calc(100vh - 10rem);
         display: flex;
-        justify-content: center;
+		justify-content: center;
+		z-index: -1;
         align-items: center;
 }
 html, body, div, span, applet, object, iframe,
