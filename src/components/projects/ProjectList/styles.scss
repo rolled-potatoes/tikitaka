@@ -1,0 +1,34 @@
+@import 'styles/utils.scss';
+.projectList{
+        width: 1200px;
+        margin: 0 auto;
+        margin-top : 40px;
+        
+        .projectList-top{
+                display: flex;
+                .title{
+                        flex: 1;
+                        height: 20px;
+                }
+
+                .search{
+                        float: right;
+                }
+                
+        }
+        .filter{
+                margin-top: 15px;
+                border-bottom: 1px solid $oc-gray-7;
+        }
+        .projectList-bottom{
+                margin-top: 15px;
+                .card-group{
+                        background: #fff; 
+                        display: flex;
+                }
+                .writer{
+                        flex:1;
+                        padding: 5px;
+                }
+        }
+}
