@@ -14,7 +14,7 @@ const Sign = ({}) => (
       <tr className={cx('purposetable')}>
       <th className={cx('purpose')}>이용목적</th>
       <td className={cx('purposebox')}><select name="purpose" size="1">
-        <option name=''>선택하세요</option>
+        <option name='s'>선택하세요</option>
         <option name='client'>클라이언트</option>
         <option name='free'>프리랜서</option>
         </select></td>
@@ -43,10 +43,6 @@ const Sign = ({}) => (
        <th className={cx('mail')}>이메일</th>
        <td className={cx('inmail')}><input type="text" name="mbmail"></input></td>
       </tr>
-      <tr className={cx('tablephone')}> 
-        <th className={cx('phone')}>휴대폰 번호</th>
-       <td className={cx('inphone')}><input type="text" name="mbphone"></input></td>
-      </tr>
       <tr className={cx('projecttable')}>
         <th className={cx('purpose')}>관심 프로젝트</th>
          <td className={cx('projectbox')}>
@@ -68,6 +64,9 @@ const Sign = ({}) => (
     <input type="radio" name="info" checked></input>
       <Button theme={'term'}>이용약관</Button> 및 <Button them={'pinfo'}>개인정보취급방침</Button>에 동의합니다.
     </h2>
+ <h2 className={cx('sign-button')}>
+ <Button to="/">회원가입</Button>
+ </h2>
   
   </div>
 );
