@@ -11,6 +11,7 @@ const cx = classnames.bind(styles)
 const naverImg = require('imgs/naver.jpg')
 const googleImg = require('imgs/google.jpg')
 const kakaoImg = require('imgs/kakao.jpg')
+const facebookImg = require('imgs/페이스북.png')
 
 const Login = ({ }) => (
   <div className={cx('login-page')}>
@@ -43,8 +44,12 @@ const Login = ({ }) => (
           <div className={cx('api-naver')}>
             <Button theme={'apibtn'}>
               <img src={kakaoImg}/>
+            </Button> 
+          </div>
+          <div className={cx('api-naver')}>
+            <Button theme={'apibtn'}>
+              <img src={facebookImg}/>
             </Button>
-            
           </div>
         </div>
 
