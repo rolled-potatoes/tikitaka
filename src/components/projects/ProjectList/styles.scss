@@ -1,18 +1,17 @@
 @import 'styles/utils.scss';
+
 .projectList{
         width: 1200px;
-        margin: 0 auto;
-        margin-top : 40px;
-        
+        margin: auto auto;
         .projectList-top{
                 display: flex;
+                justify-content: space-evenly;
                 .title{
                         flex: 1;
                         height: 20px;
                 }
 
                 .search{
-                        float: right;
                 }
                 
         }
@@ -21,14 +20,26 @@
                 border-bottom: 1px solid $oc-gray-7;
         }
         .projectList-bottom{
-                margin-top: 15px;
-                .card-group{
-                        background: #fff; 
-                        display: flex;
+                .project{
+                        display: grid;
+                        border : 1px solid #f00;
+                        grid-auto-rows: minmax(50px,auto);
+                        grid-template-columns: 1fr 3fr;
+                        margin : 40px 0 ;
+                        .project-content{
+                                display: grid;
+                                grid-template-columns: 1fr 1fr 1fr;
+                                align-items: flex-start;
+                                .title{
+                                        height: 1.5rem;
+                                        grid-column: 1/4;
+                                        display: flex;
+                                        justify-content: space-between;
+                                }
+                        }
                 }
-                .writer{
-                        flex:1;
-                        padding: 5px;
+                .project + .project{
+                        margin-top: 2rem;
                 }
         }
 }

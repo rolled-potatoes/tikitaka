@@ -7,9 +7,130 @@ import React from 'react'
 import  styles from './styles.scss'
 import classnames from 'classnames'
 import Button from '../../common/Button'
-import { Card, CardGroup} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+
 const cx = classnames.bind(styles)
 const dumyData=[
+  {
+    title: "test",
+    minCost: 100,
+    maxCost: 500,
+    deadLine: new Date("2020-01-01"),
+    cat:"wed programing",
+    filed: ["front end","Back end","Android"],
+    resisterDate: new Date(),
+    description:"test description",
+    durings: 45,
+    writer:"ParkSeungHwan",
+    writerInfo:"YU student",
+    currentCandidate:1,
+    Area : "서울"
+  },
+  {
+    title: "test",
+    minCost: 100,
+    maxCost: 500,
+    deadLine: new Date("2020-01-01"),
+    cat:"wed programing",
+    filed: ["front end","Back end","Android"],
+    resisterDate: new Date(),
+    description:"test description",
+    durings: 45,
+    writer:"ParkSeungHwan",
+    writerInfo:"YU student",
+    currentCandidate:1,
+    Area : "서울"
+  },
+  {
+    title: "test",
+    minCost: 100,
+    maxCost: 500,
+    deadLine: new Date("2020-01-01"),
+    cat:"wed programing",
+    filed: ["front end","Back end","Android"],
+    resisterDate: new Date(),
+    description:"test description",
+    durings: 45,
+    writer:"ParkSeungHwan",
+    writerInfo:"YU student",
+    currentCandidate:1,
+    Area : "서울"
+  },
+  {
+    title: "test",
+    minCost: 100,
+    maxCost: 500,
+    deadLine: new Date("2020-01-01"),
+    cat:"wed programing",
+    filed: ["front end","Back end","Android"],
+    resisterDate: new Date(),
+    description:"test description",
+    durings: 45,
+    writer:"ParkSeungHwan",
+    writerInfo:"YU student",
+    currentCandidate:1,
+    Area : "서울"
+  },
+  {
+    title: "test",
+    minCost: 100,
+    maxCost: 500,
+    deadLine: new Date("2020-01-01"),
+    cat:"wed programing",
+    filed: ["front end","Back end","Android"],
+    resisterDate: new Date(),
+    description:"test description",
+    durings: 45,
+    writer:"ParkSeungHwan",
+    writerInfo:"YU student",
+    currentCandidate:1,
+    Area : "서울"
+  },
+  {
+    title: "test",
+    minCost: 100,
+    maxCost: 500,
+    deadLine: new Date("2020-01-01"),
+    cat:"wed programing",
+    filed: ["front end","Back end","Android"],
+    resisterDate: new Date(),
+    description:"test description",
+    durings: 45,
+    writer:"ParkSeungHwan",
+    writerInfo:"YU student",
+    currentCandidate:1,
+    Area : "서울"
+  },
+  {
+    title: "test",
+    minCost: 100,
+    maxCost: 500,
+    deadLine: new Date("2020-01-01"),
+    cat:"wed programing",
+    filed: ["front end","Back end","Android"],
+    resisterDate: new Date(),
+    description:"test description",
+    durings: 45,
+    writer:"ParkSeungHwan",
+    writerInfo:"YU student",
+    currentCandidate:1,
+    Area : "서울"
+  },
+  {
+    title: "test",
+    minCost: 100,
+    maxCost: 500,
+    deadLine: new Date("2020-01-01"),
+    cat:"wed programing",
+    filed: ["front end","Back end","Android"],
+    resisterDate: new Date(),
+    description:"test description",
+    durings: 45,
+    writer:"ParkSeungHwan",
+    writerInfo:"YU student",
+    currentCandidate:1,
+    Area : "서울"
+  },
   {
     title: "test",
     minCost: 100,
@@ -75,68 +196,34 @@ const Lists= ({})=>{
   let list = dumyData.map(item =>{
     const {title,minCost,maxCost,deadLine,filed,resisterDate,cat,
             description,durings,writer,currentCandidate,Area,writerInfo} = item
-    const groupStyle={
-      height:"200px",
-      marginBottom: "20px"
-    }
     return(
-      <CardGroup style={groupStyle}>
-        <Card className='writer'>
-          <Card.Body >
-            <Card.Title>{writer}</Card.Title>
-            <Card.Text>
-              {writerInfo}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-
-        <Card style={{flex:3}}>
-          <Card.Body>
-            <Card.Title>
-              {title}
-              <div style={{float:"right"}}>
-                {resisterDate.toDateString()}
-              </div>
-            </Card.Title>
-            <CardGroup>
-              <Card style={{flex:1}}>
-                  <Card.Body >
-                    <Card.Text>
-                      비용 : {minCost} ~ {maxCost} 
-                    </Card.Text>
-                    <Card.Text>
-                      기간 : {durings}
-                    </Card.Text>
-                    <Card.Text>
-                      현재 지원 수 : {currentCandidate}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card style={{flex:1}}>
-                  <Card.Body >
-                    <Card.Text>
-                      분야 : {cat}
-                    </Card.Text>
-                    <Card.Text>
-                      기술 : {filed.map(item =>{
-                        return(
-                            item+" "
-                        )
-                      })}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card style={{flex:1}}>
-                  <Card.Body >
-                    <Card.Text>
-                      {description}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-            </CardGroup>
-          </Card.Body>
-        </Card>
-      </CardGroup>
+      <div className={cx('project')}>
+        <div className={cx('writer-content')}>
+          <div className={cx('writer')}>{writer}</div>
+          <div className={(cx('writer-info'))}> {writerInfo}</div>
+        </div>
+        <div className={cx('project-content')}>
+          <div className={cx('title')}>
+            <h4><Link to='/'>{title}</Link></h4>
+            <div>{resisterDate.toDateString()}</div>
+          </div>
+          <div className={cx('item1')}>
+            <div>비용: {minCost} ~ {maxCost}</div>
+            <div>기간 : {durings}</div>
+            <div>지역 : {Area}</div>
+            <div>지원자 수 : {currentCandidate}</div>
+          </div>
+          <div className={cx('item2')}>
+            <div>분야 :{cat}</div>
+            <div>기술 : {filed}</div>
+          </div>
+          <div className={cx('item3')}>
+            <div>설명</div>
+            <div>{description}</div>
+            <div>{deadLine.toDateString()}</div>
+          </div>
+        </div>
+      </div>
     )
   })
   return list
