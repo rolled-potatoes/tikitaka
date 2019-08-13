@@ -7,8 +7,8 @@ const cx = classnames.bind(styles)
 
 
 const Mypage = ({}) => (
-  <div className ={cx('sign page')}>
-    <h1 className={cx('sign-text')}>My Page</h1>
+  <div className ={cx('mypage')}>
+    <h1 className={cx('mypage-text')}>My Page</h1>
   </div>
 );
 
