@@ -54,22 +54,19 @@
                                 height: 100%;
                                 padding: 20px;
                                 img{
-                                        height: 70px;
-                                        width: 320px;
+                                        height: 60px;
+                                        width: 300px;
                                         border-radius: 10px;
+                                        cursor:pointer;
                                         &:hover{
                                                 box-shadow: 5px 5px $oc-gray-3;
                                         }
                                 }
-                                .api-naver{
-                                        height: 30%;
-                                        text-align: center;
-                                        font-size: 12px;
-                                        font-weight: 700;
-                                }
+
                                 .api-naver +.api-naver {
-                                        margin-top: 10px;
+                                        margin-top: 1px;
                                 }
+
                         }
                 }
         }
