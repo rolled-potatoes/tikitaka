@@ -12,9 +12,8 @@ const adImg=require('imgs/광고.jpg')
     <container>
     <div className={cx('main-page')}>
       <section class="ad">
-      <p className={cx('adverImg')}>
       <a className={cx('advertise')} href="http://meaningone.tistory.com">
-          <img src={adImg} align="center"/></a></p></section>
+          <img src={adImg} align="center"/></a></section>
       <section class="category">카테고리</section>
       <section class="follow">팔로우</section>
       <section class="x">x</section>
