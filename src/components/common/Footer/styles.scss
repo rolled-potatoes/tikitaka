@@ -5,6 +5,7 @@
         top:4rem;
         align-items: center;
         width: 100%;
+        border-top: 1px solid $oc-gray-3;
         .footer-button{
                 justify-content: center;
                 display: flex;
@@ -12,14 +13,7 @@
                 padding-bottom: 1rem;
                 border-bottom: 1px solid $oc-gray-5;
         }
-        .notice{
-                justify-content: center;
-                display: flex;
-                position: relative;
-                left: -11%;
-                border-bottom: 1px solid $oc-gray-5;
-
-        }
+        
         .button +.button{
                 margin-left: 4rem;
         }

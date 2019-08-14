@@ -12,14 +12,7 @@ const Footer = ({ }) => (
       <Button>개인정보취급방침</Button>
       <Button>고객센터</Button>
     </div>
-    <div className={cx('notice')}>
-      <p>공지사항</p>
-      <ul>
-        <li>공지 1</li>
-        <li>공지 2</li>
-        <li>공지 3</li>
-      </ul>
-    </div>
+    
     <div className={cx('aboutus')}>
       
       <p>(주) 프리모아</p>

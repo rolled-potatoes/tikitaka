@@ -12,215 +12,126 @@ import {Link} from 'react-router-dom'
 const cx = classnames.bind(styles)
 const dumyData=[
   {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
+    title: "행사 중개 플랫폼 웹서비스 제작",
+    price: 500,
+    dueDate: new Date("2020-01-01"),
+    categoryList: ["front end","Back end","Android","Android","Android"],
+    writeDate: new Date(),
+    description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    period: 45,
+    nickName:"ParkSeungHwan",
+    organization:"YU student",
+    candiList:['tom','bob','kim'],
+    freeList:['park'],
+    maxPeople: 5,
+  },{
+    title: "행사 중개 플랫폼 웹서비스 제작",
+    price: 500,
+    dueDate: new Date("2020-01-01"),
+    categoryList: ["front end","Back end","Android","Android","Android"],
+    writeDate: new Date(),
+    description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    period: 45,
+    nickName:"ParkSeungHwan",
+    organization:"YU student",
+    candiList:['tom','bob','kim'],
+    freeList:['park'],
+    maxPeople: 5,
+  },{
+    title: "행사 중개 플랫폼 웹서비스 제작",
+    price: 500,
+    dueDate: new Date("2020-01-01"),
+    categoryList: ["front end","Back end","Android","Android","Android"],
+    writeDate: new Date(),
+    description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    period: 45,
+    nickName:"ParkSeungHwan",
+    organization:"YU student",
+    candiList:['tom','bob','kim'],
+    freeList:['park'],
+    maxPeople: 5,
+  },{
+    title: "행사 중개 플랫폼 웹서비스 제작",
+    price: 500,
+    dueDate: new Date("2020-01-01"),
+    categoryList: ["front end","Back end","Android","Android","Android"],
+    writeDate: new Date(),
+    description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    period: 45,
+    nickName:"ParkSeungHwan",
+    organization:"YU student",
+    candiList:['tom','bob','kim'],
+    freeList:['park'],
+    maxPeople: 5,
   },
-  {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    cat:"wed programing",
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    cat:"wed programing",
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  },
-  {
-    title: "test",
-    minCost: 100,
-    cat:"wed programing",
-    maxCost: 500,
-    deadLine: new Date("2020-01-01"),
-    filed: ["front end","Back end","Android"],
-    resisterDate: new Date(),
-    description:"test description",
-    durings: 45,
-    writer:"ParkSeungHwan",
-    writerInfo:"YU student",
-    currentCandidate:1,
-    Area : "서울"
-  }
 ]
 const Lists= ({})=>{
   let list = dumyData.map(item =>{
-    const {title,minCost,maxCost,deadLine,filed,resisterDate,cat,
-            description,durings,writer,currentCandidate,Area,writerInfo} = item
+    const {title,price,dueDate,categoryList,writeDate,
+            description,period,nickName,candiList,freeList,maxPeople,organization} = item
+    const writeYear = writeDate.getFullYear();
+    const writeDay = writeDate.getDate();
+    const writeMonth = writeDate.getMonth()+1;
+    const dueYear = dueDate.getFullYear();
+    const dueDay = dueDate.getDate();
+    const dueMonth = dueDate.getMonth()+1;
     return(
       <div className={cx('project')}>
         <div className={cx('writer-content')}>
-          <div className={cx('writer')}>{writer}</div>
-          <div className={(cx('writer-info'))}> {writerInfo}</div>
+          <div className={cx('writer')}>
+            <img  src="https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/42135641_1894679573979032_7136233916314157056_n.jpg?_nc_cat=108&_nc_oc=AQlwd9nh7sPfN1VZJ75panQPdTySUMTdtP51y1RFleHYHAFS92s2yZlM4qDzHG5I8Wk&_nc_ht=scontent.ficn3-1.fna&oh=4a6b9e8645545cc0b5190f5e1c9b3a3a&oe=5DD275CF"className={cx('writer-profile')}></img>
+            <h3 className={cx('writer-nickName')}>{nickName}</h3>
+          </div>
+          
+          <div className={(cx('writer-info'))}> {organization}</div>
         </div>
+
         <div className={cx('project-content')}>
           <div className={cx('title')}>
-            <h4><Link to='/'>{title}</Link></h4>
-            <div>{resisterDate.toDateString()}</div>
+            <h2><Link to='/post/1'>{title}</Link></h2>
+            <div className={cx('writeDate')}>
+              {`등록일 ${writeYear}년 ${writeMonth}월 ${writeDay}일`}
+            </div>
           </div>
-          <div className={cx('item1')}>
-            <div>비용: {minCost} ~ {maxCost}</div>
-            <div>기간 : {durings}</div>
-            <div>지역 : {Area}</div>
-            <div>지원자 수 : {currentCandidate}</div>
+
+          <div className={cx('item-left')}>
+            <ul>
+              <li>
+                <div className={cx('item-name')}>비용</div>
+                <div className={cx('item-content')}>{price}</div>
+              </li>
+              <li>
+                <div className={cx('item-name')}>예상기간</div>
+                <div className={cx('item-content')}>{period}</div>
+              </li>
+              <li>
+                <div className={cx('item-name')}>모집인원</div>
+                <div className={cx('item-content')}>{maxPeople}</div>
+              </li>
+            </ul>
           </div>
-          <div className={cx('item2')}>
-            <div>분야 :{cat}</div>
-            <div>기술 : {filed}</div>
+
+          <div className={cx('item-right')}>
+            <div className={cx('categoryList')}>{categoryList.map(item=>{
+              return(
+                `${item}, `
+              )
+            })}</div>
+            <div className={cx('description')}>
+              {description}
+            </div>
           </div>
-          <div className={cx('item3')}>
-            <div>설명</div>
-            <div>{description}</div>
-            <div>{deadLine.toDateString()}</div>
+
+          <div className={cx('item-bottom')}>
+            <div className={cx('bottom-wrapper')}>
+              <div className={cx('item-name')}>지원자 수</div>
+              <div className={cx('candiListNumber')}>{candiList.length}</div>
+            </div>
+            <div className={cx('bottom-wrapper')}>
+              <div className={cx('dueDate')}>
+                {`마감일 ${dueYear}년 ${dueMonth}월 ${dueDay}일`}
+              </div>
+            </div>
           </div>
         </div>
       </div>
