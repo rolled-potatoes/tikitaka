@@ -3,9 +3,9 @@
   import './styles.scss'
 
 
-  const Main = ({}) => (
+  const Register = ({}) => (
     <div></div>
   );
   
-  export default Main
+  export default Register
   

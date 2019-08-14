@@ -21,8 +21,8 @@
         padding-top:2%;
     }
     .table{
-     width:800px;
-     height:400px;
+     width:1200px;
+     height:300px;
      margin-right:auto;
      margin-left:auto;
      font-size:1.2rem;
@@ -60,16 +60,12 @@
         width:400px;
         height:25px;
      }
-     .inmail input[type="text"]{
+     .inNickname input[type="text"]{
         margin-left:100px;
         width:400px;
         height:25px;
      }
-     .projectbox select{
-        margin-left:100px;
-        width:400px;
-        height:25px;
-     }
+     
     }
     .info{
         font-size:1rem;
@@ -79,9 +75,6 @@
         margin-right:auto;
 
         .term{
-            font-size:1rem;
-        }
-        .pinfo{
             font-size:1rem;
         }
 
@@ -100,14 +93,8 @@
        
     }
     .sign-button:hover {
-      background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d2d4d4), color-stop(1, #b8b8b8));
-	   background:-moz-linear-gradient(top, #d2d4d4 5%, #b8b8b8 100%);
-	   background:-webkit-linear-gradient(top, #d2d4d4 5%, #b8b8b8 100%);
-	   background:-o-linear-gradient(top, #d2d4d4 5%, #b8b8b8 100%);
-	   background:-ms-linear-gradient(top, #d2d4d4 5%, #b8b8b8 100%);
-	   background:linear-gradient(to bottom, #d2d4d4 5%, #b8b8b8 100%);
-	   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d4d4', endColorstr='#b8b8b8',GradientType=0);
-	   background-color:#d2d4d4;
+      background-color: darkgray;
+      font-weight:bolder;
    }
    .sign-button:active {
       position:relative;
