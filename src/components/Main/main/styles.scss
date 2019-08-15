@@ -1,32 +1,75 @@
 @import 'styles/utils.scss';
       
      .ad {
-       float:left;
-        background-color:white;
+       width:1800px;
+       height:300px;
 
           img{
             width:1800px;
-            height:250px;
+            height:300px;
         }
     }
       
       .category {
-        background-color: #FD9A5C;
+        height:250px;
+        width:1250px;
+        margin-left:auto;
+        margin-right:auto;
+        .category-txt{
+          text-align:center;
+          margin-top:30px;
+          font-size:2.5rem;
+          font-weight:bolder;
+          color:turquoise;
+        }
+        img{
+          text-align:center;
+          width:100px;
+          height:100px;
+          margin-left:100px;
+          margin-right:100px;
+          margin-top:20px;
+          &:hover{
+            box-shadow: 3px 3px lightblue
+          }
+          &:active{
+            position: relative;
+            top:1.2px;
+          }
+
+        }        
       }
-      
+      .category2{
+        height:180px;
+        width:950px;
+        margin-left:auto;
+        margin-right:auto;
+          img{
+            width:100px;
+            height:100px;
+            margin-left:100px;
+            margin-right:100px;
+          &:hover{
+            box-shadow: 3px 3px lightblue
+          }
+          &:active{
+            position: relative;
+            top:1.2px;
+          }
+        }
+
+      }
       .follow {
+        height:240px;
+        width:1500;
         background-color: yellow;
       }
       .x{
+        height:240px;
+        width:1500;
           background-color:gray;
       }
-      
-      section {
-          .ad{
-              height:240px;
-              width:1500;
-          }
-        height: 300px;
-        width:1500px;
+      .icon-text{
+        text-align:center;
+        font-weight:bold;
       }
-      
