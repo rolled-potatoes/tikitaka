@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import {Link} from'react-router-dom'
 import Button from '../../common/Button'
 const cx = classnames.bind(styles)
-const adImg=require('imgs/광고.jpg')
+const adImg=require('imgs/광고.png')
 
 
   const Main = ({}) => (
