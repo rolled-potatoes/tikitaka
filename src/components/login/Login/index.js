@@ -5,7 +5,7 @@
 import React from 'react'
 import styles from './styles.scss'
 import classnames from 'classnames'
-import {Link} from'react-router-dom'
+import { Link } from 'react-router-dom'
 import Button from '../../common/Button'
 const cx = classnames.bind(styles)
 const naverImg = require('imgs/naver.jpg')
@@ -28,31 +28,32 @@ const Login = ({ }) => (
           </div>
         </div>
 
-      <div className={cx('right')}>
-        <div className={cx('api-login')}>
-          <div className={cx('api-naver')}>
-            <Button theme={'apibtn'}>
-              <img src ={naverImg}/>
-            </Button>
-          
-          </div>
-          <div className={cx('api-naver')}>
-            <Button theme={'apibtn'}>
-              <img src={googleImg}/>
-            </Button>
-            
-          </div>
-          <div className={cx('api-naver')}>
-            <Button theme={'apibtn'}>
-              <img src={kakaoImg}/>
-            </Button> 
-          </div>
-          <div className={cx('api-naver')}>
-            <Button theme={'apibtn'}>
-              <img src={facebookImg}/>
-            </Button>
-          </div>
+        <div className={cx('right')}>
+          <div className={cx('api-login')}>
+            <div className={cx('api-naver')}>
+              <Button theme={'apibtn'}>
+                <img src={naverImg} />
+              </Button>
 
+            </div>
+            <div className={cx('api-naver')}>
+              <Button theme={'apibtn'}>
+                <img src={googleImg} />
+              </Button>
+
+            </div>
+            <div className={cx('api-naver')}>
+              <Button theme={'apibtn'}>
+                <img src={kakaoImg} />
+              </Button>
+            </div>
+            <div className={cx('api-naver')}>
+              <Button theme={'apibtn'}>
+                <img src={facebookImg} />
+              </Button>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
