@@ -29,9 +29,10 @@ const Sign = ({}) => (
         <td className={cx('inname')}><input type="text" name="name"/></td>
       </tr>
       <tr className={cx('nicknametable')}> 
-       <th className={cx('nickname')}>닉네임</th>
+       <th className={cx('nickname')} float="left">닉네임</th>
        <td className={cx('inNickname')}><input type="text" name="nickname"></input>
-       <td className={cx('checkNickname')}><button id="checkNickname">중복확인</button></td></td>
+      </td>
+      <th className={cx('checkNickname')}><button id="checkNickname">중복확인</button></th>
       </tr>
       <tr className={cx('tablephone')}> 
        <th className={cx('phonenumber')}>휴대폰 번호</th>
@@ -40,10 +41,10 @@ const Sign = ({}) => (
     </div>
     <h2 className={cx('info')}>
     <input type="radio" name="info" checked></input>
-      <Button theme={'term'}>이용약관</Button> 및 <Button them={'term'}>개인정보취급방침</Button>에 동의합니다.
+      <Button theme={'term'}>이용약관</Button> 및 <Button them={'info'}>개인정보취급방침</Button>에 동의합니다.
     </h2>
  <h2 className={cx('sign-button')}>
- <Button to="#">회원가입</Button>
+ <Button to="/">회원가입</Button>
  </h2>
   
   </div>

@@ -1,1 +1,60 @@
 @import 'styles/utils.scss';
+.mypage-page{
+ width:1200px;   
+ height:800px;
+ margin-right:auto;
+ margin-left:auto;
+ margin-top:10px;
+ padding:10px;
+ .mypageTxt{
+     display:flex;
+     margin-left:15px;
+     text-align:left;
+     color:blue;
+     font-size:2rem;
+     font-weight:bold;
+     padding-top:2%;
+     color: rgb(99, 99, 207);
+     padding-bottom:2%;
+     border-bottom:1px solid gray;
+ }
+ .mypage-tem{
+     width:1000px;
+     height:800px;
+     padding-left:auto;
+     padding-right:auto;
+     .nav{
+        justify-content: space-evenly;
+        background-color:red;
+        height:70px; 
+        float:left;
+        width:700px;
+        margin-top:10px;
+     }
+     .aside{
+         margin-left:50px;
+         background-color:tan;
+         float:left;
+         width:180px;
+         height:900px;
+         margin-top:10px;
+        .proImage{
+            padding-top:10%;
+        }
+         .nickname{
+            padding-top:2%;
+            text-align:center;
+            font-weight:bold;
+        }
+     }
+     .section{
+         background-color:green;
+         height:700px;
+         width:700px;
+         float:left;
+     }
+     .proImage{
+         text-align:center;
+     }
+ }
+}
