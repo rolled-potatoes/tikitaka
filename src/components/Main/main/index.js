@@ -13,6 +13,7 @@ const contImg=require('imgs/콘텐츠제작.png')
 const marcketImg=require('imgs/마케팅.png')
 const lesImg=require('imgs/레슨.png')
 const doImg=require('imgs/문서.png')
+const proImg=require('imgs/프로필.png')
 
   const Main = ({}) => (
     <container>
@@ -73,7 +74,21 @@ const doImg=require('imgs/문서.png')
         </td>
       </div>
       </div>
-      <div class="follow">팔로우</div>
+      <div class={cx('follow')}>
+        <th class={cx('pro-box')}>
+        <tr className={cx('pro List[]')}>
+          <img src={proImg}/>
+        </tr>
+        </th>
+        <td className={cx('name-box')}>
+        <td className={cx('project-team')}>
+        대구대학교 사진동아리
+       </td>
+      <tr className={cx('writeDate')}>
+        1일전
+      </tr>
+        </td>
+      </div>
       <div class="x">x</div>
     </div>
     </container>
