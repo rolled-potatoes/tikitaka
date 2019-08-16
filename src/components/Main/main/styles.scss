@@ -17,7 +17,8 @@
         margin-right:auto;
         .category-txt{
           text-align:center;
-          margin-top:30px;
+          margin-top:50px;
+          margin-bottom: 30px;
           font-size:2.5rem;
           font-weight:bolder;
           color:turquoise;
@@ -60,35 +61,95 @@
 
       }
       .follow {
-        height:240px;
-        width:1250px;
+        height:700px;
+        width:1500px;
         margin-left:auto;
         margin-right:auto;
-        background-color: yellow;
+        .name-box{
+          font-weight:bold;
+          margin:15px;
+          vertical-align: center;
+          float:top;
+          color:rgd(300,300,300);
+          .writeDate{
+            margin-top:10px;
+          }
+        }
+
+        .timeTxt{
+          text-align:center;
+          margin-top:50px;
+          font-size:2.5rem;
+          font-weight:bolder;
+          margin-bottom: 50px;
+          color:rgb(64, 147, 224);
+        }
+        .Card{
+          border-radius:3%;
+          border: 3px solid $tikitaka-blue;
+          margin:35px;
+          height:500px;
+          width: 300px;
+          float:left;
+          .topBox{
+            width:270px;
+            height:60px;
+          }
+          .project-box{
+            padding:3%;
+            float:top;
+            height:400px;
+            width:300px;
+            .post-title{
+              line-height: 150%;
+              height:100px;
+              vertical-align: center;
+              text-align:left;
+              font-weight:bold;
+              padding:5%;
+              font-size:1.6rem;
+              border-bottom:1px solid gray;
+            }
+            .post-box{
+              margin-top:40px;
+              height:200px;
+              width:auto;
+
+              .table-item{
+                font-weight:bolder;
+                font-size:1.2rem;
+                line-height: 200%;
+                word-spacing:30px;
+                margin-left: 15px;
+                color:darkgray;
+
+              }
+            }
+            .categoryList{
+              margin-left:15px;
+              line-height:170%;
+              margin-top:70px;
+              color: $tikitaka-yello;
+              font-weight: 600;
+              margin-bottom: 10px;
+            }
+          }
+        }
         .pro-box{
           width:auto;
           height:50px;
-          
           float:left;
         }
-        .name-box{
-          font-weight:bold;
-          margin-top:15px;
-          vertical-align: center;
-          float:left;
-        }
+
         img{
           border-radius:50%;
-          margin:10px;
+          margin-left:15px;
+          margin-right:20px;
           width:50px;
           height:50px;
         }
       }
-      .x{
-        height:240px;
-        width:1500;
-          background-color:gray;
-      }
+
       .icon-text{
         text-align:center;
         font-weight:bold;
