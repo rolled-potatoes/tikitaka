@@ -1,5 +1,70 @@
+@import 'styles/utils.scss';
 
-        .FreeLenserDetail-container {
-
+.FreeLenserDetail-wrapper{
+        width: 1200px;
+        margin-top: 80px;
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 10px;
+        grid-auto-rows: minmax(400px,auto);
+        .FreeLenserDetail-profile{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding:20px;
+                border: 1px solid $oc-gray-4;
+                .profile-img{
+                        height: 170px;
+                        width: 170px;
+                }
+                .profile-nickname{
+                        font-size: 1.2rem;
+                        color :$oc-gray-7;
+                        font-weight: 700;
+                }
+                .profile-table{
+                        margin: 10px 0;
+                        padding : 10px 0;
+                        border-top: 1px solid $oc-gray-4;
+                        border-bottom: 1px solid $oc-gray-4;
+                        >div{
+                                display: grid;
+                                margin-top: 5px;
+                                grid-template-columns: 1fr 1fr;
+                                grid-auto-rows : 1.5rem;
+                                
+                        }
+                        .profile-td{
+                                display: flex;
+                                justify-content: flex-end;
+                                color: $oc-gray-7;
+                        }
+                        .profile-tr{
+                                color : $oc-gray-5;
+                        }
+                }
+                .profile-intro{
+                        color : $oc-gray-6;
+                        padding: 10px 10px;
+                }
         }
-    
+        .FreeLenserDetail-info{
+                border: 1px solid $oc-gray-4;
+                background: $oc-gray-2;
+                display: flex;
+                flex-direction: column;
+                .FreeLenserDetail-menu{
+                        border-bottom: 1px solid $oc-gray-5;
+                        align-items: center;
+                        background: white;
+                        height: 70px;
+                        display: flex;
+                        justify-content: space-around;
+                }
+                .FreeLenserDetail-content{
+                        padding: 30px 15px;
+                        height: 100%;
+                }
+        }
+}
