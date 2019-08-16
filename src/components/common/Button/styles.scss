@@ -5,9 +5,6 @@
         display: inline-flex;
         padding:0.5rem;
         cursor: pointer;
-        &:hover{
-                border-bottom: 1px solid $oc-cyan-8;
-        }
 }
 .apibtn{
         &:hover{
