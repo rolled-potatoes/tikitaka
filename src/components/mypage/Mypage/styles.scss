@@ -2,13 +2,11 @@
 .mypage-page{
  width:1200px;   
  height:800px;
- margin-right:auto;
- margin-left:auto;
  margin-top:10px;
  padding:10px;
  .mypageTxt{
      display:flex;
-     margin-left:15px;
+     margin-left:1px;
      text-align:left;
      color:blue;
      font-size:2rem;
@@ -19,42 +17,195 @@
      border-bottom:1px solid gray;
  }
  .mypage-tem{
-     width:1000px;
+     width:1300px;
      height:800px;
      padding-left:auto;
      padding-right:auto;
-     .nav{
+     .FreeLenserDetail-info{
         justify-content: space-evenly;
-        background-color:red;
         height:70px; 
         float:left;
-        width:700px;
-        margin-top:10px;
+        width:920px;
+        margin-top:20px;
+        margin-left: 20px;
      }
+     .li{
+        font-size:1.1rem;
+        font-weight:bold;
+        text-align:center;
+        padding-top:1%;
+        float:left;
+        width:230px;
+        height:60px;
+        background-color:white;
+        border: 2px solid rgb(246,246,246);
+    }
      .aside{
-         margin-left:50px;
-         background-color:tan;
+         color:gray;
+         text-align:center;
+         margin-left:auto;
+         margin-right:auto;
          float:left;
-         width:180px;
+         width:250px;
          height:900px;
-         margin-top:10px;
-        .proImage{
-            padding-top:10%;
-        }
-         .nickname{
-            padding-top:2%;
+         margin-top:20px;
+         line-height: 150%;
+         .nicknameBox{
+            border-radius:2%;
+            margin-left:auto;
+            margin-right:auto;
+            margin-bottom:5%;
+            width:250px;
+            height:300px;
+            padding-top:5%;
+            padding-bottom:3%;
             text-align:center;
+            color:white;
             font-weight:bold;
-        }
+            font-size:1.2rem;
+            background-color:$tikitaka-blue;
+            .proImg{
+                padding-top:10%;
+                padding-bottom:10%;
+                text-align:center;
+        
+                img{
+                    width:120px;
+                    height:120px;
+                    border-radius:50%;
+    
+                }
+            }
+            .profile-td{
+                margin-top:5%;
+                color: $oc-gray-7;
+            }
+         }
+
+         .projectBox{
+             margin-top:5%;
+             width:125px;
+             height:100px;
+             float:left;
+             border:1px solid  rgb(246,246,246);
+             background-color:white;
+             .variable{
+                 color:darkslategray;
+                 font-size:1rem;
+                 font-weight:bold;
+                 text-align:center;
+                 margin-top:25px;
+             }
+             .prop{
+                color:$tikitaka-yello;
+                font-size:1.2rem;
+                font-weight:bold;
+                text-align:center;
+                margin-top:6%;
+             }
+         }
+         .revise{
+             margin-top:240px;
+             width:250px;
+             height:50px;
+             font-size:1rem;
+             font-weight: bold;
+             padding-top:2%;
+             vertical-align: center;
+             text-align: center;
+             border-radius: 5%;
+             background-color:white;
+             border:1px solid rgb(246,246,246); 
+             &:hover{
+                 background-color:lightgray;
+             }
+             &:active{
+                 position: relative;
+                 top:1.2px;
+             }
+         }
+
      }
      .section{
-         background-color:green;
-         height:700px;
-         width:700px;
+         background-color:white;;
+         border-radius: 2%;
+         height:2000px;
+         width:920px;
+         margin-left:20px;
          float:left;
-     }
-     .proImage{
-         text-align:center;
+         .career-box{
+             margin-top:5%;
+             color:black;
+             margin-left:auto;
+             margin-right:auto;
+             margin-bottom:5%;
+             width:850px;
+             height:400px;
+             font-size:1.5rem;
+             font-weight:bolder;
+             .careerlist{
+                 margin-top:20px;
+                 word-spacing:20px;
+                 color:$tikitaka-blue;
+                 font-size:1rem;
+             }
+         }
+         .edu-box{
+            margin-top:5%;
+            color:black;
+            margin-left:auto;
+            margin-right:auto;
+            margin-bottom:5%;
+            width:850px;
+            height:400px;
+            font-size:1.5rem;
+            font-weight:bolder;
+            .edulist{
+                margin-top:20px;
+                word-spacing:20px;
+                color:$tikitaka-blue;
+                font-size:1rem;
+
+            }
+        }
+        .cate-box{
+            margin-top:5%;
+            color:black;
+            margin-left:auto;
+            margin-right:auto;
+            margin-bottom:5%;
+            width:850px;
+            height:400px;
+            font-size:1.5rem;
+            font-weight:bolder;
+            .catelist{
+                margin-top:20px;
+                word-spacing:20px;
+                color:$tikitaka-blue;
+                font-size:1rem;
+
+            }
+        }
+        .license-box{
+            margin-top:5%;
+            color:black;
+            margin-left:auto;
+            margin-right:auto;
+            margin-bottom:5%;
+            width:850px;
+            height:400px;
+            font-size:1.5rem;
+            font-weight:bolder;
+            .lilist{
+                margin-top:20px;
+                word-spacing:20px;
+                color:$tikitaka-blue;
+                font-size:1rem;
+
+            }
+        }
+        
+        
      }
  }
 }
