@@ -10,71 +10,19 @@ import Button from '../../common/Button'
 import {Link} from 'react-router-dom'
 
 const cx = classnames.bind(styles)
-const dumyData=[
-  {
-    title: "행사 중개 플랫폼 웹서비스 제작",
-    price: 500,
-    dueDate: new Date("2020-01-01"),
-    categoryList: ["front end","Back end","Android","Android","Android"],
-    writeDate: new Date(),
-    description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    period: 45,
-    nickName:"ParkSeungHwan",
-    organization:"YU student",
-    candiList:['tom','bob','kim'],
-    freeList:['park'],
-    maxPeople: 5,
-  },{
-    title: "행사 중개 플랫폼 웹서비스 제작",
-    price: 500,
-    dueDate: new Date("2020-01-01"),
-    categoryList: ["front end","Back end","Android","Android","Android"],
-    writeDate: new Date(),
-    description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    period: 45,
-    nickName:"ParkSeungHwan",
-    organization:"YU student",
-    candiList:['tom','bob','kim'],
-    freeList:['park'],
-    maxPeople: 5,
-  },{
-    title: "행사 중개 플랫폼 웹서비스 제작",
-    price: 500,
-    dueDate: new Date("2020-01-01"),
-    categoryList: ["front end","Back end","Android","Android","Android"],
-    writeDate: new Date(),
-    description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    period: 45,
-    nickName:"ParkSeungHwan",
-    organization:"YU student",
-    candiList:['tom','bob','kim'],
-    freeList:['park'],
-    maxPeople: 5,
-  },{
-    title: "행사 중개 플랫폼 웹서비스 제작",
-    price: 500,
-    dueDate: new Date("2020-01-01"),
-    categoryList: ["front end","Back end","Android","Android","Android"],
-    writeDate: new Date(),
-    description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    period: 45,
-    nickName:"ParkSeungHwan",
-    organization:"YU student",
-    candiList:['tom','bob','kim'],
-    freeList:['park'],
-    maxPeople: 5,
-  },
-]
-const Lists= ({})=>{
-  let list = dumyData.map(item =>{
-    const {title,price,dueDate,categoryList,writeDate,
+
+const Lists= ({projectList})=>{
+  let list = projectList.map(item =>{
+    const {title,price,dueDate,categoryList,writeDate,id,
             description,period,nickName,candiList,freeList,maxPeople,organization} = item
-    const writeYear = writeDate.getFullYear();
-    const writeDay = writeDate.getDate();
-    const writeMonth = writeDate.getMonth()+1;
-    const dueYear = dueDate.getFullYear();
-    const dueDay = dueDate.getDate();
-    const dueMonth = dueDate.getMonth()+1;
+    const writeDates = writeDate.split('-')
+    const dueDates = dueDate.split('-')
+    const writeYear = writeDates[0]
+    const writeDay =writeDates[2]
+    const writeMonth = writeDate[1]
+    const dueYear =dueDates[0]
+    const dueDay =dueDates[2]
+    const dueMonth = dueDates[1]
     return(
       <div className={cx('project')}>
         <div className={cx('writer-content')}>
@@ -88,7 +36,7 @@ const Lists= ({})=>{
 
         <div className={cx('project-content')}>
           <div className={cx('title')}>
-            <h2><Link to='/post/1'>{title}</Link></h2>
+            <h2><Link to={`/post/${id}`}>{title}</Link></h2>
             <div className={cx('writeDate')}>
               {`등록일 ${writeYear}년 ${writeMonth}월 ${writeDay}일`}
             </div>
@@ -139,7 +87,7 @@ const Lists= ({})=>{
   })
   return list
 }
-const ProjectList = ({ }) => (
+const ProjectList = ({onClickSearch,projectList,searchString,changeSearch,keyPressSearchSring}) => (
   <div className={cx('projectList')}>
     <div className={cx('projectList-top')}>
       <h1 className={cx('title')}>
@@ -147,21 +95,26 @@ const ProjectList = ({ }) => (
       </h1>
 
       <div className={cx('search')}>
-        <input/>
-        <button>찾기</button>
+        <input 
+          value ={searchString} 
+          onChange={changeSearch}
+          onKeyPress={keyPressSearchSring}
+        />
+        <button onClick={onClickSearch}>찾기</button>
       </div>
     </div>
       <div className={cx('filter')}>
+        <Button>전체보기</Button>
         <Button>마감순</Button>
+        <Button>최신등록순</Button>
         <Button>높은금액순</Button>
         <Button>낮은금액순</Button>
-        <Button>최신등록순</Button>
       </div>
 
     
 
     <div className={cx('projectList-bottom')}>
-      <Lists/>
+      <Lists projectList={projectList}/>
     </div>
   </div>
 );

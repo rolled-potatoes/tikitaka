@@ -1,11 +1,11 @@
 import React from 'react';
 import Pagetemplate from '../components/common/PageTemplate'
 
-import ProjectPost from 'components/projects/ProjectPost/index.js'
+import ProjectPostContainer from 'containers/projects/ProjectPostContainer.js'
 const PostPage = () => {
     return (
         <Pagetemplate>
-            <ProjectPost/>
+            <ProjectPostContainer/>
         </Pagetemplate>
     );
 };
