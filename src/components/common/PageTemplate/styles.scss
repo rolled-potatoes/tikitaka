@@ -2,14 +2,12 @@
 
 .main{
         position: relative;
-        top: 4rem;
-        background: white;
+        top: 5rem;
+        background: rgb(246,246,246);
         overflow: scroll;
         min-height: calc(100vh - 10rem);
         display: flex;
 		justify-content: center;
-		z-index: -1;
-        align-items: center;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -27,7 +25,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	vertical-align: baseline;
 }
 article, aside, details, figcaption, figure, 

@@ -2,7 +2,7 @@
 
 .projectList{
         width: 1200px;
-        margin: auto auto;
+
         .projectList-top{
                 display: flex;
                 justify-content: space-evenly;
@@ -10,36 +10,134 @@
                         flex: 1;
                         height: 20px;
                 }
-
-                .search{
-                }
-                
         }
         .filter{
                 margin-top: 15px;
                 border-bottom: 1px solid $oc-gray-7;
         }
         .projectList-bottom{
+                
                 .project{
                         display: grid;
-                        border : 1px solid #f00;
-                        grid-auto-rows: minmax(50px,auto);
+                        
+                        border : 1px solid $oc-gray-3;
+                        grid-auto-rows: 200px;
                         grid-template-columns: 1fr 3fr;
                         margin : 40px 0 ;
+                        background: white;
+                        .writer-content{
+                                
+                                padding:20px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+                                .writer{
+                                        >*{
+                                                display: inline-block;
+                                        }
+                                        .writer-profile{
+                                                vertical-align: middle;
+                                                width: 40px;
+                                                height: 40px;
+                                        }
+                                        .writer-nickName{
+                                                margin-bottom: 30px;
+                                        }
+
+                                }
+                                .writer-info{
+                                        color: $oc-gray-5;
+                                        text-indent: 1rem;
+                                        font-weight: 700;
+                                }
+                        }
                         .project-content{
+                                padding: 10px;
                                 display: grid;
-                                grid-template-columns: 1fr 1fr 1fr;
-                                align-items: flex-start;
+                                grid-template-columns: 1fr 3fr ;
+                                grid-template-rows: 40px auto 40px;
+                                align-items: center;
                                 .title{
-                                        height: 1.5rem;
+                                        grid-column: 1/4;
+                                        display: flex;
+                                        margin-bottom: 5px;
+                                        justify-content: space-between;
+                                        
+                                }
+                                .item-left{
+                                        li{
+                                                >div{
+                                                        display: inline-block;
+                                                }
+                                                margin-bottom: 10px;
+                                        }
+                                        .item-content{
+                                                font-size : 1.3rem;
+                                                font-weight: 900;
+                                                
+                                        }
+                                }
+                                .item-name{
+                                        font-size: 1.2rem;
+                                        color : $oc-gray-6;
+                                        font-weight: 700;
+                                        width: 90px;
+                                }
+                                .item-right::before{
+                                        width: 1px;
+                                        content: '';
+                                        height: 130px;
+                                        position: absolute;
+                                        background: $oc-gray-4;
+                                        transform: translateX(-45px);
+                                }
+                                .item-right{
+                                        .categoryList{
+                                                color: $tikitaka-yello;
+                                                font-weight: 600;
+                                                margin-bottom: 10px;
+                                        }
+                                        .description{
+                                                font-size: 0.9rem;
+                                                color : $oc-gray-7;
+                                        }
+                                }
+                                .item-bottom::before{
+                                        content: '';
+                                        width: 150px;
+                                        height: 1px;
+                                        position: absolute;
+                                        background: $oc-gray-4;
+                                        transform: translateY(-10px);
+
+
+                                }
+                                .item-bottom{
                                         grid-column: 1/4;
                                         display: flex;
                                         justify-content: space-between;
+                                        .bottom-wrapper{
+                                                >div{
+                                                        display: inline-block;
+                                                }
+                                        }
+                                        .candiListNumber{
+                                                font-size:1.2rem;
+                                                font-weight: 900;
+                                                color:$tikitaka-blue;
+                                        }
+                                        
+                                }
+                                .writeDate, .dueDate{
+                                        color:$oc-gray-6;
+                                        font-size:0.8rem;
                                 }
                         }
                 }
                 .project + .project{
                         margin-top: 2rem;
                 }
+                
         }
 }

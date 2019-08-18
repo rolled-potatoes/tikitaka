@@ -5,9 +5,6 @@
         display: inline-flex;
         padding:0.5rem;
         cursor: pointer;
-        &:hover{
-                border-bottom: 1px solid $oc-cyan-8;
-        }
 }
 .apibtn{
         &:hover{
@@ -41,4 +38,20 @@
                 background: $oc-blue-5;
                 border-bottom:0;
         }
+}
+
+.submit-btn+.submit-btn{
+        margin-left: 8rem;
+}
+.submit-btn{
+        margin-top: 20px;
+        display: flex;
+        color: $oc-gray-7;
+        font-size: 1.4rem;
+        font-weight: 700;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 60px;
+        background: $tikitaka-blue;
 }
