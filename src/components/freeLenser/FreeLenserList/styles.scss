@@ -2,7 +2,7 @@
 
 .FreeLenserList-wrapper{
         width: 1200px;
-        margin-top: 80px;
+        margin-top: 50px;
         margin-bottom: 40px;
         .FreeLenserList-top{
                 display: grid;
@@ -28,8 +28,10 @@
                 grid-auto-rows: 420px;
                 grid-gap: 10px;
                 .FreeLenserList-post{
-                        border: 1px solid #000;
+                        border: 1px solid $oc-gray-4;
                         padding:5px;
+                        background: white;
+
                         .post-nickname{
                                 color: $oc-gray-7;
                                 font-size:1.2rem;

@@ -1,6 +1,6 @@
 /**
  * 프로젝트 게시판 목록 조회 컴포넌트
- * 게시글에 필요한 정보 : 제목, 비용, 마감, 분야, 등록일, 프로젝트 설명, 작업기간, 작성자, 요구되는 기술, 현재 지원자 수, 지역
+ * 게시글에 필요한 정보 : 제목, 비용, 마감, 등록일, 프로젝트 설명, 작업기간, 작성자, 요구되는 기술, 현재 지원자 수
  * 필요 기능 : 검색, 필터, 정렬, 페이징
  */
 import React from 'react'
@@ -148,7 +148,7 @@ const ProjectList = ({ }) => (
 
       <div className={cx('search')}>
         <input/>
-        <input type ='button'/>
+        <button>찾기</button>
       </div>
     </div>
       <div className={cx('filter')}>

@@ -2,6 +2,7 @@
 
 .projectList{
         width: 1200px;
+
         .projectList-top{
                 display: flex;
                 justify-content: space-evenly;
@@ -15,7 +16,7 @@
                 border-bottom: 1px solid $oc-gray-7;
         }
         .projectList-bottom{
-
+                
                 .project{
                         display: grid;
                         
@@ -23,7 +24,9 @@
                         grid-auto-rows: 200px;
                         grid-template-columns: 1fr 3fr;
                         margin : 40px 0 ;
+                        background: white;
                         .writer-content{
+                                
                                 padding:20px;
                                 display: flex;
                                 justify-content: center;
