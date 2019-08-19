@@ -8,7 +8,7 @@ import  styles from './styles.scss'
 import classnames from 'classnames'
 import Button from '../../common/Button'
 import {Link} from 'react-router-dom'
-
+import {DropdownButton,ButtonToolbar,Dropdown} from 'react-bootstrap';
 const cx = classnames.bind(styles)
 
 const Lists= ({projectList})=>{
@@ -95,12 +95,25 @@ const ProjectList = ({onClickSearch,projectList,searchString,changeSearch,keyPre
       </h1>
 
       <div className={cx('search')}>
+        <ButtonToolbar>
+          <DropdownButton
+            size = 'lg'
+            title={'카테고리'}
+            id={`dropdown-variants-Secondary`}
+            variant={'asdasdasd'}
+          >
+            <Dropdown.Item eventKey="1">제목</Dropdown.Item>
+            <Dropdown.Item eventKey="2">내용</Dropdown.Item>
+            <Dropdown.Item eventKey="3">기술</Dropdown.Item>
+          </DropdownButton>
+        </ButtonToolbar>
         <input 
           value ={searchString} 
           onChange={changeSearch}
           onKeyPress={keyPressSearchSring}
+          className={cx('input-search')}
         />
-        <button onClick={onClickSearch}>찾기</button>
+        <button onClick={onClickSearch} className={cx('button-search')}>검색</button>
       </div>
     </div>
       <div className={cx('filter')}>

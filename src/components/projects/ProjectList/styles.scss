@@ -10,6 +10,44 @@
                         flex: 1;
                         height: 20px;
                 }
+                .search{
+                        display: flex;
+                        .dropdown{
+                                .dropdown-toggle{
+                                        width: 100px;
+                                        height: 30px;
+                                        background: white;
+                                        border : 1px solid $oc-gray-3;
+                                }
+                                .dropdown-menu{
+                                        display: flex;
+                                        background: white;
+                                        flex-direction: column;
+                                        border : 1px solid $oc-gray-3;
+                                        
+                                }
+                                .dropdown-item{
+                                        width:99px;
+                                        height: 30px;
+                                        display: flex;
+                                        font-size: 0.8rem;
+                                        justify-content: center;
+                                        align-items: center;
+                                }
+                        }
+                        .input-search{
+                                border: 1px solid $oc-gray-4;
+                                height: 30px;
+
+                        }
+                        .button-search{
+                                background: $tikitaka-blue;
+                                border: 1px solid $tikitaka-blue;
+                                color: white;
+                                font-weight: 700;
+                                height: 30px;
+                        }
+                }
         }
         .filter{
                 margin-top: 15px;

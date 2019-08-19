@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames'
 import StarRatings from 'react-star-ratings';
 import Button from 'components/common/Button/index.js'
+import {DropdownButton,ButtonToolbar,Dropdown} from 'react-bootstrap';
+
 const imgSrc ="https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/42135641_1894679573979032_7136233916314157056_n.jpg?_nc_cat=108&_nc_oc=AQlwd9nh7sPfN1VZJ75panQPdTySUMTdtP51y1RFleHYHAFS92s2yZlM4qDzHG5I8Wk&_nc_ht=scontent.ficn3-1.fna&oh=4a6b9e8645545cc0b5190f5e1c9b3a3a&oe=5DD275CF"
 
 const cx = classnames.bind(styles)
@@ -73,8 +75,19 @@ const FreeLenserList = ({list ,onChange,searchString,onKeyPress,onClickSearch}) 
         프리랜서
       </h1>
       <div className={cx('searchBox')}>
-        <input onChange={onChange} value ={searchString} onKeyPress={onKeyPress}/>
-        <button onClick={onClickSearch}>찾기</button>
+        <ButtonToolbar>
+            <DropdownButton
+              size = 'lg'
+              title={'카테고리'}
+              id={`dropdown-variants-Secondary`}
+              variant={'asdasdasd'}
+            >
+              <Dropdown.Item eventKey="1">이름</Dropdown.Item>
+              <Dropdown.Item eventKey="2">기술</Dropdown.Item>
+            </DropdownButton>
+          </ButtonToolbar>
+        <input className={cx('input-search')}onChange={onChange} value ={searchString} onKeyPress={onKeyPress}/>
+        <button  className={cx('button-search')} onClick={onClickSearch}>검색</button>
       </div>
     </div>
 
