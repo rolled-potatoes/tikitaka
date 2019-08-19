@@ -1,7 +1,7 @@
 @import 'styles/utils.scss';
 .find-page{
     width:800px;
-    height:800px;
+    height:1000px;
     text-align:center;
     .findtxt{
         line-height: 200%;
@@ -11,19 +11,25 @@
         margin-bottom:30px;
         margin-left:auto;
         margin-right:auto;
+        font-weight: bold;
+        color:$tikitaka-yello;
     }
-    .findIdBox{
+    .findBox{
         border-radius: 2%;
         margin-left:auto;
         margin-right:auto;
         width:600px;
-        height:300px;
+        height:250px;
         text-align:center;
         border:2px solid $tikitaka-blue;
         .context{
-            padding:2%;
+            width:400px;
+            height:auto;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:50px;
         .nametable{
-            margin-top:20px;
+            margin-top:100px;
             padding-left:2%;
             font-size:1.2rem;
             text-align:center;
@@ -34,10 +40,22 @@
                 margin-bottom:20px;
              }
             }
+        .IDtlabe{
+            margin-top:100px;
+            padding-left:2%;
+            font-size:1.2rem;
+            text-align:center;
+             .inID input[type="text"]{
+                margin-top:20px;
+                margin-left:50px;
+                width:200px;
+                margin-bottom:20px;
+               }
+        }    
         .tablephone{
             padding:1%;
             font-size:1.2rem;
-            text-align:left;
+            text-align:center;
              .inphone input[type="text"]{
                 margin-top:20px;
                 margin-left:50px;
@@ -45,7 +63,12 @@
                 margin-bottom:20px;
                }
             }
+            .findId{
+                margin-top:0px;
+                margin-left:auto;
+                margin-right:auto;
+            }
         }
     }
         
-    }
+}
