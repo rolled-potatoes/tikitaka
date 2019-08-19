@@ -26,7 +26,7 @@ const Login = ({onChangeEmail, onChangePassword, onClickSign,onClickLogin,email,
               placeholder='Password' className={cx('input-pw')} type = 'password'
               onChange={onChangePassword} value={password}
             />
-            <Button theme={'find'}>아이디 | 비밀번호 찾기</Button>
+            <Button to="/FindID" disabled theme={'find'}>아이디 | 비밀번호 찾기</Button>
             <Button theme={'login colorbtn'}  onClick={onClickLogin}>로그인</Button>
             <Button to="/sign" disabled theme={'login colorbtn'} onClick={onClickSign}>회원가입</Button>
           </div>
