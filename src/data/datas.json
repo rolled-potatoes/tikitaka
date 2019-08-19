@@ -84,5 +84,282 @@
         "candiList": ["tom", "bob", "kim"],
         "freeList": ["park"],
         "maxPeople": 5
+    }],
+    "freeLenserList": [{
+        "id": 1,
+        "nickName": "ParkSeunHwan",
+        "organization": "YU Student",
+        "grade": 4.5,
+        "intro": "hello world!",
+        "categoryList": ["php", "python", "C++", "java", "javaScript"],
+        "proList": ["1", "2", "3", "4"],
+        "careeList": [{
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }],
+        "educationList": [{
+                "getDate": "2010-10-10",
+                "things": "경산초등학교"
+
+            },
+            {
+                "getDate": "2013-10-10",
+                "things": "경산중등학교"
+            },
+            {
+                "getDate": "2015-10-10",
+                "things": "경산고등학교"
+            },
+            {
+                "getDate": "2019-10-10",
+                "things": "영남대"
+            }
+        ],
+        "lisenceList": ["정보처리기사", "MOS", "치믈리에", "CCNA"]
+    }, {
+        "id": 2,
+        "nickName": "ParkSeunHwan",
+        "organization": "YU Student",
+        "grade": 4.5,
+        "intro": "hello world!",
+        "categoryList": ["php", "python", "C++", "java", "javaScript"],
+        "proList": ["1", "2", "3", "4"],
+        "careeList": [{
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }],
+        "educationList": [{
+                "getDate": "2010-10-10",
+                "things": "경산초등학교"
+
+            },
+            {
+                "getDate": "2013-10-10",
+                "things": "경산중등학교"
+            },
+            {
+                "getDate": "2015-10-10",
+                "things": "경산고등학교"
+            },
+            {
+                "getDate": "2019-10-10",
+                "things": "영남대"
+            }
+        ],
+        "lisenceList": ["정보처리기사", "MOS", "치믈리에", "CCNA"]
+    }, {
+        "id": 3,
+        "nickName": "ParkSeunHwan",
+        "organization": "YU Student",
+        "grade": 3.5,
+        "intro": "hello world!",
+        "categoryList": ["php", "python", "C++", "java", "javaScript"],
+        "proList": ["1", "2", "3", "4"],
+        "careeList": [{
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }],
+        "educationList": [{
+                "getDate": "2010-10-10",
+                "things": "경산초등학교"
+
+            },
+            {
+                "getDate": "2013-10-10",
+                "things": "경산중등학교"
+            },
+            {
+                "getDate": "2015-10-10",
+                "things": "경산고등학교"
+            },
+            {
+                "getDate": "2019-10-10",
+                "things": "영남대"
+            }
+        ],
+        "lisenceList": ["정보처리기사", "MOS", "치믈리에", "CCNA"]
+    }, {
+        "id": 4,
+        "nickName": "ParkSeunHwan",
+        "organization": "YU Student",
+        "grade": 4.5,
+        "intro": "hello world!",
+        "categoryList": ["php", "python", "C++", "java", "javaScript"],
+        "proList": ["1", "2", "3", "4"],
+        "careeList": [{
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }],
+        "educationList": [{
+                "getDate": "2010-10-10",
+                "things": "경산초등학교"
+
+            },
+            {
+                "getDate": "2013-10-10",
+                "things": "경산중등학교"
+            },
+            {
+                "getDate": "2015-10-10",
+                "things": "경산고등학교"
+            },
+            {
+                "getDate": "2019-10-10",
+                "things": "영남대"
+            }
+        ],
+        "lisenceList": ["정보처리기사", "MOS", "치믈리에", "CCNA"]
+    }, {
+        "id": 5,
+        "nickName": "ParkSeunHwan",
+        "organization": "YU Student",
+        "grade": 4.5,
+        "intro": "hello world!",
+        "categoryList": ["php", "python", "C++", "java", "javaScript"],
+        "proList": ["1", "2", "3", "4"],
+        "careeList": [{
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }],
+        "educationList": [{
+                "getDate": "2010-10-10",
+                "things": "경산초등학교"
+
+            },
+            {
+                "getDate": "2013-10-10",
+                "things": "경산중등학교"
+            },
+            {
+                "getDate": "2015-10-10",
+                "things": "경산고등학교"
+            },
+            {
+                "getDate": "2019-10-10",
+                "things": "영남대"
+            }
+        ],
+        "lisenceList": ["정보처리기사", "MOS", "치믈리에", "CCNA"]
+    }, {
+        "id": 6,
+        "nickName": "ParkSeunHwan",
+        "organization": "YU Student",
+        "grade": 4.5,
+        "intro": "hello world!",
+        "categoryList": ["php", "python", "C++", "java", "javaScript"],
+        "proList": ["1", "2", "3", "4"],
+        "careeList": [{
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }],
+        "educationList": [{
+                "getDate": "2010-10-10",
+                "things": "경산초등학교"
+
+            },
+            {
+                "getDate": "2013-10-10",
+                "things": "경산중등학교"
+            },
+            {
+                "getDate": "2015-10-10",
+                "things": "경산고등학교"
+            },
+            {
+                "getDate": "2019-10-10",
+                "things": "영남대"
+            }
+        ],
+        "lisenceList": ["정보처리기사", "MOS", "치믈리에", "CCNA"]
     }]
 }

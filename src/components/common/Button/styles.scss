@@ -55,3 +55,17 @@
         height: 60px;
         background: $tikitaka-blue;
 }
+
+.isOn-false{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+}
+.isOn-true{
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background: $tikitaka-blue;
+}

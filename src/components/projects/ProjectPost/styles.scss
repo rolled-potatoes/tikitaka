@@ -6,7 +6,9 @@
     margin-top :50px;
     margin-bottom: 30px;
     grid-gap : 20px;
-    border : 1px solid black;
+    border : 1px solid $oc-gray-4;
+    background: white;
+
     box-shadow: 5px 5px $oc-gray-2;
     padding: 20px 20px;
     .post-content{
@@ -125,13 +127,13 @@
 
         .writer{
             height: 250px;
-            border: 1px solid $oc-gray-7;
+            border: 1px solid $oc-gray-4;
             .writer-profile{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                .writer-img{
+                >img{
                     width: 70%;
                     height: 70%;
                     border-radius: 50%;

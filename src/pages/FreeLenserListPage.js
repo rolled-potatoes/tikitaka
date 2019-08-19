@@ -1,11 +1,11 @@
 import React from 'react';
 import PageTemplate from '../components/common/PageTemplate'
-import FreeLenserList from '../components/freeLenser/FreeLenserList';
+import FreeLenserListContainer from 'containers/freeLenser/FreeLenserListContainer.js';
  
 const FreeLenserListPage = () => {
     return (
         <PageTemplate>
-            <FreeLenserList/>
+            <FreeLenserListContainer/>
         </PageTemplate>
     );
 };

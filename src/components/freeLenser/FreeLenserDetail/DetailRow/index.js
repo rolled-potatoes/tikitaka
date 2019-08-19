@@ -5,7 +5,7 @@ import classnames from 'classnames'
 
 const cx = classnames.bind(styles)
 
-const DetailRow = ({ data }) => {
+const DetailRow = ({ data ,visible='visible-false' }) => {
   let temp = data.map(cat => {
     return (
       <div className={cx('item')}>
@@ -14,7 +14,7 @@ const DetailRow = ({ data }) => {
     )
   })
   return (
-    <div className={cx('row-wrapper')}>
+    <div className={cx('row-wrapper',visible)}>
       {temp}
     </div>
   )

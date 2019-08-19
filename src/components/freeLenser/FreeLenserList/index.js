@@ -11,86 +11,12 @@ import classnames from 'classnames'
 import StarRatings from 'react-star-ratings';
 import Button from 'components/common/Button/index.js'
 const imgSrc ="https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/42135641_1894679573979032_7136233916314157056_n.jpg?_nc_cat=108&_nc_oc=AQlwd9nh7sPfN1VZJ75panQPdTySUMTdtP51y1RFleHYHAFS92s2yZlM4qDzHG5I8Wk&_nc_ht=scontent.ficn3-1.fna&oh=4a6b9e8645545cc0b5190f5e1c9b3a3a&oe=5DD275CF"
-const dumyData=[
-  {
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!hello world!hello world!hello world!',
-    categoryList :['php','python','C++','java','javaScript','javaScriptjavaScript'],
-    proList:['1','2','3','4']
-  },{
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!',
-    categoryList :['php','python','C++','java','javaScript'],
-    proList:['1','2','3','4']
-  },{
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!',
-    categoryList :['php','python','C++','java','javaScript'],
-    proList:['1','2','3','4']
-  },{
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!',
-    categoryList :['php','python','C++','java','javaScript'],
-    proList:['1','2','3','4']
-  },{
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!',
-    categoryList :['php','python','C++','java','javaScript'],
-    proList:['1','2','3','4']
-  },{
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!',
-    categoryList :['php','python','C++','java','javaScript'],
-    proList:['1','2','3','4']
-  },{
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!',
-    categoryList :['php','python','C++','java','javaScript'],
-    proList:['1','2','3','4']
-  },{
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!',
-    categoryList :['php','python','C++','java','javaScript'],
-    proList:['1','2','3','4']
-  },{
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!',
-    categoryList :['php','python','C++','java','javaScript'],
-    proList:['1','2','3','4']
-  },{
-    nickName:'ParkSeunHwan'  ,
-    organization:'YU Student',
-    grade:4.5,
-    intro : 'hello world!',
-    categoryList :['php','python','C++','java','javaScript'],
-    proList:['1','2','3','4']
-  },
-]
+
 const cx = classnames.bind(styles)
-const FreeLenserContent= ({})=>{
-  const doms=dumyData.map(data =>{
-    const {nickName,organization,grade,intro,categoryList,proList} = data;
-    let tmp;
+const FreeLenserContent= ({list})=>{
+  const doms=list.map(item =>{
+    const {nickName,organization,grade,intro,categoryList,proList,id} = item;
     const cat = categoryList.map(item =>{
-      
       return(
         <div className={cx('category-item')}>
           {item}
@@ -100,12 +26,12 @@ const FreeLenserContent= ({})=>{
     return(
       <div className={cx('FreeLenserList-post')}>
         <div className={cx('post-img','post-item')}>
-          <Link to='/detail/1'>
+          <Link to={`/detail/${id}`}>
             <img src={imgSrc}/>
           </Link>
         </div>
         <div className={cx('post-nickname','post-item')}>
-          <Link to='/detail/1'>
+          <Link to={`/detail/${id}`}>
             {nickName}
           </Link>
         </div>
@@ -140,15 +66,15 @@ const FreeLenserContent= ({})=>{
     doms
   )
 }
-const FreeLenserList = ({ }) => (
+const FreeLenserList = ({list ,onChange,searchString,onKeyPress,onClickSearch}) => (
   <div className={cx('FreeLenserList-wrapper')}>
     <div className={cx('FreeLenserList-top')}>
       <h1 className={cx("title")}>
         프리랜서
       </h1>
       <div className={cx('searchBox')}>
-        <input/>
-        <button>찾기</button>
+        <input onChange={onChange} value ={searchString} onKeyPress={onKeyPress}/>
+        <button onClick={onClickSearch}>찾기</button>
       </div>
     </div>
 
@@ -158,7 +84,7 @@ const FreeLenserList = ({ }) => (
       <Button>평점순</Button>
     </div>
     <div className={cx('FreeLenserList-contents')}>
-      <FreeLenserContent/>
+      <FreeLenserContent list = {list}/>
     </div>
   </div>
 );

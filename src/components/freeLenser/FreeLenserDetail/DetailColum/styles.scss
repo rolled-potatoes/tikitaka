@@ -1,0 +1,45 @@
+@import 'styles/utils.scss';
+.Detail-colum-wrapper:nth-child(even){
+        background: $tikitaka-yello;
+        .date{
+                color: $oc-gray-6;
+        }
+        .date::after{
+                background: $oc-gray-6;
+        }
+}
+.Detail-colum-wrapper{
+        display: grid;
+        grid-template-columns: 1.5fr 5fr;
+        border-radius: 15px;
+        font-size : 1.3rem;
+        grid-auto-rows: 60px;
+        background: white;
+        align-items: center;
+        margin-bottom: 20px;
+        .date::after{
+                content:'';
+                width: 1px;
+                height: 32px;
+                background: $oc-gray-4;
+                position: absolute;
+                transform: translate(38px,-4px);
+        }
+        .date{  
+                text-align: center;
+                color: $oc-gray-5;
+
+        }
+        .content{
+                text-indent: 3rem;
+                color:$oc-gray-7;
+                font-weight: 700;
+        }
+}
+
+.visible-true{
+        display: grid;
+}
+.visible-false{
+        display: none;
+}
