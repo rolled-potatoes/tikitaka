@@ -1,0 +1,51 @@
+@import 'styles/utils.scss';
+.find-page{
+    width:800px;
+    height:800px;
+    text-align:center;
+    .findtxt{
+        line-height: 200%;
+        font-size:1.5rem;
+        text-align:center;
+        margin-top:100px;
+        margin-bottom:30px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .findIdBox{
+        border-radius: 2%;
+        margin-left:auto;
+        margin-right:auto;
+        width:600px;
+        height:300px;
+        text-align:center;
+        border:2px solid $tikitaka-blue;
+        .context{
+            padding:2%;
+        .nametable{
+            margin-top:20px;
+            padding-left:2%;
+            font-size:1.2rem;
+            text-align:center;
+            .inname input[type="text"]{
+                margin-top:20px;
+                margin-left:50px;
+                width:200px;
+                margin-bottom:20px;
+             }
+            }
+        .tablephone{
+            padding:1%;
+            font-size:1.2rem;
+            text-align:left;
+             .inphone input[type="text"]{
+                margin-top:20px;
+                margin-left:50px;
+                width:200px;
+                margin-bottom:20px;
+               }
+            }
+        }
+    }
+        
+    }
