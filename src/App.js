@@ -9,6 +9,7 @@ import PostPage from './pages/PostPage'
 import FreeLenserListPage from './pages/FreeLenserListPage'
 import FreeLensetDetailPage from './pages/FreeLenserDetailPage'
 import WritePostPage from './pages/WritePostPage';
+import FindIdPage from './pages/FindIdPage';
 
 const App =()=>{
   return(
@@ -23,6 +24,7 @@ const App =()=>{
         <Route exact path ='/freeLenser/:page' component={FreeLenserListPage}/>
         <Route exact path ='/detail/:id' component={FreeLensetDetailPage}/>
         <Route exact path ='/write' component={WritePostPage}/>
+        <Route exact path ='/FindID' component={FindIdPage}/>
       </Switch>
     </div>
   )
