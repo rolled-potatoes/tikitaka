@@ -90,7 +90,7 @@ const Mypage = ({}) => {
         </div>
       </div>
       <div className={cx('revise')}>
-      <Button>프로필 관리</Button>
+      <Button to="/Revise" disabled >프로필 관리</Button>
     </div>
     </div>
 
