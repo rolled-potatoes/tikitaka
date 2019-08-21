@@ -2,7 +2,7 @@ import React from 'react';
 import Pagetemplate from '../components/common/PageTemplate'
 import ListWrapper from '../components/projects/ListWrapper';
 import ProjectListContainer from 'containers/projects/ProjectListContainer.js'
-const ProjectList = () => {
+const ProjectListPage = () => {
     return (
         <Pagetemplate>
             <ListWrapper>
@@ -12,4 +12,4 @@ const ProjectList = () => {
     );
 };
 
-export default ProjectList;
+export default ProjectListPage;

@@ -1,5 +1,37 @@
 {
-    "category": ["APP", "디자인", "데이터베이스", "Video", "문서", "레슨", "번역", "응용프로그램", "회계", "APP", "디자인", "데이터베이스", "Video", "문서", "레슨", "번역", "응용프로그램", "회계"],
+    "categoryList": [{
+            "id": 1,
+            "category": "APP"
+        },
+        {
+            "id": 2,
+            "category": "디자인"
+        },
+        {
+            "id": 3,
+            "category": "데이터베이스"
+        },
+        {
+            "id": 4,
+            "category": "영상제작"
+        },
+        {
+            "id": 5,
+            "category": "문서"
+        },
+        {
+            "id": 6,
+            "category": "레슨"
+        },
+        {
+            "id": 7,
+            "category": "번역"
+        },
+        {
+            "id": 8,
+            "category": "회계"
+        }
+    ],
     "projectList": [{
         "id": 1,
         "title": "행사 중개 플랫폼 웹서비스 제작",

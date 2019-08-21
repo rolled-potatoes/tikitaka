@@ -12,7 +12,7 @@ const googleImg = require('imgs/google.jpg')
 const kakaoImg = require('imgs/kakao.jpg')
 const facebookImg = require('imgs/페이스북.png')
 
-const Login = ({onChangeEmail, onChangePassword, onClickSign,onClickLogin,email,password}) => (
+const Login = ({onChangeEmail, onChangePassword, onClickLogin,email,password,onKeyPressEnter}) => (
   <div className={cx('login-wrapper')}>
     <div className={cx('login-page')}>
       <h1 className={cx('login-text')}>로그인</h1>
@@ -20,15 +20,23 @@ const Login = ({onChangeEmail, onChangePassword, onClickSign,onClickLogin,email,
         <div className={cx('left')}>
           <div className={cx('local')}>
             <input 
-              placeholder="email" className={cx('input-id')} onChange={onChangeEmail} value={email}
+              onKeyPress={onKeyPressEnter}
+              placeholder="email" 
+              className={cx('input-id')}
+              onChange={onChangeEmail} 
+              value={email}
             />
             <input 
-              placeholder='Password' className={cx('input-pw')} type = 'password'
-              onChange={onChangePassword} value={password}
+              onKeyPress={onKeyPressEnter}
+              placeholder='Password' 
+              className={cx('input-pw')} 
+              type = 'password'
+              onChange={onChangePassword} 
+              value={password}
             />
-            <Button to="/FindID" disabled theme={'find'}>아이디 | 비밀번호 찾기</Button>
+            <Button to="/FindID" theme={'find'}>아이디 | 비밀번호 찾기</Button>
             <Button theme={'login colorbtn'}  onClick={onClickLogin}>로그인</Button>
-            <Button to="/sign" disabled theme={'login colorbtn'} onClick={onClickSign}>회원가입</Button>
+            <Button to="/sign" theme={'login colorbtn'}>회원가입</Button>
           </div>
         </div>
 

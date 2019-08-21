@@ -2,13 +2,13 @@
 import React from 'react'
 import styles from './styles.scss'
 import classNames from 'classnames'
-import Header from '../Header'
+import HeaderContainer from 'containers/common/HeaderContainer.js'
 import Footer from '../Footer'
 const cx = classNames.bind(styles)
 
 const PageTemplate = ({children}) => (
   <div className={cx('page-template')}>
-    <Header/>
+    <HeaderContainer/>
     <main className='main'>
       {children}
     </main>

@@ -1,10 +1,10 @@
 import React from 'react';
 import PageTemplate from '../components/common/PageTemplate'
-import WritePost from 'components/projects/WritePost/index.js'
+import WritePostContainer from 'containers/projects/WritePostContainer.js'
 const WritePostPage = () => {
     return (
         <PageTemplate >
-            <WritePost/>
+            <WritePostContainer/>
         </PageTemplate>
     );
 };
