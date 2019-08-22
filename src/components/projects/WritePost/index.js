@@ -7,7 +7,7 @@ import datas from 'data/datas.json';
 import Button from 'components/common/Button/index.js'
 const cx = classNames.bind(styles)
 
-const WritePost = ({onClickCategory,onDayClick,onChangeInput,title,price,dueDate,period,maxPeople,description}) => {
+const WritePost = ({onClickReset,onClickCategory,onDayClick,onChangeInput,title,price,dueDate,period,maxPeople,description}) => {
   const category = datas.categoryList;
   return (
     <div className={cx('WritePost-wrapper')}>
@@ -73,7 +73,7 @@ const WritePost = ({onClickCategory,onDayClick,onChangeInput,title,price,dueDate
 
         <div className={cx('btns')}>
           <Button theme='submit-btn'>등록</Button>
-          <Button theme='submit-btn'>초기화</Button>
+          <Button theme='submit-btn' onClick={onClickReset}>초기화</Button>
         </div>
       </div>
     </div>

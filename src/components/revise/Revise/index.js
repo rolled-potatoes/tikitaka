@@ -8,6 +8,8 @@ import Button from '../../common/Button'
 const cx = classnames.bind(styles)
 const proImg=require('imgs/프로필.png')
 const dumyData={
+  phonenumber:'01031010885',
+  name:'권경혜',
   nickname:['Tasha'],
   description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   period: 45,
@@ -24,19 +26,21 @@ const dumyData={
   proList:['1','2','3']
 }
 
-const Mypage = ({}) => {
-  const {nickname,organization,careerList,userId,location,intro,licenseList, educationList, proList} =dumyData
+  const Revise = ({}) => {
+    const {phonenumber, name, nickname,organization,careerList,userId,location,intro,licenseList, educationList, proList} =dumyData
     return(
   <div className={cx('mypage-page')}>
     <div className={cx('mypageTxt')}>
-      My page
+      프로필 수정
     </div>
     <div className={cx('mypage-tem')}>
     <div className={cx('aside')}>
     <div className={cx('nicknameBox')}>
-        {nickname}님 안녕하세요!
       <div className={cx('proImg')}>
         <img src={proImg}/>
+      </div>
+      <div className={cx('revise-button')}>
+        <Button>프로필 수정</Button>
       </div>
       <div className={cx('usdrId')}>
         {userId}
@@ -89,68 +93,107 @@ const Mypage = ({}) => {
         {dumyData.followUserList.length}
         </div>
       </div>
-      <div className={cx('revise')}>
-      <Button to="/Revise" disabled >프로필 관리</Button>
-    </div>
-    </div>
 
-    <div className={cx('FreeLenserDetail-info')}>
-      <div className={cx('FreeLenserDetail-menu')}>
-        <div className={cx('li')}>
-        <Button><a href="#career">경력</a></Button>
-        </div>
-        <div className={cx('li')}>
-        <Button><a href="#education">학력</a></Button>
-        </div>
-        <div className={cx('li')}>
-        <Button><a href="#cate">보유기술</a></Button>
-        </div>
-        <div className={cx('li')}>
-        <Button><a href="#license"> 자격증</a></Button>
-        </div>
-      </div>
     </div>
-    <div className={cx('section')}>
-      <div className={cx('career-box')}>
-      <p id="career">경력</p>
+    <div className={cx('revise-box')}>
+      <div className={cx('info-box')}>
+        <div className={cx('info-txt')}>
+          기본정보
+        </div>
+        <div clssName={cx('container')}>
+        <tr className={cx('info')}>
+        <th className={cx('Id')}>아이디</th><tr className={cx('compo')}>{userId}</tr>
+        </tr>
+        <tr className={cx('info')}>
+        <th>이름</th><tr className={cx('compo')}>{name}</tr>
+        </tr>
+        <tr className={cx('info')}>
+        <th>닉네임</th><tr className={cx('compo')}>{nickname}</tr>
+        </tr>
+        <tr className={cx('info')}> 
+          <th className={cx('password')}>기존 비밀번호         </th>
+          <td className={cx('inpassword')}><input type="text" name="password" ></input></td>
+          </tr>
+        <tr className={cx('info')}> 
+          <th className={cx('password')}>변경할 비밀번호     </th>
+          <td className={cx('inpassword')}><input type="text" name="newpassword" ></input></td>
+       </tr>
+       <tr className={cx('info')}> 
+          <th className={cx('password')}>비밀번호 확인        </th>
+          <td className={cx('inpassword')}><input type="text" name="password2" ></input></td>
+        </tr>
+        <tr className={cx('info')}> 
+          <th className={cx('phonenumber')}>전화번호        </th>
+          <td className={cx('inpassword')}><input type="text" name="password2" ></input></td>
+        </tr>
+        <tr className={cx('info')}>
+        <th>지역</th><tr className={cx('compo')}>{location}</tr>
+        </tr>
+      </div>
+      </div>
+      <div className={cx('info-box')}>
+      <div className={cx('info-txt')}>
+          경력
+        </div>
         <div className={cx('careerlist')}>
           {careerList.map(cat =>{
               return(
-                `'${cat}' `
+                `'${cat}' ` 
               )
             })}
         </div>
+        <div className={cx('add-button')}>
+          <Button>수정하기</Button>
+        </div>
       </div>
-      <div className={cx('edu-box')}>
-        <p id="education">학력</p>
-        <div className={cx('edulist')}>
+      <div className={cx('info-box')}>
+      <div className={cx('info-txt')}>
+          학력
+        </div>
+      <div className={cx('edulist')}>
           {educationList.map(cat =>{
               return(
                 `'${cat}' `
               )
             })}
         </div>
+        <div className={cx('add-button')}>
+          <Button>수정하기</Button>
+        </div>
       </div>
-      <div className={cx('cate-box')}>
-       <p id="cate"> 보유기술</p>
-        <div className={cx('catelist')}>
-          <div className={cx('FreeLenserDetail-content')}>
+      <div className={cx('info-box')}>
+      <div className={cx('info-txt')}>
+          보유기술
+        </div>
+        <div className={cx('FreeLenserDetail-content')}>
             {dumyData.categoryList.map(cat =>{
               return(
                 `'${cat}' `
               )
             })}
          </div>
+        <div className={cx('add-button')}>
+          <Button>수정하기</Button>
         </div>
       </div>
-      <div className={cx('license-box')}>
-      <p id="license"> 자격증</p>
+      <div className={cx('info-box')}>
+      <div className={cx('info-txt')}>
+          자격증
+        </div>
         <div className={cx('lilist')}>
           {licenseList.map(cat =>{
               return(
                 `'${cat}' `
               )
             })}
+        </div>
+        <div className={cx('add-button')}>
+          <Button>수정하기</Button>
+        </div>
+      </div>
+      <div className={(cx('end'))}>
+        <div className={cx('end-button')}>
+          <Button>수정완료</Button>
         </div>
       </div>
     </div>
@@ -159,5 +202,5 @@ const Mypage = ({}) => {
 
 )
     }
-
-export default Mypage
+  export default Revise
+  
