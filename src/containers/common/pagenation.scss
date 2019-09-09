@@ -1,0 +1,17 @@
+@import 'styles/utils.scss';
+
+.pagenation{
+    font-size: 1.3rem;
+    margin:auto;
+    .pagenation-btns{
+        background: white;
+        padding: 10px;
+        margin : 2px;
+        border: 1px solid $oc-gray-3;
+    }
+    .current-btn{
+        background: $tikitaka-yello !important;
+        color: white;
+        font-weight: 700;
+    }
+}

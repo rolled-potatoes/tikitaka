@@ -12,27 +12,48 @@
                 }
                 .search{
                         display: flex;
-                        .dropdown{
-                                .dropdown-toggle{
+                        
+                        .dropdown {
+                                .btn{   
                                         width: 100px;
                                         height: 30px;
                                         background: white;
-                                        border : 1px solid $oc-gray-3;
+                                        border: 1px solid $oc-gray-3;
                                 }
-                                .dropdown-menu{
+                                .dropdown-menu {
                                         display: flex;
-                                        background: white;
                                         flex-direction: column;
-                                        border : 1px solid $oc-gray-3;
-                                        
+                                        display: none;
+                                        width: 100px;
+                                        padding: 0.5rem 0;
+                                        margin: 0.125rem 0 0;
+                                        font-size: 1rem;
+                                        color: #212529;
+                                        text-align: left;
+                                        background-color: #fff;
+                                        border: 1px solid $oc-gray-3;
+                                        .dropdown-divider{
+                                                height: 0;
+                                                margin: 0.5rem 0;
+                                                overflow: hidden;
+                                                border-top: 1px solid #e9ecef;
+                                        }
+                                        .dropdown-item{
+                                                display: block;
+                                                width: 100%;
+                                                padding: 0.25rem 1.5rem;
+                                                clear: both;
+                                                font-weight: 400;
+                                                color: #212529;
+                                                text-align: inherit;
+                                                white-space: nowrap;
+                                                background-color: transparent;
+                                                border: 0;
+                                        }
                                 }
-                                .dropdown-item{
-                                        width:99px;
-                                        height: 30px;
+
+                                .dropdown-menu.show {
                                         display: flex;
-                                        font-size: 0.8rem;
-                                        justify-content: center;
-                                        align-items: center;
                                 }
                         }
                         .input-search{

@@ -1,48 +1,92 @@
 @import 'styles/utils.scss';
 
-.FreeLenserList-wrapper{
+.FreeLenserList-wrapper {
         width: 1200px;
         margin-top: 50px;
         margin-bottom: 40px;
-        .FreeLenserList-top{
+
+        .loadding-div {
+                position: fixed;
+                top: 0%;
+                z-index: 100;
+                left: 0%;
+                background: $oc-gray-4;
+                width: 100%;
+                height: 100%;
+                opacity: 0.3;
+
+                .css-19bt2gx {
+                        position: absolute;
+                        top: 38%;
+                        left: 45%;
+                }
+        }
+
+        .hidden {
+                display: none;
+        }
+
+        .FreeLenserList-top {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                .title{
 
-                }
-                .searchBox{
+                .title {}
+
+                .searchBox {
                         display: flex;
                         justify-content: flex-end;
-                        .dropdown{
-                                .dropdown-toggle{
+
+                        .dropdown {
+                                .btn{   
                                         width: 100px;
                                         height: 30px;
                                         background: white;
-                                        border : 1px solid $oc-gray-3;
+                                        border: 1px solid $oc-gray-3;
                                 }
-                                .dropdown-menu{
+                                .dropdown-menu {
                                         display: flex;
-                                        background: white;
                                         flex-direction: column;
-                                        border : 1px solid $oc-gray-3;
-                                        
+                                        display: none;
+                                        width: 100px;
+                                        padding: 0.5rem 0;
+                                        margin: 0.125rem 0 0;
+                                        font-size: 1rem;
+                                        color: #212529;
+                                        text-align: left;
+                                        background-color: #fff;
+                                        border: 1px solid $oc-gray-3;
+                                        .dropdown-divider{
+                                                height: 0;
+                                                margin: 0.5rem 0;
+                                                overflow: hidden;
+                                                border-top: 1px solid #e9ecef;
+                                        }
+                                        .dropdown-item{
+                                                display: block;
+                                                width: 100%;
+                                                padding: 0.25rem 1.5rem;
+                                                clear: both;
+                                                font-weight: 400;
+                                                color: #212529;
+                                                text-align: inherit;
+                                                white-space: nowrap;
+                                                background-color: transparent;
+                                                border: 0;
+                                        }
                                 }
-                                .dropdown-item{
-                                        width:99px;
-                                        height: 30px;
-                                        font-size: 0.8rem;
 
+                                .dropdown-menu.show {
                                         display: flex;
-                                        justify-content: center;
-                                        align-items: center;
                                 }
                         }
-                        .input-search{
+
+                        .input-search {
                                 border: 1px solid $oc-gray-4;
                                 height: 30px;
 
                         }
-                        .button-search{
+
+                        .button-search {
                                 background: $tikitaka-blue;
                                 border: 1px solid $tikitaka-blue;
                                 color: white;
@@ -51,40 +95,45 @@
                         }
                 }
         }
-        .FreeLenserList-filter{
-                margin-top : 15px;
+
+        .FreeLenserList-filter {
+                margin-top: 15px;
                 border-bottom: 1px solid $oc-gray-7;
 
         }
 
-        .FreeLenserList-contents{
-                margin-top:30px;
+        .FreeLenserList-contents {
+                margin-top: 30px;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
                 grid-auto-rows: 420px;
                 grid-gap: 10px;
-                .FreeLenserList-post{
+
+                .FreeLenserList-post {
                         border: 1px solid $oc-gray-4;
-                        padding:5px;
+                        padding: 5px;
                         background: white;
 
-                        .post-nickname{
+                        .post-nickname {
                                 color: $oc-gray-7;
-                                font-size:1.2rem;
+                                font-size: 1.2rem;
                                 font-weight: 900;
                         }
-                        .post-organization{
+
+                        .post-organization {
                                 color: $oc-gray-5;
                                 font-size: 0.9rem;
                         }
-                        .post-item{
+
+                        .post-item {
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
                                 margin-top: 5px;
                         }
-                        .post-intro{
-                                overflow: hidden; 
+
+                        .post-intro {
+                                overflow: hidden;
                                 display: flex;
                                 width: 280px;
                                 height: 20px;
@@ -93,39 +142,45 @@
                                 justify-content: center;
                                 align-items: center;
                                 text-overflow: ellipsis;
-                                white-space: nowrap; 
+                                white-space: nowrap;
                         }
-                        .post-skill{
+
+                        .post-skill {
                                 display: grid;
-                                margin-top:10px;
+                                margin-top: 10px;
                                 grid-template-columns: 1.5fr 4fr;
                                 color: $oc-gray-6;
                                 font-weight: 700;
-                                .categoryList{
+
+                                .categoryList {
                                         display: flex;
                                         overflow: hidden;
                                         justify-content: flex-start;
-                                        .category-item{
+
+                                        .category-item {
                                                 text-overflow: ellipsis;
-                                                font-size:0.8rem;
+                                                font-size: 0.8rem;
                                                 padding: 10px 7px;
                                                 color: $tikitaka-yello;
                                                 font-weight: 500;
                                                 border-radius: 10px;
                                                 background: $oc-gray-7;
                                         }
-                                        .category-item + .category-item{
+
+                                        .category-item+.category-item {
                                                 margin-left: 3px;
                                         }
                                 }
                         }
-                        .post-pro{
-                                margin-top : 20px;
+
+                        .post-pro {
+                                margin-top: 20px;
                                 color: $oc-gray-6;
                                 font-weight: 700;
                                 display: grid;
                                 grid-template-columns: 1.5fr 2fr;
-                                .prolength{
+
+                                .prolength {
                                         font-weight: 700;
                                         color: $tikitaka-blue;
                                 }

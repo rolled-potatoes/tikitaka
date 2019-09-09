@@ -25,7 +25,7 @@ const App = () => {
         <Route exact path='/mypage' component={MyPagePage}/>
         <Route exact path='/project/:page' component={ProjectListPage}/>
         <Route exact path='/post/:id' component={PostPage}/>
-        <Route exact path ='/freeLenser/:page' component={FreeLenserListPage}/>
+        <Route exact path ='/freeLenser' component={FreeLenserListPage}/>
         <Route exact path ='/detail/:id' component={FreeLenserDetailPage}/>
         <Route exact path ='/write' component={WritePostPage}/>
         <Route exact path ='/FindID' component={FindIdPage}/>

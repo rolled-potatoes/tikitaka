@@ -4,33 +4,34 @@
  * 필요 기능 : 검색, 필터, 정렬, 페이징
  */
 import React from 'react'
-import  styles from './styles.scss'
+import styles from './styles.scss'
 import classnames from 'classnames'
 import Button from '../../common/Button'
-import {Link} from 'react-router-dom'
-import {DropdownButton,ButtonToolbar,Dropdown} from 'react-bootstrap';
+import { Link } from 'react-router-dom'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
 const cx = classnames.bind(styles)
 
-const Lists= ({projectList})=>{
-  let list = projectList.map(item =>{
-    const {title,price,dueDate,categoryList,writeDate,id,
-            description,period,nickName,candiList,freeList,maxPeople,organization} = item
+const Lists = ({ projectList }) => {
+  let list = projectList.map(item => {
+    const { title, price, dueDate, categoryList, writeDate, id,
+      description, period, nickName, candiList, freeList, maxPeople, organization } = item
     const writeDates = writeDate.split('-')
     const dueDates = dueDate.split('-')
     const writeYear = writeDates[0]
-    const writeDay =writeDates[2]
+    const writeDay = writeDates[2]
     const writeMonth = writeDate[1]
-    const dueYear =dueDates[0]
-    const dueDay =dueDates[2]
+    const dueYear = dueDates[0]
+    const dueDay = dueDates[2]
     const dueMonth = dueDates[1]
-    return(
+    return (
       <div className={cx('project')}>
         <div className={cx('writer-content')}>
           <div className={cx('writer')}>
-            <img  src="https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/42135641_1894679573979032_7136233916314157056_n.jpg?_nc_cat=108&_nc_oc=AQlwd9nh7sPfN1VZJ75panQPdTySUMTdtP51y1RFleHYHAFS92s2yZlM4qDzHG5I8Wk&_nc_ht=scontent.ficn3-1.fna&oh=4a6b9e8645545cc0b5190f5e1c9b3a3a&oe=5DD275CF"className={cx('writer-profile')}></img>
+            <img src="https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/42135641_1894679573979032_7136233916314157056_n.jpg?_nc_cat=108&_nc_oc=AQlwd9nh7sPfN1VZJ75panQPdTySUMTdtP51y1RFleHYHAFS92s2yZlM4qDzHG5I8Wk&_nc_ht=scontent.ficn3-1.fna&oh=4a6b9e8645545cc0b5190f5e1c9b3a3a&oe=5DD275CF" className={cx('writer-profile')}></img>
             <h3 className={cx('writer-nickName')}>{nickName}</h3>
           </div>
-          
+
           <div className={(cx('writer-info'))}> {organization}</div>
         </div>
 
@@ -60,8 +61,8 @@ const Lists= ({projectList})=>{
           </div>
 
           <div className={cx('item-right')}>
-            <div className={cx('categoryList')}>{categoryList.map(item=>{
-              return(
+            <div className={cx('categoryList')}>{categoryList.map(item => {
+              return (
                 `${item}, `
               )
             })}</div>
@@ -87,35 +88,33 @@ const Lists= ({projectList})=>{
   })
   return list
 }
-const ProjectList = ({onClickSearch,projectList,searchString,changeSearch,keyPressSearchSring}) => (
-  <div className={cx('projectList')}>
-    <div className={cx('projectList-top')}>
-      <h1 className={cx('title')}>
-        프로젝트
+const ProjectList = ({ onClickSearch, projectList, searchString, changeSearch, keyPressSearchSring,
+  ontoggle, dropdownOnClick, dropdownName, dropdowndispaly }) => (
+    <div className={cx('projectList')}>
+      <div className={cx('projectList-top')}>
+        <h1 className={cx('title')}>
+          프로젝트
       </h1>
-
-      <div className={cx('search')}>
-        <ButtonToolbar>
-          <DropdownButton
-            size = 'lg'
-            title={'카테고리'}
-            id={`dropdown-variants-Secondary`}
-            variant={'asdasdasd'}
-          >
-            <Dropdown.Item eventKey="1">제목</Dropdown.Item>
-            <Dropdown.Item eventKey="2">내용</Dropdown.Item>
-            <Dropdown.Item eventKey="3">기술</Dropdown.Item>
-          </DropdownButton>
-        </ButtonToolbar>
-        <input 
-          value ={searchString} 
-          onChange={changeSearch}
-          onKeyPress={keyPressSearchSring}
-          className={cx('input-search')}
-        />
-        <button onClick={onClickSearch} className={cx('button-search')}>검색</button>
+        <div className={cx('search')}>
+          <Dropdown toggle={ontoggle} isOpen={dropdowndispaly}>
+            <DropdownToggle>
+              {dropdownName}
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem value="이름" onClick={dropdownOnClick}>이름</DropdownItem >
+              <DropdownItem divider />
+              <DropdownItem value="기술" onClick={dropdownOnClick}>기술</DropdownItem >
+            </DropdownMenu>
+          </Dropdown>
+          <input
+            value={searchString}
+            onChange={changeSearch}
+            onKeyPress={keyPressSearchSring}
+            className={cx('input-search')}
+          />
+          <button onClick={onClickSearch} className={cx('button-search')}>검색</button>
+        </div>
       </div>
-    </div>
       <div className={cx('filter')}>
         <Button>전체보기</Button>
         <Button>마감순</Button>
@@ -124,12 +123,12 @@ const ProjectList = ({onClickSearch,projectList,searchString,changeSearch,keyPre
         <Button>낮은금액순</Button>
       </div>
 
-    
 
-    <div className={cx('projectList-bottom')}>
-      <Lists projectList={projectList}/>
+
+      <div className={cx('projectList-bottom')}>
+        <Lists projectList={projectList} />
+      </div>
     </div>
-  </div>
-);
+  );
 
 export default ProjectList
