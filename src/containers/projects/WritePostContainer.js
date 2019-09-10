@@ -96,6 +96,7 @@ class WritePostContainer extends Component {
             maxPeople,
             description,
         } = this.props
+//        const { id } = this.props.match.params
         return (
             <WritePost
                 title={title}

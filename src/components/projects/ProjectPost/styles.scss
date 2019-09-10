@@ -20,6 +20,18 @@
             .post-title{
                 font-size: 1.5rem;
                 font-weight: 900;
+                .post-btn{
+                    margin-left: 10px;
+                    width: 60px;
+                    height: 40px;
+                    border:0;
+                    background: $tikitaka-blue;
+                    transition: all 2s ease-in-out;
+
+                    &:hover{
+                        background: linear-gradient( to bottom, $tikitaka-blue, $oc-blue-4 );
+                    }
+                }
             }
             .post-dates{
                 .dates{
