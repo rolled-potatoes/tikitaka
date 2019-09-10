@@ -1,10 +1,10 @@
 import React from 'react';
 import PageTemplate from '../components/common/PageTemplate'
-import Sign from '../components/sign/Sign'
+import SignContainer from 'containers/Sign/SignUp.js'
 const SignPage = () => {
     return (
         <PageTemplate >
-            <Sign/>
+            <SignContainer/>
         </PageTemplate>
     );
 };

@@ -65,7 +65,6 @@ export default handleActions ({
         type:LOGOUT,
         onSuccess:(state,action)=>{
             return state.set('logged',false)
-
         }
     })
 },initialState)

@@ -22,8 +22,6 @@ class ProjectPostContainer extends Component {
         this.setState({
             post: post
         })
-        console.log(post);
-        
     }
     render() {
         const {post} = this.state;

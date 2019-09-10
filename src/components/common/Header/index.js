@@ -19,7 +19,7 @@ const Header = ({ logged,onClickLogout }) => {
         </div>
         <div className={cx('menu')}>
           <Button to="/project/1" >프로젝트</Button>
-          <Button to="/freeLenser/1" >프리랜서</Button>
+          <Button to="/freeLenser" >프리랜서</Button>
           <Button to="/write" >프로젝트 등록</Button>
           {logged && <Button to="/mypage" >My Page</Button>}
         </div>

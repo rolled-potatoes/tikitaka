@@ -1,106 +1,90 @@
 @import 'styles/utils.scss';
-.sign-page{
-    width: 1200px;
-    height: 800px;
-    margin-right:auto;
-    margin-left:auto;
-    margin-top:10px;
-    padding:10px;
-    .sign-text{
-       padding-top:2%;
-        text-align:left;
-        font-size:2rem;
-        color: rgb(99, 99, 207);
-    }
-    .welcome{
-        text-align:left;
-        font-size:1.4rem;
-        color:black;
-        border-bottom:1px solid gray;
-        padding-bottom:2%;
-        padding-top:2%;
-    }
-    .table{
-     width:1000px;
-     height:300px;
-     margin-right:auto;
-     margin-left:auto;
-     font-size:1.3rem;
-     line-height: 2.7rem;
-     text-align:left;
-     padding:20px;
-     .inID input[type="text"]{
-        margin-left:100px;
-        width:400px;
-        height:30px;
-     }
-     .inpassword input[type="text"]{
-      margin-top:20px;
-      margin-left:100px;
-      width:400px;
-      height:30px;
-     }
-     .inpassword2 input[type="text"]{
-      margin-top:20px;
-      margin-left:100px;
-      width:400px;
-      height:30px;
-     }
-     .inname input[type="text"]{
-        margin-top:20px;
-        margin-left:100px;
-        width:400px;
-        height:30px;
-     }
-     .inphone input[type="text"]{
-      margin-top:20px;
-      margin-left:100px;
-      width:400px;
-      height:30px;
-     }
-     .inNickname input[type="text"]{
-      margin-top:20px;
-      margin-left:100px;
-      width:400px;
-      height:30px;
-     }
-     .checkNickname{
-        padding-left:30px;
-     }
-     
-    }
-    .info{
-        font-size:1rem;
-        text-align:center;
-        margin-top:50px;
-        margin-left:auto;
-        margin-right:auto;
-        margin-bottom:20px;
-
-        .term{
-            font-size:1rem;
-        }
-
-    }
-    .sign-button{
-       margin-left:auto;
-       margin-right:auto;
-       text-align:center;
-       width:150px;
-       height:40px;
-       background-color:whitesmoke;
-       font-size: 1.3rem;
-       vertical-align: center;
-       border-radius:10px;
-       border:1px solid gray;
-       
-    }
-    .sign-button:hover {
-      background-color: darkgray;
-      font-weight:bolder;
+.signup-wrapper{
+   width:1200px;
+   margin-top: 50px;
+   margin-bottom: 40px;
+   .signup-top{
+      border-bottom: 1px solid #000;
+      .signup-title{
+         
+      }
+      .signup-text{
+         margin-top:20px;
+         margin-bottom: 20px;
+      }
    }
-   .sign-button:active {
-      position:relative;
-      top:1px;
+   .signup-bottom{
+      display: flex;
+      flex-direction: column;
+      margin-top:20px;
+      align-items: center;
+      .bottom-nicname{
+         input{
+            width: 410px !important;
+         }
+         button{
+            width: 80px;
+            margin-left: 10px;
+            height: 50px;
+            font-size: 16px;
+            color:white;
+            border: 1px solid transparent;
+            background: $tikitaka-blue;
+         }
+      }
+      .bottom-check{
+         margin-top:20px;
+         display: flex;
+         align-items: center;
+         user-select: none;
+         .chkbox{
+            display: none;
+         }
+         .check-h3{
+            margin-right: 110px;
+            cursor: pointer;
+         }
+         .chk-div{
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background:  white;
+         }
+         input[type="checkbox"]:checked+.chk-div {
+               
+               background:url('../../../imgs/chk.png' ) white no-repeat center/30px 30px;
+            
+         }
+         input{
+            width: 20px !important;
+            height: 20px !important;
+            margin-right: 20px;
+         }
+
+      }
+
+      .bottoms{
+         h3{
+            margin: 20px 0;
+         }
+         input{
+            font-size: 1rem;
+            text-indent: 5px;
+            width: 500px;
+            height: 50px;
+         }
+      }
+      .signup-btn{
+         margin-top:20px;
+         >button{
+            width: 500px;
+            height: 50px;
+            border: 1px solid transparent;
+            background: $tikitaka-blue;
+            color:white;
+            font-size: 1.4rem;
+         }
+      }
    }
+   
 }

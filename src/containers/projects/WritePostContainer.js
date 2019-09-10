@@ -10,10 +10,10 @@ class WritePostContainer extends Component {
     }
     componentDidMount() {
         const { history, logged } = this.props;
-        if (!logged) {
+        /* if (!logged) {
             alert('로그인 후 이용하실 수 있습니다.')
             history.goBack();
-        }
+        } */
     }
 
     /**
@@ -78,8 +78,6 @@ class WritePostContainer extends Component {
             item.style.background=black;
             item.style.color=black;
         }) */
-        console.log('reset');
-        
         WriteActions.reset()
     }
     render() {
@@ -98,6 +96,7 @@ class WritePostContainer extends Component {
             maxPeople,
             description,
         } = this.props
+//        const { id } = this.props.match.params
         return (
             <WritePost
                 title={title}

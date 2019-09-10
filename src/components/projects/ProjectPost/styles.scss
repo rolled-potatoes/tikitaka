@@ -20,6 +20,18 @@
             .post-title{
                 font-size: 1.5rem;
                 font-weight: 900;
+                .post-btn{
+                    margin-left: 10px;
+                    width: 60px;
+                    height: 40px;
+                    border:0;
+                    background: $tikitaka-blue;
+                    transition: all 2s ease-in-out;
+
+                    &:hover{
+                        background: linear-gradient( to bottom, $tikitaka-blue, $oc-blue-4 );
+                    }
+                }
             }
             .post-dates{
                 .dates{
@@ -154,17 +166,18 @@
             font-weight: 700;
             color: $oc-gray-7;
             margin-top: 5px;
-            border : 1px solid #000;
+            border : 1px solid $oc-gray-4;
         }
         .writer-organization:hover, .chat-btn:hover{
             box-shadow: 5px 5px $oc-gray-2;
         }
         .writer-organization{
-            background: $tikitaka-blue;
+            //background: $tikitaka-blue;
+            
         }
         .chat-btn{
             cursor: pointer;
-            background: $tikitaka-blue;
+            background: $tikitaka-yello;
         }
     }
 }

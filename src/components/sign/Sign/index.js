@@ -1,53 +1,99 @@
-
+/**
+ * 회원가입 페이지
+ * ! 아이디, 비밀번호, 비밀번호 확인, 이름, 닉네임 + 닉네임 중복 확인, 소속
+ */
 import React from 'react'
 import styles from './styles.scss'
 import classnames from 'classnames'
-import {Link} from'react-router-dom'
+import { Link } from 'react-router-dom'
 import Button from '../../common/Button'
 const cx = classnames.bind(styles)
 
 
-const Sign = ({}) => (
-  <div className ={cx('sign-page')}>
-    <h1 className={cx('sign-text')}>회원가입</h1>
-    <h2 className={cx('welcome')}>티키타카에 오신 것을 환영합니다.</h2>
-    <div className={cx('table')}>
-      <tr className={cx('IDtlabe')}> 
-        <th className={cx('userId')}>아이디</th>
-       <td className={cx('inID')}><input type="text" name="userId"></input></td>
-      </tr>
-      <tr className={cx('passwordtable')}> 
-        <th className={cx('password')}>비밀번호</th>
-       <td className={cx('inpassword')}><input type="text" name="password"></input></td>
-      </tr>
-      <tr className={cx('passwordtable2')}> 
-       <th className={cx('pasword2')}>비밀번호 확인         </th>
-       <td className={cx('inpassword2')}><input type="text" name="password2" ></input></td>
-      </tr>
-      <tr className={cx('nametable')}> 
-       <th className={cx('name')}>이름</th>
-        <td className={cx('inname')}><input type="text" name="name"/></td>
-      </tr>
-      <tr className={cx('nicknametable')}> 
-       <th className={cx('nickname')} float="left">닉네임</th>
-       <td className={cx('inNickname')}><input type="text" name="nickname"></input>
-      </td>
-      <th className={cx('checkNickname')}><button id="checkNickname">중복확인</button></th>
-      </tr>
-      <tr className={cx('tablephone')}> 
-       <th className={cx('phonenumber')}>휴대폰 번호</th>
-       <td className={cx('inphone')}><input type="text" name="phonenumber"></input></td>
-      </tr>
+const Sign = ({ 
+  email,
+  password,
+  passwordR,
+  name,
+  nickname,
+  organization,
+  onCheck,
+  agree,
+  duplicate_check, 
+  onChange,
+}) => (
+    <div className={cx('signup-wrapper')}>
+      <div className={cx('signup-top')}>
+        <h1 className={cx('signup-title')}>회원가입</h1>
+        <h2 className={cx('signup-text')}>티키타카에 오신 것을 환영합니다.</h2>
+      </div>
+      <div className={cx('signup-bottom')}>
+
+        <div className={cx('bottom-email', 'bottoms')}>
+          <h3>
+            <label>이메일</label>
+          </h3>
+          <span>
+            <input value={email} id ="email" onChange={onChange}/>
+          </span>
+        </div>
+
+        <div className={cx('bottom-pw', 'bottoms')}>
+          <h3>
+            <label>비밀번호</label>
+          </h3>
+          <span>
+            <input type ='password' value={password}  id ="password" onChange={onChange}/>
+          </span>
+          <h3>
+            <label>비밀번호 확인</label>
+          </h3>
+          <span>
+            <input type ='password' value={passwordR}  id ="passwordR" onChange={onChange}/>
+          </span>
+        </div>
+
+        <div className={cx('bottom-name', 'bottoms')}>
+          <h3>
+            <label>이름</label>
+          </h3>
+          <span>
+            <input value={name}  id ="name" onChange={onChange} />
+          </span>
+        </div>
+
+        <div className={cx('bottom-nicname', 'bottoms')}>
+          <h3>
+            <label>닉네임</label>
+          </h3>
+          <span>
+            <input value={nickname}  id ="nickname" onChange={onChange}/>
+            <button>중복확인</button>
+          </span>
+        </div>
+
+        <div className={cx('bottom-organization', 'bottoms')}>
+          <h3>
+            <label>소속</label>
+          </h3>
+          <span>
+            <input value={organization}  id ="organization" onChange={onChange}/>
+          </span>
+        </div>
+
+
+        <div className={cx('bottom-check', 'bottoms')}>
+          <label for="agree"><h3 className="check-h3">이용약관 및 개인정보취급방침에 동의합니다.</h3></label>
+          <input type='checkbox' className="chkbox" id="agree" onChange={onCheck} checked={agree}/>
+          <label for="agree" className="chk-div"></label>
+        </div>
+
+        <div className={cx('signup-btn')}>
+          <button>회원가입</button>
+        </div>
+      </div>
+
     </div>
-    <h2 className={cx('info')}>
-    <input type="radio" name="info" checked></input>
-      <Button theme={'term'}>이용약관</Button> 및 <Button them={'info'}>개인정보취급방침</Button>에 동의합니다.
-    </h2>
- <h2 className={cx('sign-button')}>
- <Button to="/">회원가입</Button>
- </h2>
-  
-  </div>
-);
+  );
 
 export default Sign

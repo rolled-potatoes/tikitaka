@@ -5,6 +5,7 @@ import classnames from 'classnames'
 import { Link } from 'react-router-dom'
 import Button from '../../common/Button'
 import { COPYFILE_EXCL } from 'constants';
+
 const cx = classnames.bind(styles)
 const adImg = require('imgs/광고.png')
 const deImg = require('imgs/디자인.png')
@@ -36,6 +37,7 @@ const Main = ({ }) => {
     , nickName, organization, candiList, maxPeople } = dumyData
   return (
     <container>
+      
       <div className={cx('main-page')}>
         <section class="ad">
           <a className={cx('advertise')}>
@@ -93,6 +95,7 @@ const Main = ({ }) => {
             </td>
           </div>
         </div>
+
         <div className={cx('follow')}>
           <div className={cx('timeTxt')}>
             최신 등록 프로젝트

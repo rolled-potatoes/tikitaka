@@ -7,7 +7,6 @@ import Button from '../../common/Button';
 const cx = classNames.bind('styles')
 
 const ProjectPost = ({ post }) => {
-  console.log(post);
   if (post !== null) {
     {
       const { writeDate, dueDate, title, price, categoryList, description, period
@@ -29,6 +28,8 @@ const ProjectPost = ({ post }) => {
 
               <div className={cx('post-title')}>
                 {title}
+                <button className={cx('post-btn')}>삭제</button>
+                <button className={cx('post-btn')}>수정</button>
               </div>
 
               <div className={cx('post-dates')}>
