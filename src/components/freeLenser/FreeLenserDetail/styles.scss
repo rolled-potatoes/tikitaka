@@ -15,10 +15,12 @@
                 align-items: center;
                 padding:20px;
                 border: 1px solid $oc-gray-4;
+
                 .profile-img{
                         height: 170px;
                         width: 170px;
                 }
+                
                 .profile-nickname{
                         font-size: 1.2rem;
                         color :$oc-gray-7;
@@ -48,6 +50,44 @@
                 .profile-intro{
                         color : $oc-gray-6;
                         padding: 10px 10px;
+                        
+                }
+                .profile-intro::after{
+                        content: "";
+                        width: 228px;
+                        height: 1px;
+                        position: absolute;
+                        background: #ced4da;
+                        transform: translate(-158px, 35px);
+                }
+                .following{
+                        border: 1px solid $oc-red-7 !important;
+                        color :red;
+                }
+                .profil-follow{
+                        padding:0 20px;
+                        
+                        font-size: 1.2rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 228px;
+                        cursor: pointer;
+                        height: 50px;
+                        border: 1px solid $oc-gray-3;
+                        margin-top: 25px;
+                        .follow-div{
+                                display: grid;
+                                
+                                grid-template-columns: 3fr 1fr;
+                                .follow-text{
+                                        width: 139px;
+                                        text-align: left;
+                                }
+                                i{
+                                        text-align: right;
+                                }
+                        }
                 }
         }
         .FreeLenserDetail-info{

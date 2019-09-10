@@ -20,7 +20,7 @@ const initialState = Map({
 export default handleActions({
     [GET_LIST]:(state,acion) =>{
         const page = state.get('page');
-        let {data,isLast} = api.getFreeList((page+1))
+        let {data,isLast} = api.getFreeList((page))
         return state.set("FreeList", state.get("FreeList").merge(data))
                     .set('loadding',true)
                     .set('isLast',isLast)

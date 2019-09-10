@@ -17,6 +17,7 @@ const initialState = Map({
     name :"",
     nickname :"",
     organization :"",
+    phone:"",
     agree :false,
     duplicate_check: false,
 })

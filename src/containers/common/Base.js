@@ -4,7 +4,6 @@ import {bindActionCreators} from 'redux'
 
 import * as baseActions from 'store/modules/base.js'
 
-
 class Base extends Component {
     initialize= async() =>{
         const {BaseActions} = this.props;
@@ -12,8 +11,6 @@ class Base extends Component {
             BaseActions.tempLogin()
         }
         BaseActions.checkLogin();
-        console.log('initialize');
-        
     }
     componentDidMount(){
         this.initialize();
@@ -28,8 +25,10 @@ class Base extends Component {
 }
 
 export default connect(
-    null,
+    (state)=>({
+        logged : state.base.get('logged'),
+    }),
     (dispatch)=>({
-        BaseActions : bindActionCreators(baseActions,dispatch)
+        BaseActions : bindActionCreators(baseActions,dispatch),
     })
 )(Base);

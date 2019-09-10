@@ -4,8 +4,16 @@ import datas from 'data/datas.json'
 
 export const getProject =(id)=> axios.get(`/api/project/${id}`) 
 export const login = (email, password) => axios.post('/api/auth/login',{email,password})
+export const checkLogin = () =>axios.get('/api/auth/check')
 
 export const logout= ()=> axios.post('/api/auth/logout')
+
+export const getFreeInfo = (id)=>{
+    let data =datas.freeLenserList;
+    return data.find(item =>{
+        return item.id == id
+    })
+}
 export const getPost = (id) =>{
     let data= datas.projectList;
     return data.find(item =>{

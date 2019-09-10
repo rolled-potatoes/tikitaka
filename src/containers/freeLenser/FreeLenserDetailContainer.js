@@ -2,31 +2,26 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {withRouter} from 'react-router-dom'
-import datas from 'data/datas.json'
-import {List} from 'immutable'
+import * as freeActions from 'store/modules/freePost.js'
 import FreeLenserDetailComponent from 'components/freeLenser/FreeLenserDetail/index.js'
 
 class FreeLenserDetailContainer extends Component {
     constructor(props){
         super(props)
         this.state={
-            info: null,
             visibles:[true,false,false,false]
         }
     }
 
     componentDidMount(){
-        const {id} = this.props.match.params
-        const {freeLenserList} = datas;
-        
-        const freeInfo = freeLenserList.find(n=>{
-            return n.id == id
-        })
-        this.setState({
-            info : freeInfo
-        })
-
+        this.initial();
     }   
+    
+    initial=async()=>{
+        const {id} = this.props.match.params
+        const {FreeActions} = this.props
+        FreeActions.getFree({id:id})
+    }
     onClickMenuitem=(e)=>{
         const {id} =e.target;
         const{visibles} =this.state;
@@ -42,15 +37,25 @@ class FreeLenserDetailContainer extends Component {
     }
     render() {
         const {
-            info,
-            visibles
+            visibles,
+            
         } = this.state;
+
+        const {
+            info,
+            myfollowList
+        }= this.props
         const {
             onClickMenuitem
         } =  this
+        
+        const follow_check =  myfollowList.find(item=>{
+            return item == info.email
+        }) ===undefined? false :true
         return (
             <FreeLenserDetailComponent
                 freeInfo={info}
+                follow_check={follow_check}
                 visibles={visibles}
                 onClickMenuitem={onClickMenuitem}
             />
@@ -60,9 +65,10 @@ class FreeLenserDetailContainer extends Component {
 
 export default connect(
     (state)=>({
-
+        myfollowList : state.base.get('myfollowList'),
+        info : state.freePost.get('info'),
     }),
     (dispatch)=>({
-
+        FreeActions : bindActionCreators(freeActions,dispatch),
     })
 )(withRouter(FreeLenserDetailContainer))

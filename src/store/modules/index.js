@@ -4,4 +4,7 @@ export {default as writePost} from './writePost'
 export {default as FreeLenserList} from './FreeLenserList'
 export {default as ProjectList} from './ProjectList'
 export {default as signup} from './signup'
+export {default as info} from'./info'
+export {default as freePost} from './freePost'
+
 export {penderReducer as pender} from 'redux-pender'

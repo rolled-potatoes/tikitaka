@@ -23,7 +23,7 @@ class SignUp extends Component {
             passwordR,
             name,
             nickname,
-            
+            phone,
             organization,
             agree,
             duplicate_check,
@@ -38,6 +38,7 @@ class SignUp extends Component {
                 password={password}
                 passwordR={passwordR}
                 name={name}
+                phone={phone}
                 nickname={nickname}
                 organization={organization}
                 agree={agree}
@@ -56,6 +57,7 @@ export default connect(
         passwordR: state.signup.get('passwordR'),
         name: state.signup.get('name'),
         nickname: state.signup.get('nickname'),
+        phone: state.signup.get('phone'),
         organization: state.signup.get('organization'),
         agree: state.signup.get('agree'),
         duplicate_check: state.signup.get('duplicate_check'),

@@ -19,6 +19,7 @@ const Sign = ({
   organization,
   onCheck,
   agree,
+  phone,
   duplicate_check, 
   onChange,
 }) => (
@@ -69,6 +70,15 @@ const Sign = ({
           <span>
             <input value={nickname}  id ="nickname" onChange={onChange}/>
             <button>중복확인</button>
+          </span>
+        </div>
+
+        <div className={cx('bottoms')}>
+          <h3>
+            <label>전화번호</label>
+          </h3>
+          <span>
+            <input value={phone}  id ="phone" onChange={onChange} />
           </span>
         </div>
 
