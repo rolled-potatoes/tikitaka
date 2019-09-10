@@ -3,10 +3,10 @@ import React from 'react'
 import styles from './styles.scss'
 import classNames from 'classnames'
 import Button from '../../common/Button';
-
+import {Link} from 'react-router-dom'
 const cx = classNames.bind('styles')
 
-const ProjectPost = ({ post }) => {
+const ProjectPost = ({ post,id }) => {
   if (post !== null) {
     {
       const { writeDate, dueDate, title, price, categoryList, description, period
@@ -28,8 +28,8 @@ const ProjectPost = ({ post }) => {
 
               <div className={cx('post-title')}>
                 {title}
-                <button className={cx('post-btn')}>삭제</button>
-                <button className={cx('post-btn')}>수정</button>
+                <div className={cx('post-btn')}>삭제</div>
+                <div className={cx('post-btn')}><Link  to={`/write/${id}`}>수정</Link></div>
               </div>
 
               <div className={cx('post-dates')}>
@@ -100,6 +100,7 @@ const ProjectPost = ({ post }) => {
               {organization}
             </div>
             <div className={cx('chat-btn')}>채팅하기</div>
+            <div className={cx('chat-btn')}>지원하기</div>
           </div>
         </div>
       )

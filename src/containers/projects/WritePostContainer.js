@@ -4,12 +4,16 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom'
 import WritePost from 'components/projects/WritePost'
 import * as writeActions from 'store/modules/writePost.js'
+
 class WritePostContainer extends Component {
     constructor(props) {
         super(props)
     }
     componentDidMount() {
-        const { history, logged } = this.props;
+        const { history, logged ,WriteActions} = this.props;
+        const {id} = this.props.match.params;
+        if(id !== undefined)
+        WriteActions.getContaint({id:id})
         /* if (!logged) {
             alert('로그인 후 이용하실 수 있습니다.')
             history.goBack();
