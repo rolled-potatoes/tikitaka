@@ -27,11 +27,8 @@ const initialState = Map({
     password:'',
     loginError:false,
     logged : false,
+    myInfo:"",
 
-    myemail:"",
-    myname :"",
-    mynickname :"",
-    myfollowList:List(),
 })
 
 export default handleActions ({
@@ -50,21 +47,18 @@ export default handleActions ({
         return state.set('logged', true)
     },
     [GET_INFO] : (state,action)=>{
-        return state.set('myemail','keep4404@gmail.com')
-                    .set('myname','박승환')
-                    .set('mynickname','potato')
-                    .set('myfollowList',["ak3198@naver.com","tjdtngkgh@naver.com","wlsaud@google.com"])
+        const myinfo = api.getMyInfo();
+        return state.set('myInfo',myinfo)
     },
     ...pender({
         type: LOGIN,
         onSuccess:(state,action) =>{
+        const myinfo = api.getMyInfo();
+            
             return state.set('logged',true)
+                        .set('myInfo',myinfo)
                         .set('email','')
                         .set('password','')
-                        .set('myemail','keep4404@gmail.com')
-                        .set('myname','박승환')
-                        .set('mynickname','potato')
-                        .set('myfollowList',["ak3198@naver.com","tjdtngkgh@naver.com","wlsaud@google.com"])
         },
         onError:(state,action)=>{
             return state.set('email','')
@@ -77,13 +71,10 @@ export default handleActions ({
         type : CHECK_LOGIN,
         onSuccess:(state,action) =>{
             const {logged} = action.payload.data
-            console.log('chk');
-            
+            const myinfo = api.getMyInfo();
+
             return state.set('logged',logged)
-                        .set('myemail','keep4404@gmail.com')
-                        .set('myname','박승환')
-                        .set('mynickname','potato')
-                        .set('myfollowList',["ak3198@naver.com","tjdtngkgh@naver.com","wlsaud@google.com"])
+                        .set('myInfo',myinfo)
         }
     }),
     ...pender({

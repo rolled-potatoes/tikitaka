@@ -21,7 +21,7 @@ const Header = ({ logged,onClickLogout }) => {
           <Button to="/project/1" >프로젝트</Button>
           <Button to="/freeLenser" >프리랜서</Button>
           <Button to="/write" >프로젝트 등록</Button>
-          {logged && <Button to="/mypage" >My Page</Button>}
+          {logged && <Button to="/mypage" >마이페이지</Button>}
         </div>
         <div className={cx('client')}>
           {

@@ -6,18 +6,16 @@ import * as api from '../../lib/api'
 
 const GET_POST = 'ProjectPost/GET_POST'
 
-export const getPost = createAction(GET_POST,api.getProject)
+export const getPost = createAction(GET_POST)
 
 const initialState=Map({
-    project:Map({})
+    project:""
 })
 
 export default handleActions({
-    ...pender({
-        type: GET_POST,
-        onSuccess:(state,action)=>{
-            const {data: project} = action.payload;
-            return state.set('project',fromJS(project))
-        }
-    })
+    [GET_POST] : (state,action) =>{
+        const{id} = action.payload
+        const data = api.getPost(id);
+        return state.set('project',data)
+    }
 },initialState)

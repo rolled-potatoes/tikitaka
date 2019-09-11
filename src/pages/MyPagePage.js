@@ -1,10 +1,10 @@
 import React from 'react';
 import PageTemplate from '../components/common/PageTemplate'
-import Mypage from '../components/mypage/Mypage'
+import MypageContainer from 'containers/Mypage/mypage.js'
 const MyPagePage = () => {
     return (
         <PageTemplate >
-            <Mypage/>
+            <MypageContainer/>
         </PageTemplate>
     );
 };

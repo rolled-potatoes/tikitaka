@@ -13,13 +13,23 @@ class WritePostContainer extends Component {
         const { history, logged ,WriteActions} = this.props;
         const {id} = this.props.match.params;
         if(id !== undefined)
-        WriteActions.getContaint({id:id})
+            WriteActions.getContaint({id:id})
         /* if (!logged) {
             alert('로그인 후 이용하실 수 있습니다.')
             history.goBack();
         } */
     }
-
+    componentDidUpdate(prevProp){
+        const {id} = this.props.match.params;
+        const { WriteActions } = this.props;
+        if(id === undefined)    
+            WriteActions.reset();
+        
+    }
+    componentWillUnmount(){
+        const {WriteActions} =this.props;
+        WriteActions.reset();
+    }
     /**
      * 모집기간 선택 했을 떄 
      * 오늘날 이전 값은 무시 

@@ -13,7 +13,7 @@ const cx = classnames.bind(styles)
 const imgSrc = "https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/42135641_1894679573979032_7136233916314157056_n.jpg?_nc_cat=108&_nc_oc=AQlwd9nh7sPfN1VZJ75panQPdTySUMTdtP51y1RFleHYHAFS92s2yZlM4qDzHG5I8Wk&_nc_ht=scontent.ficn3-1.fna&oh=4a6b9e8645545cc0b5190f5e1c9b3a3a&oe=5DD275CF"
 
 const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check }) => {
-  if (freeInfo !== "") {
+  if (freeInfo != "") {
     return (
       <div className={cx('FreeLenserDetail-wrapper')}>
         <div className={cx('FreeLenserDetail-profile')}>

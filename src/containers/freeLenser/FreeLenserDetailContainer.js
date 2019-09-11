@@ -24,7 +24,6 @@ class FreeLenserDetailContainer extends Component {
     }
     onClickMenuitem=(e)=>{
         const {id} =e.target;
-        const{visibles} =this.state;
         let tempVisible = [false,false,false,false]
         for(let i = 0 ; i < 4; i++){
             if(i === id -1){
@@ -38,18 +37,20 @@ class FreeLenserDetailContainer extends Component {
     render() {
         const {
             visibles,
-            
         } = this.state;
 
         const {
             info,
-            myfollowList
+            myInfo
         }= this.props
         const {
             onClickMenuitem
         } =  this
-        
-        const follow_check =  myfollowList.find(item=>{
+        //const follow_check = myInfo =="" ? false : true;
+
+        let follow_check = false;
+        if(myInfo !="")
+            follow_check=  myInfo.follow.find(item=>{
             return item == info.email
         }) ===undefined? false :true
         return (
@@ -65,7 +66,7 @@ class FreeLenserDetailContainer extends Component {
 
 export default connect(
     (state)=>({
-        myfollowList : state.base.get('myfollowList'),
+        myInfo : state.base.get('myInfo'),
         info : state.freePost.get('info'),
     }),
     (dispatch)=>({

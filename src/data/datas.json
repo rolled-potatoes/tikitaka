@@ -32,6 +32,57 @@
             "category": "회계"
         }
     ],
+    "myInfo":{
+        "email":"ak3198@naver.com",
+        "Intro":"hello world!",
+        "grade":3.5,
+        "nickName":"ParkSeunHwan",
+        "follow" : ["ak3198@naver.com","tjdtngkgh@naver.com","wlsaud@google.com"],
+        "name":"박승환",
+        "organization": "YU student",
+        "location":"대구",
+        "categoryList": ["php", "python", "C++", "java", "javaScript"],
+
+        "proList": ["1", "2", "3", "4"],
+        "careeList": [{
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }, {
+            "getDate": "2019-01-01",
+            "things": "영남대 행정실"
+        }],
+        "educationList": [{
+                "getDate": "2010-10-10",
+                "things": "경산초등학교"
+
+            },
+            {
+                "getDate": "2013-10-10",
+                "things": "경산중등학교"
+            },
+            {
+                "getDate": "2015-10-10",
+                "things": "경산고등학교"
+            },
+            {
+                "getDate": "2019-10-10",
+                "things": "영남대"
+            }
+        ],
+        "licenseList": ["정보처리기사", "MOS", "치믈리에", "CCNA"]
+    },
     "projectList": [{
         "id": 1,
         "title": "행사 중개 플랫폼 웹서비스 제작111",

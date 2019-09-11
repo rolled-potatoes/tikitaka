@@ -33,7 +33,7 @@ const dumyData={
     <div className={cx('mypageTxt')}>
       프로필 수정
     </div>
-    <div className={cx('mypage-tem')}>
+    <div className={cx('revise-tem')}>
     <div className={cx('aside')}>
     <div className={cx('nicknameBox')}>
       <div className={cx('proImg')}>
