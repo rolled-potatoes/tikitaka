@@ -1,10 +1,10 @@
 import React from 'react';
 import PageTemplate from '../components/common/PageTemplate'
-import Revise from '../components/revise/Revise'
+import ReviseContainer from 'containers/Mypage/reivse.js'
 const RevisePage = () => {
     return (
         <PageTemplate >
-            <Revise/>
+            <ReviseContainer/>
         </PageTemplate>
     );
 };

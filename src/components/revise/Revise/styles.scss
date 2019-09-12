@@ -1,209 +1,222 @@
 @import 'styles/utils.scss';
 
-.mypage-page{
- width:1200px;   
- margin-top:10px;
- padding:10px;
- .mypageTxt{
-     display:flex;
-     margin-left:1px;
-     text-align:left;
-     font-size:2rem;
-     font-weight:bold;
-     padding-top:2%;
-     color: rgb(99, 99, 207);
-     padding-bottom:2%;
-     border-bottom:1px solid gray;
- }
- .end{
-     width:900px;
-     margin-left: auto;
-     margin-right: auto;
-     height: auto;
-     border-top:2px solid $tikitaka-blue;
-     margin-top:20px;
- }
- .revise-button{
-    border-radius: 2%;
-    margin-left:auto;
-    margin-right:auto;
-    width:150px;
-    height:40px;
-    border:1px solid $tikitaka-yello;
-    font-size:1rem;
-    text-align:center;
-    background-color:$tikitaka-yello;
-    &:active{
-       background-color:darkgoldenrod;
-       position: relative;
-       top:1.5px;
+.mypage-page {
+    width: 1200px;
+    margin-top: 10px;
+    padding: 10px;
+
+    .mypageTxt {
+        display: flex;
+        margin-left: 1px;
+        text-align: left;
+        font-size: 2rem;
+        font-weight: bold;
+        padding-top: 2%;
+        color: rgb(99, 99, 207);
+        padding-bottom: 2%;
+        border-bottom: 1px solid gray;
     }
-     
- }
- .end-button{
-    margin-bottom:20px;
-    margin-top:20px;
-    border-radius: 2%;
-    margin-left:auto;
-    margin-right:auto;
-    width:120px;
-    height:40px;
-    border:1px solid $tikitaka-blue;
-    font-size:1rem;
-    margin-top:30px;
-    text-align:center;
-    background-color:$tikitaka-blue;
-    &:active{
-       background-color:rgb(88, 140, 189);
-       position: relative;
-       top:1.5px;
+
+    .end {
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        border-top: 2px solid $tikitaka-blue;
+        margin-top: 20px;
     }
- }
- .add-button{
-     border-radius: 2%;
-     margin-left:auto;
-     margin-right:auto;
-     width:100px;
-     height:40px;
-     border:1px solid $tikitaka-yello;
-     font-size:1rem;
-     margin-top:40px;
-     text-align:center;
-     background-color:$tikitaka-yello;
-     &:active{
-        background-color:darkgoldenrod;
-        position: relative;
-        top:1.5px;
-     }
 
- }
- 
- .info{
+    .revise-button {
+        border-radius: 2%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px;
+        height: 40px;
+        border: 1px solid $tikitaka-yello;
+        font-size: 1rem;
+        text-align: center;
+        background-color: $tikitaka-yello;
 
-    width:700px;
-    height:auto;
-    margin-right:auto;
-    line-height: 200%;
-    font-size:1.2rem;
-    margin-left:100px;
-    padding-left:100px;
+        &:active {
+            background-color: darkgoldenrod;
+            position: relative;
+            top: 1.5px;
+        }
 
-    .Id{
-        width:300px;
-        height:auto;
-        margin-right:100px;
     }
-    .inpassword input[type="text"]{
-        margin-top:20px;
-        width:400px;
 
-       }  
+    .end-button {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-radius: 2%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 120px;
+        height: 40px;
+        border: 1px solid $tikitaka-blue;
+        font-size: 1rem;
+        margin-top: 30px;
+        text-align: center;
+        background-color: $tikitaka-blue;
 
-
-}
-
-
- .revise-tem{
-     width:1300px;
-     height:800px;
-     padding-left:auto;
-     padding-right:auto;
-
-     .revise-box{
-        font-weight:bold;
-        margin-top:20px;
-        margin-left:20px;
-        float:left;
-        width:1000px;
-        height:auto;
-        background-color:white;
-        border: 2px solid rgb(246,246,246);
-        .info-box{
-            width:900px;
-            height:auto;
-            margin-left:auto;
-            margin-right:auto;
-            margin-top: 20px;
-            text-align:left;
-            }
-            .info-txt{
-                height:50px;
-                width:900px;
-                border-bottom:1px solid $tikitaka-blue;
-                font-size:1.7rem;
-                font-weight: bolder;
-                margin-bottom:20px;
-                color:$tikitaka-blue;
-          }
+        &:active {
+            background-color: rgb(88, 140, 189);
+            position: relative;
+            top: 1.5px;
         }
     }
-     .aside{
-         color:gray;
-         text-align:center;
-         margin-left:auto;
-         margin-right:auto;
-         float:left;
-         width:250px;
-         height:900px;
-         margin-top:20px;
-         line-height: 150%;
 
-         .nicknameBox{
-            border-radius:2%;
-            margin-left:auto;
-            margin-right:auto;
-            margin-bottom:5%;
-            width:250px;
-            height:600px;
-            padding-top:5%;
-            padding-bottom:3%;
-            text-align:center;
-            color:white;
-            font-weight:bold;
-            font-size:1.2rem;
-            background-color:$tikitaka-blue;
-            .proImg{
-                float:top;
-                padding-top:10%;
-                text-align:center;
-                img{
-                    float:middle;
-                    width:120px;
-                    height:120px;
-                    border-radius:50%;
+    .add-button {
+        border-radius: 2%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        height: 40px;
+        border: 1px solid $tikitaka-yello;
+        font-size: 1rem;
+        margin-top: 40px;
+        text-align: center;
+        background-color: $tikitaka-yello;
+
+        &:active {
+            background-color: darkgoldenrod;
+            position: relative;
+            top: 1.5px;
+        }
+
+    }
+
+    .info {
+
+        width: 700px;
+        height: auto;
+        margin-right: auto;
+        line-height: 200%;
+        font-size: 1.2rem;
+        margin-left: 100px;
+        padding-left: 100px;
+
+        .Id {
+            width: 300px;
+            height: auto;
+            margin-right: 100px;
+        }
+
+        .inpassword input[type="text"] {
+            height: 30px;
+            width: 400px;
+
+        }
+
+
+    }
+
+
+    .revise-tem {
+        width: 1300px;
+        padding-left: auto;
+        padding-right: auto;
+
+        .revise-box {
+            font-weight: bold;
+            margin-top: 20px;
+            margin-left: 20px;
+            float: left;
+            width: 1000px;
+            height: auto;
+            background-color: white;
+            border: 2px solid rgb(246, 246, 246);
+
+            .info-box {
+                width: 900px;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                text-align: left;
+            }
+
+            .info-txt {
+                height: 50px;
+                width: 900px;
+                border-bottom: 1px solid $tikitaka-blue;
+                font-size: 1.7rem;
+                font-weight: bolder;
+                margin-bottom: 20px;
+                color: $tikitaka-blue;
+            }
+        }
+    }
+
+    .aside {
+        color: gray;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        float: left;
+        width: 250px;
+        height: 900px;
+        margin-top: 20px;
+        line-height: 150%;
+
+        .nicknameBox {
+            border-radius: 2%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5%;
+            width: 250px;
+            padding-top: 5%;
+            padding-bottom: 3%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            background-color: $tikitaka-blue;
+
+            .proImg {
+                float: top;
+                padding-top: 10%;
+                text-align: center;
+
+                img {
+                    float: middle;
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
                 }
 
             }
-            .profile-td{
-                margin-top:5%;
+
+            .profile-td {
+                margin-top: 5%;
                 color: $oc-gray-7;
             }
-         }
+        }
 
-         .projectBox{
-             margin-top:5%;
-             width:125px;
-             height:100px;
-             float:left;
-             border:1px solid  rgb(246,246,246);
-             background-color:white;
-             .variable{
-                 color:darkslategray;
-                 font-size:1rem;
-                 font-weight:bold;
-                 text-align:center;
-                 margin-top:25px;
-             }
-             .prop{
-                color:$tikitaka-yello;
-                font-size:1.2rem;
-                font-weight:bold;
-                text-align:center;
-                margin-top:6%;
-             }
-         }
+        .projectBox {
+            margin-top: 5%;
+            width: 125px;
+            height: 100px;
+            float: left;
+            border: 1px solid rgb(246, 246, 246);
+            background-color: white;
 
-     }
+            .variable {
+                color: darkslategray;
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 25px;
+            }
+
+            .prop {
+                color: $tikitaka-yello;
+                font-size: 1.2rem;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 6%;
+            }
+        }
+
+    }
 }
-
-
