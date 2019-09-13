@@ -1,56 +1,55 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
-import {bindCreateAction} from 'redux'
-import {Map,fromJS} from 'immutable'
+import { connect } from 'react-redux'
+import { bindCreateAction } from 'redux'
+import { Map, fromJS, List } from 'immutable'
 import ReviseComponent from 'components/revise/Revise/index.js'
 class reivse extends Component {
-    constructor(props){
-        super(props);
-        this.state=Map({
-            cahchInfo:{},
-        })
+
+    state = {
+        nickname:"",
+        careerList:"",
+        educationList:"",
+        skills:"",
+        licenseList:"",
     }
-    componentDidUpdate(prevProps){
-        if(this.props.myInfo != prevProps.myInfo){
-            this.initialState()
+    static getDerivedStateFromProps(nextProps, prevState) {
+        const { myInfo } = nextProps;
+        return {
+            nickname: myInfo.nickName,
+            careerList: fromJS(myInfo.careeList),
+            educationList: fromJS(myInfo.educationList),
+            skills: fromJS(myInfo.categoryList),
+            licenseList: fromJS(myInfo.licenseList),
         }
     }
-    initialState=()=>{
-        this.setState({
-            cahchInfo :this.state.set('cahchInfo',fromJS(this.props.myInfo))
-        })
-    }
+
     render() {
-        const{
+        const {
             myInfo
         } = this.props;
-        const {
-            cahchInfo
-        } = this.state;
-        if(cahchInfo != undefined)
-            console.log(cahchInfo.toJS());
-        if(cahchInfo !=undefined){
+        if (myInfo != "") {
             return (
                 <ReviseComponent
-                    info ={cahchInfo.toJS().cahchInfo}
+                    inputdata ={this.state}
+                    info={myInfo}
                 />
             )
         }
-        else{
-            return(
+        else {
+            return (
                 <div></div>
             )
         }
-        
-        
+
+
     }
 }
 
 export default connect(
-    (state)=>({
+    (state) => ({
         myInfo: state.base.get('myInfo'),
     }),
-    (dispatch)=>({
+    (dispatch) => ({
 
     })
 )(reivse);

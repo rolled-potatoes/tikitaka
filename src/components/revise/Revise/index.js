@@ -3,20 +3,61 @@ import styles from './styles.scss'
 import classnames from 'classnames'
 import StarRatings from 'react-star-ratings';
 import { Link } from 'react-router-dom'
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+
 import Button from '../../common/Button'
 /*import { prependOnceListener } from 'cluster';*/
 const cx = classnames.bind(styles)
 const proImg = require('imgs/프로필.png')
+const Input_date =({arr})=>{
+  let temp = arr.map(item=>{
+    const {getDate,things} = item
+    return(
+      <div>
+        <div>
+          <DayPickerInput
+            value={new Date(getDate)}
+            dayPickerProps={{
+              enableOutsideDaysClick :true,
+              month: new Date(),
+              todayButton: 'Today',
+            }}
+          />
+        </div>
+        <div>
+          <input />
+        </div>
+        <div>
+          <button>
 
+          </button>
+        </div>
+      </div>
+    )
+  })
+}
 //경력 학력 => 년도 
 //기술 자격증 => 그냥
-const Revise = ({ info }) => {
+const Revise = ({ 
+  info,
+  inputdata
+ }) => {
+   
   const {
-    name, nickName, organization, email,
-    careeList, userId, grade, categoryList,
-    location, intro, licenseList, educationList,
+    name,  organization, email,
+    userId, grade, 
+    location, intro,
     proList, follow
   } = info
+  const {
+    nickname,
+    careerList,
+    educationList,
+    skills,
+    licenseList,
+  } = inputdata
+  
+  
   return (
     <div className={cx('mypage-page')}>
       <div className={cx('mypageTxt')}>
@@ -100,7 +141,7 @@ const Revise = ({ info }) => {
               <tr className={cx('info')}>
                 <th>닉네임</th>
                 <tr className={cx('compo')}>
-                  <input value ={nickName}/>
+                  <input value ={nickname}/>
                 </tr>
               </tr>
               <tr className={cx('info')}>
@@ -125,15 +166,19 @@ const Revise = ({ info }) => {
             </div>
           </div>
           <div className={cx('info-box')}>
-            <div className={cx('info-txt')}>
-              경력
-          </div>
-            <div className={cx('careerlist')}>
+            <div>
+              <div>
+                <div className={cx('info-txt')}>
+                  경력
+                </div>
+                <button>삭제</button>
+              </div>
 
+              <div className={cx('careerlist')}>
+                
+              </div>
             </div>
-            <div className={cx('add-button')}>
-              <Button>수정하기</Button>
-            </div>
+            
           </div>
           <div className={cx('info-box')}>
             <div className={cx('info-txt')}>
