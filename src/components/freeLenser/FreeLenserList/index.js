@@ -30,12 +30,12 @@ const FreeLenserContent = ({ list }) => {
     return (
       <div className={cx('FreeLenserList-post')}>
         <div className={cx('post-img', 'post-item')}>
-          <Link to={`/detail/${id}`}>
+          <Link to={`/freeLenser/detail/${id}`}>
             <img src={imgSrc} />
           </Link>
         </div>
         <div className={cx('post-nickname', 'post-item')}>
-          <Link to={`/detail/${id}`}>
+          <Link to={`/freeLenser/detail/${id}`}>
             {nickName}
           </Link>
         </div>

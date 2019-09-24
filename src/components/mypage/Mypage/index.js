@@ -8,7 +8,7 @@ const cx = classnames.bind(styles)
 
 const Mypage = ({myInfo,visibles,onClickMenuitem }) => {
   const { 
-    nickName, organization, careeList, 
+    nickName, organization, careerList, 
     userId, location, Intro, licenseList, grade,
     educationList ,categoryList,proList,follow
   } = myInfo
@@ -38,7 +38,7 @@ const Mypage = ({myInfo,visibles,onClickMenuitem }) => {
             visibles={visibles}
             categoryList={categoryList}
             educationList={educationList}
-            careeList={careeList}
+            careerList={careerList}
             licenseList={licenseList}
           />
         </div>

@@ -12,7 +12,6 @@
         font-size: 2rem;
         font-weight: bold;
         padding-top: 2%;
-        color: rgb(99, 99, 207);
         padding-bottom: 2%;
         border-bottom: 1px solid gray;
     }
@@ -102,9 +101,12 @@
             margin-right: 100px;
         }
 
-        .inpassword input[type="text"] {
-            height: 30px;
-            width: 400px;
+        .inpassword {
+            >input{
+
+                height: 30px;
+                width: 400px;
+            }
 
         }
 
@@ -112,17 +114,13 @@
     }
 
 
-    .revise-tem {
-        width: 1300px;
-        padding-left: auto;
-        padding-right: auto;
-
+    .FreeLenserDetail-wrapper {
         .revise-box {
             font-weight: bold;
-            margin-top: 20px;
-            margin-left: 20px;
+            margin-top: 10px;
+            margin-left: 10px;
             float: left;
-            width: 1000px;
+            padding: 10px;
             height: auto;
             background-color: white;
             border: 2px solid rgb(246, 246, 246);
@@ -130,20 +128,31 @@
             .info-box {
                 width: 900px;
                 height: auto;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 20px;
+                margin: 20px auto;
+                margin-bottom: 40px;
                 text-align: left;
-            }
+                .info-top{
+                    display: grid;
 
-            .info-txt {
-                height: 50px;
-                width: 900px;
-                border-bottom: 1px solid $tikitaka-blue;
-                font-size: 1.7rem;
-                font-weight: bolder;
-                margin-bottom: 20px;
-                color: $tikitaka-blue;
+                    grid-template-columns: 8fr 1fr;
+                    padding-bottom:10px;
+                    border-bottom: 1px solid $tikitaka-blue;
+                    margin-bottom: 20px;
+                    .info-txt {
+                        font-size: 1.7rem;
+                        font-weight: bolder;
+                        color: $tikitaka-blue;
+                    }
+                    .info-insert{
+                        height: 30px;
+                        background: $tikitaka-yello;
+                        border: 0;
+                        color: black;
+                        font-size: 1.1rem;
+                        width: 100%;
+                    }
+                    
+                }
             }
         }
     }
@@ -218,5 +227,36 @@
             }
         }
 
+    }
+}
+.Revise-input-wrapper2{
+    grid-template-columns: 8fr 1fr !important;
+
+}
+.Revise-input-wrapper{
+    display: grid;
+    grid-template-columns: 2fr 6fr 1fr;
+    margin-bottom: 5px;
+    
+    input{
+        height: 30px;
+        text-indent: 10px;
+        border: 1px solid $oc-gray-4;
+    }
+    .Revise-input-input{
+        .Revise-inputs{
+            width: 95%;
+        }
+    }
+    .Revise-input-removeBtn{
+        >button{
+            background: $tikitaka-blue;
+            border:0;
+            width: 100%;
+            cursor: pointer;
+            color:white;
+            height: 30px;
+            font-size:1.1rem; 
+        }   
     }
 }

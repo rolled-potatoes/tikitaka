@@ -51,10 +51,15 @@ const mypageSide = ({
       <div className={cx('profile-intro')}>
         {Intro}
       </div>
-      <div className={cx('profil-follow')}>
-        <Link to='/revise'>프로필 수정</Link>
-
-      </div>
+      <Link className={cx('profil-follow')} to='/mypage'>
+        <div >프로필 보기</div>
+      </Link>
+      <Link className={cx('profil-follow')} to='/mypage/mylist'>
+        <div >마이 프로젝트</div>
+      </Link>
+      <Link className={cx('profil-follow')} to='/mypage/revise'>
+        <div >프로필 수정</div>
+      </Link>
     </div>
   )
 }

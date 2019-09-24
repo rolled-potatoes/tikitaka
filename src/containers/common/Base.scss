@@ -1,0 +1,16 @@
+.base-wrapper{
+    position: fixed;
+    width: 400px;
+    height: 500px;
+    right: 0;
+    bottom : 0;
+}
+
+.base-wrapper-close{
+    position: fixed;
+    right: 23px;
+    bottom : 23px;
+}
+.noneDisplay{
+    display: none;
+}

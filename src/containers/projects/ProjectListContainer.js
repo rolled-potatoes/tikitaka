@@ -36,6 +36,7 @@ class ProjectListContainer extends Component {
     }
     componentDidMount() {
         const { page } = this.props.match.params
+        window.scrollTo(0, 0)
         const { ProjectAction } = this.props
         ProjectAction.getList({ page: page });
     }

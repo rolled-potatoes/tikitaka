@@ -24,6 +24,7 @@ class FreeLenserListContainer extends Component {
 
     //페이지 들어올때 스크롤 이벤트 생성
     componentDidMount() {
+        window.scrollTo(0, 0)
         window.addEventListener("scroll", this.handleScroll);
         this.props.FLActions.getList();
     }

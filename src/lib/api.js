@@ -4,9 +4,33 @@ import datas from 'data/datas.json'
 
 export const getProject =(id)=> axios.get(`/api/project/${id}`) 
 export const login = (email, password) => axios.post('/api/auth/login',{email,password})
-export const checkLogin = () =>axios.get('/api/auth/check')
-export const logout= ()=> axios.post('/api/auth/logout')
 
+// export const login = (userId, password) => axios.post('/auth/login_process',{userId,password})
+
+export const checkLogin = () =>axios.get('/api/auth/check')
+//export const logout= ()=> axios.get('/auth/logout')
+export const logout= ()=> axios.post('/api/auth/logout')
+export const singup = (userId, password) => axios.post('/auth/register_process',{userId,password})
+
+export const test =()=> axios.get('/zz'); 
+export const postProject=(title,description) => axios.post('/project/create_process',{title,description});
+export const naver =()=> axios.get('/auth/naver');
+
+export const getCandidateInfo =(list)=>{
+    let data = datas.freeLenserList;
+    let frees=[]
+    list.map(item =>{
+        frees.push(
+            data.find(free=>{
+            return free.id == item
+        }))
+    })
+    return frees;
+}
+export const getNewFeed =()=>{
+    let data = datas.timeline;
+    return data;
+}
 export const getMyInfo =()=>{
     let data = datas.myInfo;
     return data;

@@ -13,7 +13,7 @@ const mypageContent = ({
   visibles,
   categoryList,
   educationList,
-  careeList,
+  careerList,
   licenseList
 }) => (
     <Fragment>
@@ -27,7 +27,7 @@ const mypageContent = ({
         <div className={cx('FreeLenserDetail-content')}>
           <DetailRow data={categoryList} visible={`visible-${visibles[0]}`} />
           <DetailRow data={licenseList} visible={`visible-${visibles[1]}`} />
-          <DetailColum list={careeList} visible={`visible-${visibles[2]}`} />
+          <DetailColum list={careerList} visible={`visible-${visibles[2]}`} />
           <DetailColum list={educationList} visible={`visible-${visibles[3]}`} />
         </div>
       </div>

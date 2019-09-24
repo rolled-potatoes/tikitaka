@@ -22,6 +22,7 @@ const Sign = ({
   phone,
   duplicate_check, 
   onChange,
+  onSingUp,
 }) => (
     <div className={cx('signup-wrapper')}>
       <div className={cx('signup-top')}>
@@ -99,7 +100,7 @@ const Sign = ({
         </div>
 
         <div className={cx('signup-btn')}>
-          <button>회원가입</button>
+          <button onClick={onSingUp}>회원가입</button>
         </div>
       </div>
 

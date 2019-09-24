@@ -22,9 +22,8 @@ class WritePostContainer extends Component {
     componentDidUpdate(prevProp){
         const {id} = this.props.match.params;
         const { WriteActions } = this.props;
-        if(id === undefined)    
-            WriteActions.reset();
-        
+        /*  if(id === undefined)    
+            WriteActions.reset(); */
     }
     componentWillUnmount(){
         const {WriteActions} =this.props;
@@ -38,7 +37,7 @@ class WritePostContainer extends Component {
     handleDatePicker = (selectedDay, modifiers, dayPickerInput) => {
         const { WriteActions } = this.props;
         const today = new Date();
-        if (today >= selectedDay) {
+        if (today > selectedDay) {
             alert('올바른 기간이 아닙니다.')
             WriteActions.changeInput({ id: 'dueDate', data: today })
             return;
@@ -94,12 +93,23 @@ class WritePostContainer extends Component {
         }) */
         WriteActions.reset()
     }
+    onSubmit = async()=>{
+        const {
+            title,
+            description,
+            WriteActions,
+            dueDate,
+            period,
+        } = this.props;
+        await WriteActions.postProject(title,description)
+    }
     render() {
         const {
             handleDatePicker,
             onChangeInput,
             onClickCategory,
             onClickReset,
+            onSubmit,
         } = this
         const {
             title,
@@ -123,6 +133,7 @@ class WritePostContainer extends Component {
                 onDayClick={handleDatePicker}
                 onChangeInput={onChangeInput}
                 onClickCategory={onClickCategory}
+                onSubmit={onSubmit}
             />
         );
     }

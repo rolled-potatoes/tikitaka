@@ -1,0 +1,28 @@
+.pageNotFound-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    img{
+        height: 500px;
+        animation-duration: 3s;
+        animation-name: notfound;
+        animation-iteration-count: infinite;
+    }
+}
+//keyframes 애니메이션 규칙 정의
+
+@keyframes notfound{
+    from{
+        height: 500px
+        
+    }
+    50%{
+        height: 550px;
+
+    }
+    to{
+        height: 500px;
+    }
+}

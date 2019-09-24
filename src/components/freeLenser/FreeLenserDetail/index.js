@@ -74,7 +74,7 @@ const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check })
           <div className={cx('FreeLenserDetail-content')}>
             <DetailRow data={freeInfo.categoryList} visible={`visible-${visibles[0]}`} />
             <DetailRow data={freeInfo.lisenceList} visible={`visible-${visibles[1]}`} />
-            <DetailColum list={freeInfo.careeList} visible={`visible-${visibles[2]}`} />
+            <DetailColum list={freeInfo.careerList} visible={`visible-${visibles[2]}`} />
             <DetailColum list={freeInfo.educationList} visible={`visible-${visibles[3]}`} />
           </div>
         </div>

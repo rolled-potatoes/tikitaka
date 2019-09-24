@@ -1,0 +1,69 @@
+@import 'styles/utils.scss';
+.candidate-Wrapper{
+        width: 100%;
+        z-index: 3;
+        top:0;
+        height: 100%;
+        color:$oc-gray-7;
+        position: fixed;
+        background: rgba(20,20,20,0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .candidate-container{
+                width: 700px;
+                max-height: 300px;
+                overflow-y: scroll;
+                background: white;
+                position: absolute;
+                padding:30px;
+                border: 1px solid $oc-gray-5;
+                .close-btn{
+                        font-size:20px;
+                        color:#000;
+                        padding-right:10px;
+                        position: absolute;
+                        right: 30px;
+                        cursor: pointer;
+                }
+                .candidate-bottom{
+                        .candidate-td{
+                                font-weight: 900;
+                                display: grid;
+                                grid-template-columns: 2fr 2fr 1fr 1fr;
+                                padding-bottom: 15px;
+                                border-bottom: 1px solid $oc-gray-4;
+                                
+                        }
+                        
+                        .candidate-content{
+                                margin-top:10px;
+                                .candidate-content-item{
+                                        display: grid;
+                                        grid-template-columns: 2fr 2fr 1fr 1fr;
+                                        >button{
+                                                width: 80px;
+                                                height: 30px;
+                                                border-radius: 15px;
+                                                border:1px solid rgb(24, 138, 231);
+                                                background: $tikitaka-blue;
+                                                transition: all 0.1s ease-in;
+                                                &:hover{
+                                                        position: relative;
+                                                        left: -2px;
+                                                        width: 84px;
+                                                }
+                                        }
+                                }
+                                .candidate-content-item+.candidate-content-item{
+                                        margin-top:10px;
+                                        
+                                }
+                        }
+                }
+        }
+
+}
+.candidate-close{
+        display: none;
+}

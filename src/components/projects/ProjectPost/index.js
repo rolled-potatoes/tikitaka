@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 const cx = classNames.bind('styles')
 
-const ProjectPost = ({ post,id,mycontent }) => {
+const ProjectPost = ({ post,id,mycontent,onModals }) => {
   if (post !== "") {
     {
       const { writeDate, dueDate, title, price, categoryList, description, period
@@ -100,8 +100,9 @@ const ProjectPost = ({ post,id,mycontent }) => {
             <div className={cx('writer-organization')}>
               {organization}
             </div>
-            <div className={cx('chat-btn')}>채팅하기</div>
             <div className={cx('chat-btn')}>지원하기</div>
+            <div className={cx('chat-btn')} onClick={onModals}>지원자보기</div>
+            <div className={cx('chat-btn')}>완료하기</div>
           </div>
         </div>
       )

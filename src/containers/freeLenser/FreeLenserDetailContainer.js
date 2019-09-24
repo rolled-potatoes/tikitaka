@@ -15,6 +15,8 @@ class FreeLenserDetailContainer extends Component {
 
     componentDidMount(){
         this.initial();
+        window.scrollTo(0, 0)
+
     }   
     
     initial=async()=>{

@@ -5,10 +5,11 @@
 import {createAction, handleActions} from 'redux-actions'
 import {Map, fromJS} from 'immutable'
 import {pender} from 'redux-pender'
-
+import * as api from 'lib/api.js'
 const CHANGE_INPUT = 'signup/CHANGE_INPUT'
-
+const SUBMIT = 'signup/SUBMIT'
 export const changeInput = createAction(CHANGE_INPUT)
+export const submit = createAction(SUBMIT,api.singup)
 
 const initialState = Map({
     email:"",
@@ -27,5 +28,15 @@ export default handleActions({
     [CHANGE_INPUT] : (state,action)=>{
         const {target, value} = action.payload
         return state.set(target, value);
-    }
+    },
+    ...pender({
+        onSuccess:(state,action) =>{
+            console.log('success');
+            return state
+        },
+        onError:(state,action)=>{
+            console.log('error');
+            return state;
+        }
+    })
 },initialState)

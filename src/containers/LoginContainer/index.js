@@ -53,7 +53,13 @@ class LoginContainer extends React.Component {
 
     }
   }
- 
+  ontt=()=>{
+    alert('로그인 되었습니다.')
+  }
+  onNaver =async ()=>{
+    let a = window.open("http://175.124.10.33:3000/auth/naver","hihi","width=600,height=500")
+  }
+  
   render() {
     const {
       inputEmail,
@@ -61,7 +67,7 @@ class LoginContainer extends React.Component {
       goSignPage,
       onLogin,
       onKeyPressEnter,
-      asdasd,
+      onNaver,
     } = this
     const {
       email,
@@ -84,6 +90,7 @@ class LoginContainer extends React.Component {
           onClickSign={goSignPage}
           onClickLogin={onLogin}
           onKeyPressEnter={onKeyPressEnter}
+          onNaver={onNaver}
         />
     );
   }

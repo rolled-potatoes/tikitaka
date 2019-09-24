@@ -12,7 +12,7 @@ const googleImg = require('imgs/google.jpg')
 const kakaoImg = require('imgs/kakao.jpg')
 const facebookImg = require('imgs/페이스북.png')
 
-const Login = ({onChangeEmail, onChangePassword, onClickLogin,email,password,onKeyPressEnter}) => (
+const Login = ({onChangeEmail, onChangePassword, onClickLogin,email,password,onKeyPressEnter,onNaver}) => (
   <div className={cx('login-wrapper')}>
     <div className={cx('login-page')}>
       <h1 className={cx('login-text')}>로그인</h1>
@@ -46,7 +46,6 @@ const Login = ({onChangeEmail, onChangePassword, onClickLogin,email,password,onK
               <Button theme={'apibtn'}>
                 <img src={naverImg} />
               </Button>
-
             </div>
             <div className={cx('api-naver')}>
               <Button theme={'apibtn'}>

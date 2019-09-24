@@ -1,0 +1,61 @@
+@import 'styles/utils.scss';
+
+.myList-wrapper{
+        .myList-top{
+                padding:20px;
+                border: 1px solid $oc-gray-4;
+                background: white;
+
+                .myList-title{
+                        font-size: 1.3rem;
+                        font-weight: 900;
+                        text-indent: 20px;
+                }
+        }
+        .myList-bottom{
+                background: white;
+                margin-top: 20px;
+                border: 1px solid $oc-gray-4;
+                .myList-bottom-title{
+                        display: grid;
+                        grid-template-columns: 1fr 5fr;
+                        margin-top:10px;
+                        padding: 10px 0;
+                        font-size: 1.2rem;
+                        border-bottom: 1px solid $oc-gray-4;
+                        &::after{
+                                content: '';
+                                width: 1px;
+                                height: 20px;
+                                background: #ced4da;
+                                position: absolute;
+                                transform: translate(148px, -1px);
+                        }
+                        .myList-bottom-title-date{
+                                text-align: center;
+
+                        }
+                        .myList-bottom-title-title{
+                                text-indent: 30px;
+                        }
+                }
+                .myList-bottom-item{
+                        display: grid;
+                        cursor: pointer;
+                        grid-template-columns: 1fr 5fr;
+                        padding: 20px 0;
+                        .myList-bottom-item-date{
+                                text-align: center;
+                        }
+                        .myList-bottom-item-title{
+                                text-indent: 30px;
+                        }
+                }
+                .myList-bottom-item+ .myList-bottom-item{
+                        border-top: 1px solid $oc-gray-4;
+                }
+                .myList-bottom-item:nth-child(even){
+                        background: $oc-gray-2;
+                }
+        }
+}

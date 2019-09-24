@@ -1,0 +1,77 @@
+@import 'styles/utils.scss';
+
+.newfeed-wapper {
+        position: absolute;
+        background: $oc-gray-0;
+        bottom: 23px;
+        right: 23px;
+        border: 1px solid $oc-gray-4;
+        .newfeed-title {
+                height: 30px;
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid $oc-gray-4;
+                text-indent: 10px;
+        }
+
+        .zzz {
+                overflow: scroll;
+                max-height: 500px;
+
+        }
+
+        .newfeed-line {
+
+                display: grid;
+
+                grid-template-columns: 2fr 5fr;
+
+                .newfeed-line-writer {
+                        overflow: hidden;
+                        >a {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+                        }
+
+                        padding-right: 5px;
+
+                        //border-right: 1px solid $oc-gray-6;
+                        .newfeed-line-writer-img {
+                                >img {
+                                        border-radius: 50%;
+                                        width: 50px;
+                                        height: 50px;
+                                }
+                        }
+
+                        .newfeed-line-writer-name {}
+                }
+
+                .newfeed-line-text {
+                        display: flex;
+                        flex-direction: column;
+
+                        .newfeed-line-date {
+                                text-align: right;
+                                padding-right: 10px;
+                        }
+
+                        .newfeed-line-content {
+                                display: flex;
+                                height: 100%;
+                                align-items: center;
+                                text-indent: 10px;
+                        }
+                }
+        }
+
+        .newfeed-line+.newfeed-line {
+                border-top: 1px solid $oc-gray-4;
+        }
+}
+.newfeed-wrapper-close{
+        display: none;
+}

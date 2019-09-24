@@ -37,7 +37,7 @@ const Lists = ({ projectList }) => {
 
         <div className={cx('project-content')}>
           <div className={cx('title')}>
-            <h2><Link to={`/post/${id}`}>{title}</Link></h2>
+            <h2><Link to={`/project/post/${id}`}>{title}</Link></h2>
             <div className={cx('writeDate')}>
               {`등록일 ${writeYear}년 ${writeMonth}월 ${writeDay}일`}
             </div>

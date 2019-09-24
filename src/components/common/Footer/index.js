@@ -14,12 +14,13 @@ const Footer = ({ }) => (
     </div>
     
     <div className={cx('aboutus')}>
-      
-      <p>(주) 프리모아</p>
-      <p>대표이사 : 한경원 | CFO : 주지웅 | 사업자등록번호 : 113-86-89926 | 주소 : 서울시 금천구 벚꽃로 298, 911-912호(가산동, 대륭포스트타워6차)</p>
-      <p>고객센터 : 평일(공휴일 휴무) 10:00 ~ 19:00 | 02-6380-7521 | help@freemoa.net</p>
-      <p>Copyright 2018 Freemoa Inc., All rights reserved.</p>
+      <div>
+        <div>(주) 티키타카</div>
+        <div>대표 : 아무개 | 사업자등록번호 : test-number | 주소 : 경상북도 경산시 대학로 280 </div>
+        <div>고객센터 : 평일(공휴일 휴무) 10:00 ~ 19:00 | 010-xxxx-xxxx | test@naver.com</div>
+        <div>Copyright 2018 Freemoa Inc., All rights reserved.</div>
       </div>
+    </div>
     
   </footer>
 );

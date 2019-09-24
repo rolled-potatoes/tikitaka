@@ -7,7 +7,7 @@ import Footer from '../Footer'
 const cx = classNames.bind(styles)
 
 const PageTemplate = ({children}) => (
-  <div className={cx('page-template')}>
+  <div className={cx('page-template') }id='pagetem'>
     <HeaderContainer/>
     <main className='main'>
       {children}

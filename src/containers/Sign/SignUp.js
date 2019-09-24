@@ -9,8 +9,14 @@ class SignUp extends Component {
         const { id, value } = e.target;
         const { SingupActions } = this.props;
         SingupActions.changeInput({ target: id, value: value })
-    }
+    }   
+    onSingUp= ()=>{
+        const {email, password,SingupActions} = this.props;
+        console.log(email,password);
+        
+       SingupActions.submit(email,password);
 
+    }
     onChange_agree =(e)=>{
         const {checked,id} = e.target;
         const { SingupActions } = this.props;
@@ -31,6 +37,7 @@ class SignUp extends Component {
         const {
             onChange_agree,
             onChange_things,
+            onSingUp,
         } = this
         return (
             <SignComponent
@@ -44,6 +51,7 @@ class SignUp extends Component {
                 agree={agree}
                 duplicate_check={duplicate_check}
                 onChange={onChange_things}
+                onSingUp={onSingUp}
                 onCheck={onChange_agree}
             />
         );
