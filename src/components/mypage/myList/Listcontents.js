@@ -1,7 +1,7 @@
 import React from 'react';
 const List =({LinkToPost})=>{
     let temp=[];
-    for(let  i = 1 ; i < 10 ; i++){
+    for(let  i = 1 ; i < 20 ; i++){
         temp.push(
             <li value={i} onClick={LinkToPost} className='myList-bottom-item'>
                 <div className='myList-bottom-item-date'>

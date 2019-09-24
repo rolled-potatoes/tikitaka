@@ -16,6 +16,18 @@ export const test =()=> axios.get('/zz');
 export const postProject=(title,description) => axios.post('/project/create_process',{title,description});
 export const naver =()=> axios.get('/auth/naver');
 
+export const getFollowerInfo = ({follow})=>{
+    let data = datas.freeLenserList;
+    let follower = [];
+    follow.map(item =>{
+        follower.push(
+            data.find(node =>{
+                return item == node.email
+            })
+        )
+    })
+    return follower;
+}
 export const getCandidateInfo =(list)=>{
     let data = datas.freeLenserList;
     let frees=[]

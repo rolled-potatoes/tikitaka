@@ -60,6 +60,9 @@ const mypageSide = ({
       <Link className={cx('profil-follow')} to='/mypage/revise'>
         <div >프로필 수정</div>
       </Link>
+      <Link className={cx('profil-follow')} to='/mypage/follow'>
+        <div >팔로우 목록</div>
+      </Link>
     </div>
   )
 }

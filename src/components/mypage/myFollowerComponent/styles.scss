@@ -1,0 +1,65 @@
+@import 'styles/utils.scss';
+
+.follower-wrapper{
+        .follower-top{
+                padding:20px;
+                border: 1px solid $oc-gray-4;
+                background: white;
+                .follower-title{
+                        font-size: 1.3rem;
+                        font-weight: 900;
+                        text-indent: 20px;
+                }
+        }
+        .follower-bottom{
+                background: white;
+                margin-top: 20px;
+                border: 1px solid $oc-gray-4;
+                .follower-bottom-title{
+                        display: grid;
+                        grid-template-columns: 2fr 5fr 1fr;
+                        margin-top:10px;
+                        padding: 10px 0;
+                        font-size: 1.2rem;
+                        border-bottom: 1px solid $oc-gray-4;
+                        .follower-bottom-title-nickname{
+                                text-align: center;
+                                &::after{
+                                        content: '';
+                                        width: 1px;
+                                        height: 22px;
+                                        background: $oc-gray-4;
+                                        position: absolute;
+                                        transform: translate(83px, -3px);
+                                }
+                        }
+                        .follower-bottom-title-email{
+                                text-indent: 30px;
+
+                        }
+                }
+                .follower-li{
+                        display: grid;
+                        grid-template-columns: 2fr 5fr 1fr;
+                        padding: 20px 0;
+                        .follower-li-div1{
+                                cursor: pointer;
+                                text-align: center;
+                        }
+                        .follower-li-div2{
+                                text-indent: 30px;
+                        }
+                        button{
+                                width: 80px;
+                                height: 25px;
+                                color:white;
+                                border-radius: 5px;
+                                border: 1px solid #188ae7;
+                                background: #35CBEE;
+                        }
+                }
+                .follower-li:nth-child(even){
+                        background: $oc-gray-2;
+                }
+        }
+}
