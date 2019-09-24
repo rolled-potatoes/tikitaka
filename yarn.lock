@@ -10436,6 +10436,15 @@ react-prop-types@^0.4.0:
   dependencies:
     warning "^3.0.0"
 
+react-ratings-declarative@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/react-ratings-declarative/-/react-ratings-declarative-3.4.1.tgz#9025393bd08fcae44b4052c575468c8d1ff994e4"
+  integrity sha512-zL3d5PNcDcF/+KNcZlP2KVE5UIp53yLk7EJkbM9bXpvrqUp/S91lp7SkFsWPqv+q8dUg3BOdfEX1RWNQs1ocVw==
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+    react "^16.2.0"
+
 react-redux@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.1.0.tgz#72af7cf490a74acdc516ea9c1dd80e25af9ea0b2"
@@ -10538,7 +10547,7 @@ react-transition-group@^4.0.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@^16.1.0, react@^16.4.1, react@^16.5.1:
+react@^16.1.0, react@^16.2.0, react@^16.4.1, react@^16.5.1:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"
   integrity sha512-+7LQnFBwkiw+BobzOF6N//BdoNw0ouwmSJTEm9cglOOmsg/TMiFHZLe2sEoN5M7LgJTj9oHH0gxklfnQe66S1w==

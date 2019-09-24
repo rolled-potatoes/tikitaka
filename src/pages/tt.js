@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
+import Ratings from 'react-ratings-declarative';
 import {withRouter} from 'react-router-dom'
 class tt extends Component {
-    componentDidMount(){
-        this.a();
+    state={
+        rating:0,
     }
-    a= async() =>{
-        const {history} = this.props;
-        window.opener.location.href = 'http://119.18.120.225:3000'
-        await window.close();
-    }
+    changeRating=( newRating ) =>{
+        this.setState({
+          rating: newRating
+        });
+      }
+   
     render() {
         return (
-            <div>
-                
-            </div>
+            <Ratings
+            rating={this.state.rating}
+            widgetRatedColors="blue"
+            changeRating={this.changeRating}
+          >
+            <Ratings.Widget />
+            <Ratings.Widget />
+            <Ratings.Widget
+              widgetDimension="60px"
+              svgIconViewBox="0 0 5 5"
+              svgIconPath="M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z"
+            />
+            <Ratings.Widget widgetHoverColor="black" />
+            <Ratings.Widget />
+          </Ratings>
         );
     }
 }

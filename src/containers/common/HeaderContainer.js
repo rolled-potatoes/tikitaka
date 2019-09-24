@@ -19,16 +19,17 @@ class HeaderContainer extends Component {
     render() {
         const{
             logged,
-            timeline,
+            myInfo,
         } =this.props
         const {
             handleLogout
         } = this
+        const nickName = myInfo.nickName? myInfo.nickName : "";
         return (
             <Header
                 onClickLogout= {handleLogout}
                 logged= {logged}
-                timeline={timeline}
+                nickName={nickName}
             />
         );
     }
@@ -37,6 +38,7 @@ class HeaderContainer extends Component {
 export default connect(
     (state)=>({
         logged : state.base.get('logged'),
+        myInfo : state.base.get('myInfo'),
     }),
     (dispatch) =>({
         BaseActions : bindActionCreators(baseActions,dispatch)

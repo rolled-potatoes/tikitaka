@@ -15,9 +15,7 @@ class ProjectListContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            searchString: '',
             dropdown_dispaly: false,
-            dropdown_name: "카테고리",
         }
     }
     /**
@@ -42,9 +40,9 @@ class ProjectListContainer extends Component {
     }
     changeSearchString = (e) => {
         const { value } = e.target;
-        this.setState({
-            searchString: value
-        })
+        const {ProjectAction} = this.props;
+        ProjectAction.changetSearch({value:value})
+        
     }
     keyPressSearchSring = (e) => {
         const { key } = e
@@ -61,14 +59,12 @@ class ProjectListContainer extends Component {
     }
     dropdown_onClick = (e) => {
         const { value } = e.target;
-        this.setState({
-            dropdown_name: value
-        })
+        const {ProjectAction} = this.props;
+        ProjectAction.changeCategory({value:value});
+        
     }
     onClickSearch = () => {
-        const { history } = this.props;
-        const { searchString } = this.state;
-        history.push(`/project/1?search=${searchString}`)
+            
     }
     render() {
         const {
@@ -79,13 +75,13 @@ class ProjectListContainer extends Component {
             dropdown_onClick,
         } = this
         const {
-            searchString,
-            dropdown_name,
             dropdown_dispaly,
         } = this.state;
         const {
             projectList,
-            lastPage
+            lastPage,
+            searchText,
+            searchCategory
         } = this.props
 
         return (
@@ -93,10 +89,10 @@ class ProjectListContainer extends Component {
                 <ProjectListComponent
                     ontoggle={dropdown_onToggle}
                     dropdownOnClick={dropdown_onClick}
-                    dropdownName={dropdown_name}
+                    dropdownName={searchCategory}
                     dropdowndispaly={dropdown_dispaly}
                     projectList={projectList}
-                    searchString={searchString}
+                    searchString={searchText}
                     changeSearch={changeSearchString}
                     keyPressSearchSring={keyPressSearchSring}
                     onClickSearch={onClickSearch}
@@ -112,7 +108,9 @@ class ProjectListContainer extends Component {
 export default connect(
     (state) => ({
         projectList: state.ProjectList.get('projectList'),
-        lastPage : state.ProjectList.get('lastPage')
+        lastPage : state.ProjectList.get('lastPage'),
+        searchText: state.ProjectList.get('searchText'),
+        searchCategory: state.ProjectList.get('searchCategory'),
     }),
     (dispath) => ({
         ProjectAction: bindActionCreators(projectAction, dispath)

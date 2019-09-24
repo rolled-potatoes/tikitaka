@@ -53,7 +53,7 @@ const Main = ({LinkToProject,LinkToFree,LinkToSign,LinkToLogin}) => {
           </div>
 
           <div className='main-currentnumber-resister'>
-            <span>현재 등록된 프리렌서 수</span>
+            <span>현재 등록된 프리랜서 수</span>
             <div>5</div>
           </div>
 

@@ -36,7 +36,7 @@ const App = () => {
         <Route exact path ='/write/:id?' component={WritePostPage}/>
         <Route exact path ='/FindID' component={FindIdPage}/>
         <Route exact path ='/mypage/revise' component={RevisePage}/>
-        <Route exact path ='/exit' component={TT}/>
+        {/* <Route exact path ='/exit' component={TT}/> */}
         <Route component = {PageNotFound}/>
       </Switch>
       <Base />
