@@ -8,24 +8,22 @@ class SignUp extends Component {
         passwordStr : "",
         password_check: false,
     }
-    onkeyPressInput = (e) =>{
-        console.log(e.which);
-        
-        if(e.which  === 32){
-            console.log(false);
-            
-            return false;
-        }
-    }
-    componentDidMount(){
-
-    }
-    onChange_things = async (e) => {
+    onChange_things =  (e) => {
         const { id, value } = e.target;
-        console.log(e.which);
-        
+        let values=value;
+        //공백방지
+        let str_space = /\s/
+        if(str_space.exec(value)){
+            values= values.replace(' ','');
+        }
+        //--
+
+        //리덕스에 입력
         const { SingupActions,password ,passwordR} = this.props;
-        await SingupActions.changeInput({ target: id, value: value })
+        SingupActions.changeInput({ target: id, value: values })
+        //--
+
+        //비밀번호와 비밀번호 확인이 일치하는지 검사하여 표시할 텍스트 설정
         if(id === 'passwordR'){
             if( (password === value)){
                 this.setState({
@@ -55,13 +53,26 @@ class SignUp extends Component {
                 })
             }
         }
+        //--
     }
     onSingUp = () => {
-        const { email, password, SingupActions } = this.props;
+        const { 
+            email, 
+            password, 
+            SingupActions,
+            duplicate_check,
+        } = this.props;
         const {
             password_check
         } = this.state;
-        if(email === "" || password === "")
+        
+        /**
+         * 회원가입 api 연결 이전 확인 해야할 사항
+         * 모든 항목 입력여부 확인, 닉네임 중복확인, 비밀번호 일치확인, 개인정보동의체크
+         */
+        if(email === "" || password === "" || !duplicate_check){
+
+        }
         if(!password_check){
             return alert('비밀번호가 일치하지 않습니다.')
         }

@@ -43,7 +43,7 @@ const Sign = ({
             <label>비밀번호</label>
           </h3>
           <span>
-            <input  onKeyPress={onkeyPressInput} type ='password' value={password}  id ="password" onChange={onChange}/>
+            <input type ='password' value={password}  id ="password" onChange={onChange}/>
           </span>
           <h3 className='passwordR-h3'>
             <label>비밀번호 확인</label>
