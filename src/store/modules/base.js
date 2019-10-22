@@ -62,6 +62,9 @@ export default handleActions ({
         onSuccess:(state,action) =>{
         const myinfo = api.getMyInfo();
         const timeline = api.getNewFeed();
+        const {data} =action.payload
+        console.log(data);
+        
             return state.set('logged',true)
                         .set('myInfo',myinfo)
                         .set('timeline',timeline)
@@ -81,7 +84,8 @@ export default handleActions ({
             const {logged} = action.payload.data
             const myinfo = api.getMyInfo();
             const timeline = api.getNewFeed();
-
+const {data} =action.payload
+        console.log(data);
             return state.set('logged',logged)
                         .set('myInfo',myinfo)
                         .set('timeline',timeline)

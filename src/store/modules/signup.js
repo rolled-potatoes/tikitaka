@@ -18,7 +18,6 @@ const initialState = Map({
     name :"",
     nickname :"",
     organization :"",
-    phone:"",
     agree :false,
     duplicate_check: false,
 })
@@ -27,6 +26,7 @@ const initialState = Map({
 export default handleActions({
     [CHANGE_INPUT] : (state,action)=>{
         const {target, value} = action.payload
+        
         return state.set(target, value);
     },
     ...pender({

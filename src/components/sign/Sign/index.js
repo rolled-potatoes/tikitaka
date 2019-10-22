@@ -5,11 +5,7 @@
 import React from 'react'
 import styles from './styles.scss'
 import classnames from 'classnames'
-import { Link } from 'react-router-dom'
-import Button from '../../common/Button'
 const cx = classnames.bind(styles)
-
-
 const Sign = ({ 
   email,
   password,
@@ -17,9 +13,11 @@ const Sign = ({
   name,
   nickname,
   organization,
+  password_check,
+  passwordStr,
   onCheck,
+  onkeyPressInput,
   agree,
-  phone,
   duplicate_check, 
   onChange,
   onSingUp,
@@ -45,10 +43,11 @@ const Sign = ({
             <label>비밀번호</label>
           </h3>
           <span>
-            <input type ='password' value={password}  id ="password" onChange={onChange}/>
+            <input  onKeyPress={onkeyPressInput} type ='password' value={password}  id ="password" onChange={onChange}/>
           </span>
-          <h3>
+          <h3 className='passwordR-h3'>
             <label>비밀번호 확인</label>
+            <label className={cx({'passwordR-true':password_check,'passwordR-false':!password_check})}>{passwordStr}</label>
           </h3>
           <span>
             <input type ='password' value={passwordR}  id ="passwordR" onChange={onChange}/>
@@ -71,15 +70,6 @@ const Sign = ({
           <span>
             <input value={nickname}  id ="nickname" onChange={onChange}/>
             <button>중복확인</button>
-          </span>
-        </div>
-
-        <div className={cx('bottoms')}>
-          <h3>
-            <label>전화번호</label>
-          </h3>
-          <span>
-            <input value={phone}  id ="phone" onChange={onChange} />
           </span>
         </div>
 

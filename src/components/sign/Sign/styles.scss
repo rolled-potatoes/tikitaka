@@ -18,6 +18,16 @@
       flex-direction: column;
       margin-top:20px;
       align-items: center;
+      .passwordR-h3{
+         display: flex;
+         justify-content: space-between;
+         .passwordR-true{
+            color: green;
+         }
+         .passwordR-false{
+            color: red;
+         }
+      }
       .bottom-nicname{
          input{
             width: 410px !important;

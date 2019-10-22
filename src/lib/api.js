@@ -3,14 +3,16 @@ import datas from 'data/datas.json'
 /*import queryString  from'query-string'*/
 
 export const getProject =(id)=> axios.get(`/api/project/${id}`) 
-export const login = (email, password) => axios.post('/api/auth/login',{email,password})
+//export const login = (email, password) => axios.post('/api/auth/login',{email,password})
 
-// export const login = (userId, password) => axios.post('/auth/login_process',{userId,password})
+ export const login = (userId, password) => axios.post('/auth/login_process',{userId,password})
 
-export const checkLogin = () =>axios.get('/api/auth/check')
-//export const logout= ()=> axios.get('/auth/logout')
-export const logout= ()=> axios.post('/api/auth/logout')
-export const singup = (userId, password) => axios.post('/auth/register_process',{userId,password})
+//export const checkLogin = () =>axios.get('/api/auth/check')
+export const checkLogin = () =>axios.get('/main')
+
+export const logout= ()=> axios.get('/auth/logout')
+//export const singup = (userId, password) => axios.post('/auth/register_process',{userId,password})
+export const singup = (userId, password) => axios.post('/user/register_process',{userId,password})
 
 export const test =()=> axios.get('/zz'); 
 export const postProject=(title,description) => axios.post('/project/create_process',{title,description});
