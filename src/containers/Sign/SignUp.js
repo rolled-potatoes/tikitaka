@@ -1,13 +1,22 @@
+/**
+ * 회원가입 컨테이너
+ * 이메일, 비밀번호, 비밀번호 확인, 닉네님, 소속, 개인정보동의 입력 받음.
+ */
 import React, { Component } from 'react';
 import SignComponent from 'components/sign/Sign'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as singupActions from 'store/modules/signup.js'
+import * as api from 'lib/api.js'
+import {withRouter} from 'react-router-dom'
 class SignUp extends Component {
     state={
-        passwordStr : "",
-        password_check: false,
+        passwordStr : "", // 비밀번호 일치 여부 text
+        password_check: false, // 비밀번호 일치 여부 flag
     }
+    /**
+     * input에서 입력 할 때 onChange이벤트 처리
+     */
     onChange_things =  (e) => {
         const { id, value } = e.target;
         let values=value;
@@ -55,12 +64,22 @@ class SignUp extends Component {
         }
         //--
     }
-    onSingUp = () => {
+
+    /**
+     * 입력받은거 확인 후 서버에 전송 함수 
+     */
+    onSingUp = async () => {
         const { 
             email, 
             password, 
             SingupActions,
             duplicate_check,
+            agree,
+            nickname,
+            location_,
+            organization,
+            name,
+            history,
         } = this.props;
         const {
             password_check
@@ -70,20 +89,38 @@ class SignUp extends Component {
          * 회원가입 api 연결 이전 확인 해야할 사항
          * 모든 항목 입력여부 확인, 닉네임 중복확인, 비밀번호 일치확인, 개인정보동의체크
          */
-        if(email === "" || password === "" || !duplicate_check){
-
+        // if(organization!=="" && name !== "" && email !== "" && password !== "" && duplicate_check &&agree &&password_check){
+        //     SingupActions.submit(email, password,name,nickname,location,organization);
+        // }
+        if(location_!==""&& organization!=="" && name !== "" && email !== "" && password !== ""){
+            try{
+                const ret = await api.singup(email, password,name,nickname,location_,organization);
+                if(ret === 'success'){
+                    history.push(`/sign/success/${name}`)
+                }
+            }
+            catch(e){
+                console.log(e);
+                
+            }
+            // const a = await SingupActions.submit(email, password,name,nickname,location,organization);
+            
         }
         if(!password_check){
             return alert('비밀번호가 일치하지 않습니다.')
         }
         
-        SingupActions.submit(email, password);
     }
+    
+    /**
+     * 개인정보동의 이벤트
+     */
     onChange_agree = (e) => {
         const { checked, id } = e.target;
         const { SingupActions } = this.props;
         SingupActions.changeInput({ target: id, value: checked })
     }
+
     render() {
         const {
             email,
@@ -94,6 +131,7 @@ class SignUp extends Component {
             phone,
             organization,
             agree,
+            location_,
             duplicate_check,
         } = this.props
         const {
@@ -114,6 +152,7 @@ class SignUp extends Component {
                 email={email}
                 password={password}
                 passwordR={passwordR}
+                location={location_}
                 name={name}
                 phone={phone}
                 nickname={nickname}
@@ -136,6 +175,7 @@ export default connect(
         name: state.signup.get('name'),
         nickname: state.signup.get('nickname'),
         phone: state.signup.get('phone'),
+        location_: state.signup.get('location_'),
         organization: state.signup.get('organization'),
         agree: state.signup.get('agree'),
         duplicate_check: state.signup.get('duplicate_check'),
@@ -143,4 +183,4 @@ export default connect(
     (dispatch) => ({
         SingupActions: bindActionCreators(singupActions, dispatch)
     })
-)(SignUp);
+)(withRouter(SignUp));

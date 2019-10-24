@@ -40,7 +40,7 @@ const mypageSide = ({
         </div>
         <div>
           <div className={cx('profile-tr')}>진행 프로젝트 수</div>
-          <div className={cx('profile-td')}>{proList.length}</div>
+          <div className={cx('profile-td')}>{proList== null? 0 : proList.length}</div>
         </div>
         <div>
           <div className={cx('profile-tr')}>지역</div>

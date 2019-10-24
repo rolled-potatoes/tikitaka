@@ -98,3 +98,28 @@
    }
    
 }
+
+.after-warpper{
+   margin:auto auto;
+   .after-logo-container{
+      text-align: center;
+      img{
+         height: 300px;
+      }
+   }
+   .after-contant{
+      font-size: 1.2rem;
+      margin-top: 20px;
+      line-height: 1.5;
+   }
+   .after-button{
+      margin-top:20px;
+      button{
+         height: 40px;
+         border:0;
+         color: $oc-gray-1;
+         background: $tikitaka-blue;
+         width: 100%;
+      }
+   }
+}

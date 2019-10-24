@@ -16,7 +16,8 @@ const Sign = ({
   password_check,
   passwordStr,
   onCheck,
-  onkeyPressInput,
+  location,
+  
   agree,
   duplicate_check, 
   onChange,
@@ -79,6 +80,15 @@ const Sign = ({
           </h3>
           <span>
             <input value={organization}  id ="organization" onChange={onChange}/>
+          </span>
+        </div>
+
+        <div className={cx('bottoms')}>
+          <h3>
+            <label>지역</label>
+          </h3>
+          <span>
+            <input value={location}  id ="location_" onChange={onChange}/>
           </span>
         </div>
 

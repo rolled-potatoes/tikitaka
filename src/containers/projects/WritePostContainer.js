@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom'
 import WritePost from 'components/projects/WritePost'
 import * as writeActions from 'store/modules/writePost.js'
-
+import axios from 'axios'
+import {postProject} from 'lib/api.js'
 class WritePostContainer extends Component {
     constructor(props) {
         super(props)
@@ -93,16 +94,49 @@ class WritePostContainer extends Component {
         }) */
         WriteActions.reset()
     }
+    /**
+     * 글 저장 버튼액션
+     * 카테고리가 번호로 지정되어 있어 배열에서 String 검색
+     */
     onSubmit = async()=>{
+        const categorys = ["디자인","영상",'번역','코딩','음악','공학','스터디','기타'];
+        
         const {
             title,
-            description,
-            WriteActions,
-            dueDate,
+            price,
             period,
+            description,
+            maxPeople,
+            dueDate,
+            catList,
+            history,
         } = this.props;
-        await WriteActions.postProject(title,description)
+        let list = catList.map(i=>{
+            return(
+                categorys[i-1]
+            )
+        })
+
+        const res = await postProject({
+            title: title,
+            description:description,
+            period: period,
+            maxPeople:maxPeople,
+            dueDate:dueDate,
+            price:price,
+            categoryList : list
+        })
+        console.log(res);
+        alert(res.data.flag)
+        history.push('/')
     }
+    // title: state.writePost.get('title'),
+    // price: state.writePost.get('price'),
+    // dueDate: state.writePost.get('dueDate'),
+    // catList: state.writePost.get('catList'),
+    // period: state.writePost.get('period'),
+    // maxPeople: state.writePost.get('maxPeople'),
+    // description: state.writePost.get('description'),
     render() {
         const {
             handleDatePicker,

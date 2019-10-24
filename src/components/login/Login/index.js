@@ -44,11 +44,12 @@ const Login = ({onChangeEmail, onChangePassword, onClickLogin,email,password,onK
           <div className={cx('api-login')}>
             <div className={cx('api-naver')}>
               <Button theme={'apibtn'}>
-                <img src={naverImg} />
+                <img src={naverImg} onClick={onNaver}/>
               </Button>
             </div>
             <div className={cx('api-naver')}>
               <Button theme={'apibtn'}>
+                <a href="http://119.18.120.225:4000/auth/naver">hihi</a>
                 <img src={googleImg} />
               </Button>
 

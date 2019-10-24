@@ -66,7 +66,7 @@ export default handleActions ({
         console.log(data);
         
             return state.set('logged',true)
-                        .set('myInfo',myinfo)
+                        .set('myInfo',data.user)
                         .set('timeline',timeline)
                         .set('email','')
                         .set('password','')
@@ -84,10 +84,10 @@ export default handleActions ({
             const {logged} = action.payload.data
             const myinfo = api.getMyInfo();
             const timeline = api.getNewFeed();
-const {data} =action.payload
-        console.log(data);
+            const {data} =action.payload
+            console.log(data);
             return state.set('logged',logged)
-                        .set('myInfo',myinfo)
+                        .set('myInfo',data.user)
                         .set('timeline',timeline)
 
         }

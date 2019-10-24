@@ -6,7 +6,9 @@ import classnames from 'classnames'
 const cx = classnames.bind(styles)
 
 const DetailRow = ({ data ,visible='visible-false' }) => {
-  let temp = data.map(cat => {
+  console.log(data===null);
+  
+  let temp = data==null? <div></div>:data.map(cat => {
     return (
       <div className={cx('item')}>
         {cat}

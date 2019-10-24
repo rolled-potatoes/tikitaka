@@ -15,6 +15,7 @@ import {
   MyList,
   PageNotFound,
   MyFollowerPage,
+  AftersignPage,
 } from './pages'
 import TT from 'pages/tt.js'
 import Base from './containers/common/Base'
@@ -26,7 +27,7 @@ const App = () => {
         <Route exact path ='/' component={MainPage}/>
         <Route exact path='/login' component={LoginPage}/>
         <Route exact path='/sign' component={SignPage}/>
-
+        <Route exact path = '/sign/success/:name' component={AftersignPage}/>
         <Route exact path='/mypage' component={MyPagePage}/>
         <Route exact path='/mypage/mylist' component={MyList}/>
         <Route exact path ='/mypage/revise' component={RevisePage}/>

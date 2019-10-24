@@ -3,6 +3,10 @@ import datas from 'data/datas.json'
 /*import queryString  from'query-string'*/
 
 export const getProject =(id)=> axios.get(`/api/project/${id}`) 
+export const getProjectList = (pageId,size)=>{
+    console.log(pageId,size);
+    return axios.get('/project?pageId=1&size=10')
+}
 //export const login = (email, password) => axios.post('/api/auth/login',{email,password})
 
  export const login = (userId, password) => axios.post('/auth/login_process',{userId,password})
@@ -11,11 +15,17 @@ export const getProject =(id)=> axios.get(`/api/project/${id}`)
 export const checkLogin = () =>axios.get('/main')
 
 export const logout= ()=> axios.get('/auth/logout')
-//export const singup = (userId, password) => axios.post('/auth/register_process',{userId,password})
-export const singup = (userId, password) => axios.post('/user/register_process',{userId,password})
+
+export const singup = async (userId, password,name,nickname,location,organization) => {
+    const a = await axios.post('/user',{userId,password,name,nickname,location,organization})   
+    return a.data.flag
+}
 
 export const test =()=> axios.get('/zz'); 
-export const postProject=(title,description) => axios.post('/project/create_process',{title,description});
+export const postProject=async ({title,description,period,maxPeople,dueDate,price,categoryList}) => {
+    const res = await axios.post('/project',{title,description,period,maxPeople,dueDate,price,categoryList});
+    return res;
+}
 export const naver =()=> axios.get('/auth/naver');
 
 export const getFollowerInfo = ({follow})=>{

@@ -57,7 +57,7 @@ class LoginContainer extends React.Component {
     alert('로그인 되었습니다.')
   }
   onNaver =async ()=>{
-    let a = window.open("http://175.124.10.33:3000/auth/naver","hihi","width=600,height=500")
+    let a = window.open("http://119.18.120.225:4000/auth/naver","hihi","width=600,height=500")
   }
   
   render() {

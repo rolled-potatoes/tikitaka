@@ -18,6 +18,7 @@ const initialState = Map({
     name :"",
     nickname :"",
     organization :"",
+    location_:"",
     agree :false,
     duplicate_check: false,
 })
@@ -26,13 +27,12 @@ const initialState = Map({
 export default handleActions({
     [CHANGE_INPUT] : (state,action)=>{
         const {target, value} = action.payload
-        
         return state.set(target, value);
     },
     ...pender({
         onSuccess:(state,action) =>{
             console.log('success');
-            return state
+            return initialState
         },
         onError:(state,action)=>{
             console.log('error');

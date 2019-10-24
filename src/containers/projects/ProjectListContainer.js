@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import * as projectAction from 'store/modules/ProjectList.js'
 import Pagenation from 'containers/common/Pagenation.js'
-
 /**
  * 넘겨줄 값 : 페이지 번호 , 필터, 검색어
  * 받을 값 : 페이지 마지막 번호, 프로젝트 리스트 10개
@@ -33,10 +32,11 @@ class ProjectListContainer extends Component {
         window.scrollTo(0, 0)
     }
     componentDidMount() {
-        const { page } = this.props.match.params
         window.scrollTo(0, 0)
+        const { page } = this.props.match.params
         const { ProjectAction } = this.props
-        ProjectAction.getList({ page: page });
+        ProjectAction.getList(1,10);
+        // ProjectAction.getList({ page: page });
     }
     changeSearchString = (e) => {
         const { value } = e.target;
