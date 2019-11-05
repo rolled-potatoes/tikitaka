@@ -126,7 +126,6 @@ class WritePostContainer extends Component {
             price:price,
             categoryList : list
         })
-        console.log(res);
         alert(res.data.flag)
         history.push('/')
     }

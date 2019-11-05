@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import * as projectAction from 'store/modules/ProjectList.js'
 import Pagenation from 'containers/common/Pagenation.js'
+import { timingSafeEqual } from 'crypto';
 /**
  * 넘겨줄 값 : 페이지 번호 , 필터, 검색어
  * 받을 값 : 페이지 마지막 번호, 프로젝트 리스트 10개
@@ -35,8 +36,7 @@ class ProjectListContainer extends Component {
         window.scrollTo(0, 0)
         const { page } = this.props.match.params
         const { ProjectAction } = this.props
-        ProjectAction.getList(1,10);
-        // ProjectAction.getList({ page: page });
+        ProjectAction.getList({pageId:1,size:10});
     }
     changeSearchString = (e) => {
         const { value } = e.target;
@@ -63,8 +63,38 @@ class ProjectListContainer extends Component {
         ProjectAction.changeCategory({value:value});
         
     }
-    onClickSearch = () => {
-            
+    onOrderFilter=(event)=>{
+        let elem = event.target;
+        const {ProjectAction} = this.props;
+        
+        while(!elem.classList.contains('filter-btn')){
+            elem = elem.parentNode;
+
+            if(elem.nodeName=='BODY')
+                return ;
+        }
+        if(elem.dataset.value== 0){
+            ProjectAction.changetSearch({value:""});
+            setTimeout(() => {
+                this.onClickSearch(elem.dataset.value)
+            }, 500)
+        }else{
+
+            this.onClickSearch(elem.dataset.value)
+        }
+    }
+    onClickSearch = (order) => {
+        const {ProjectAction,searchText,searchCategory} = this.props;
+        const cat = searchCategory === '제목'? 'title':'categoryList';
+        console.log(order);
+        
+        ProjectAction.getList({
+            pageId: 1,
+            size:10,
+            cat :cat,
+            text:searchText,
+            order : order
+        });        
     }
     render() {
         const {
@@ -73,6 +103,7 @@ class ProjectListContainer extends Component {
             onClickSearch,
             dropdown_onToggle,
             dropdown_onClick,
+            onOrderFilter,
         } = this
         const {
             dropdown_dispaly,
@@ -87,6 +118,7 @@ class ProjectListContainer extends Component {
         return (
             <Fragment>
                 <ProjectListComponent
+                    onOrderFilter={onOrderFilter}
                     ontoggle={dropdown_onToggle}
                     dropdownOnClick={dropdown_onClick}
                     dropdownName={searchCategory}

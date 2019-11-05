@@ -4,7 +4,6 @@ import classnames from 'classnames'
 
 const cx =classnames.bind(styles);
 const List = ({data})=>{
-  console.log(data);
   
   let list = data.map(item=>{
     const {nickName,email} = item;

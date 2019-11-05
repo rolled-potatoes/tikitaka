@@ -50,12 +50,9 @@ class FreeLenserListContainer extends Component {
         }
     }
     _testAtion = async () => {
-        console.log('1');
         const id = "egoing7777@gmail.com";
         const pw = "111111";
         let temp = await axios.post('/auth/login_process', { email: id, password: pw })
-        console.log(temp);
-        console.log('2');
     }
 
     changeSearchString = (e) => {

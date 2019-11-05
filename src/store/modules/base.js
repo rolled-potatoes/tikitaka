@@ -63,7 +63,6 @@ export default handleActions ({
         const myinfo = api.getMyInfo();
         const timeline = api.getNewFeed();
         const {data} =action.payload
-        console.log(data);
         
             return state.set('logged',true)
                         .set('myInfo',data.user)
@@ -85,7 +84,6 @@ export default handleActions ({
             const myinfo = api.getMyInfo();
             const timeline = api.getNewFeed();
             const {data} =action.payload
-            console.log(data);
             return state.set('logged',logged)
                         .set('myInfo',data.user)
                         .set('timeline',timeline)
@@ -96,7 +94,6 @@ export default handleActions ({
         type:LOGOUT,
         onSuccess:(state,action)=>{
             console.log('logout');
-            
             return state.set('logged',false)
         },
         onError:(state,action)=>{
@@ -108,7 +105,6 @@ export default handleActions ({
     ...pender({
         type:TEST,
         onSuccess:(state,action)=>{
-            console.log(action);
             return state;
         }
     })

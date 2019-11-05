@@ -73,6 +73,12 @@
         .filter{
                 margin-top: 15px;
                 border-bottom: 1px solid $oc-gray-7;
+                >button{
+                        font-family: 'Nanum Myeongjo', serif;
+                        border: 0;
+                        background: 0;
+                        font-size: 1.2rem;
+                }
         }
         .projectList-bottom{
                 

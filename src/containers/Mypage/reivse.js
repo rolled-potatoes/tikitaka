@@ -46,7 +46,6 @@ class reivse extends Component {
         this.setState({
             info: info.set(`${value}`,info.get(`${value}`).push(Map({getDate:`${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,things:""})) )
         })
-        console.log(info.toJS());
     }
     onChangeDay=(selectedDay, modifiers, dayPickerInput)=>{
         // 0 : name

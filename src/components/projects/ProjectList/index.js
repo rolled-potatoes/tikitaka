@@ -89,7 +89,7 @@ const Lists = ({ projectList }) => {
   return list
 }
 const ProjectList = ({ onClickSearch, projectList, searchString, changeSearch, keyPressSearchSring,
-  ontoggle, dropdownOnClick, dropdownName, dropdowndispaly }) => (
+  ontoggle, dropdownOnClick, dropdownName, dropdowndispaly ,onOrderFilter}) => (
     <div className={cx('projectList')}>
       <div className={cx('projectList-top')}>
         <h1 className={cx('title')}>
@@ -101,9 +101,9 @@ const ProjectList = ({ onClickSearch, projectList, searchString, changeSearch, k
               {dropdownName}
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem value="이름" onClick={dropdownOnClick}>이름</DropdownItem >
+              <DropdownItem value="제목" onClick={dropdownOnClick}>제목</DropdownItem >
               <DropdownItem divider />
-              <DropdownItem value="기술" onClick={dropdownOnClick}>기술</DropdownItem >
+              <DropdownItem value="분야" onClick={dropdownOnClick}>분야</DropdownItem >
             </DropdownMenu>
           </Dropdown>
           <input
@@ -112,15 +112,14 @@ const ProjectList = ({ onClickSearch, projectList, searchString, changeSearch, k
             onKeyPress={keyPressSearchSring}
             className={cx('input-search')}
           />
-          <button onClick={onClickSearch} className={cx('button-search')}>검색</button>
+          <button onClick={(e)=>onClickSearch(0)} className={cx('button-search')}>검색</button>
         </div>
       </div>
-      <div className={cx('filter')}>
-        <Button>전체보기</Button>
-        <Button>마감순</Button>
-        <Button>최신등록순</Button>
-        <Button>높은금액순</Button>
-        <Button>낮은금액순</Button>
+      <div className={cx('filter')} onClick={onOrderFilter}>
+        <button data-value="0" className='filter-btn'>전체보기</button>
+        <button data-value='1' className='filter-btn'>마감순</button>
+        <button data-value='2' className='filter-btn'>높은금액순</button>
+        <button data-value='3' className='filter-btn'>낮은금액순</button>
       </div>
 
 

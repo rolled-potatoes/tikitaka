@@ -15,7 +15,6 @@ const Pages = ({pageNumber,lastPage}) =>{
     const start = Math.floor((pageNumber-1) / 10) *10 +1
     
     const end = start +9 > lastPage ? lastPage : start+9;
-    console.log(lastPage);
     
     let btns = [];
     let startStyle = start <=10?{pointerEvents :'none'}:{pointerEvents :'auto'};

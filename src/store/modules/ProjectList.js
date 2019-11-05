@@ -31,8 +31,6 @@ export default handleActions({
         type: GETLIST,
         onSuccess:(state,action)=>{
             const {project} = action.payload.data;
-            console.log(project);
-            
             return state.set('projectList', project)
                         .set('lastPage',1)
         }

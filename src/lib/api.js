@@ -3,9 +3,8 @@ import datas from 'data/datas.json'
 /*import queryString  from'query-string'*/
 
 export const getProject =(id)=> axios.get(`/api/project/${id}`) 
-export const getProjectList = (pageId,size)=>{
-    console.log(pageId,size);
-    return axios.get('/project?pageId=1&size=10')
+export const getProjectList = ({pageId,size,order,text,cat})=>{
+    return axios.get(`/project?pageId=${pageId}&size=${size}&order=${order}&text=${text}&cat=${cat}`)
 }
 //export const login = (email, password) => axios.post('/api/auth/login',{email,password})
 

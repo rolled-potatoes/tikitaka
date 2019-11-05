@@ -41,7 +41,6 @@ class Base extends Component {
         const {pageNot,timeline,logged} = this.props;
         const {onClickBell} = this
         const {visibleNewFeed} = this.state;
-        console.log('render');
         const temp = document.getElementById('pagetem');
         if(timeline !=""){
             if(!pageNot)
