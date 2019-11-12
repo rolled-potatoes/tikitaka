@@ -3,13 +3,13 @@ import React from 'react'
 import styles from'./styles.scss'
 import classnames from 'classnames'
 import MypageSide from '../mypageSide'
-import MyPageListContents from 'components/mypage/myList/Listcontents.js'
+import MyPageListContents from './Listcontents.js'
 const cx = classnames.bind(styles)
 
-const myList = ({myInfo,LinkToPost}) =>{
+const myList = ({myInfo,LinkToPost,projects}) =>{
   const { 
-    nickName, organization, 
-    userId, location, Intro,  grade,
+    nickname, organization, 
+    userId, location, intro,  grade,
     proList,follow
   } = myInfo
   if(myInfo ==""){
@@ -25,11 +25,10 @@ const myList = ({myInfo,LinkToPost}) =>{
         </div>
         <div className={cx('FreeLenserDetail-wrapper')}>
           <MypageSide
-            nickName={nickName}
+            nickName={nickname}
             organization={organization}
             location={location}
-            Intro={Intro}
-            grade={grade}
+            Intro={intro}
             proList={proList}
           />
           <div className='myList-wrapper'>
@@ -37,6 +36,7 @@ const myList = ({myInfo,LinkToPost}) =>{
               <div className='myList-title'>나의 프로젝트 목록</div>
             </div >
             <MyPageListContents
+              projects={projects}
               LinkToPost={LinkToPost}
             />
           </div>

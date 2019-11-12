@@ -7,6 +7,8 @@ import React from 'react'
 import styles from './styles.scss'
 import classnames from 'classnames'
 import Button from '../../common/Button'
+import {format} from 'lib/functions.js'
+
 import { Link } from 'react-router-dom'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
@@ -14,16 +16,11 @@ const cx = classnames.bind(styles)
 
 const Lists = ({ projectList }) => {
   let list = projectList.map(item => {
-    const { title, price, dueDate, categoryList, writeDate, id,
+    const { title, price, dueDate, categoryList, writeDate, _id,
       description, period, nickName, candiList, freeList, maxPeople, organization } = item
-    const writeDates = writeDate.split('-')
-    const dueDates = dueDate.split('-')
-    const writeYear = writeDates[0]
-    const writeDay = writeDates[2]
-    const writeMonth = writeDate[1]
-    const dueYear = dueDates[0]
-    const dueDay = dueDates[2]
-    const dueMonth = dueDates[1]
+    let _writeDate = format(new Date(writeDate))
+    let _dueDate =format(new Date(dueDate))
+    
     return (
       <div className={cx('project')}>
         <div className={cx('writer-content')}>
@@ -37,9 +34,9 @@ const Lists = ({ projectList }) => {
 
         <div className={cx('project-content')}>
           <div className={cx('title')}>
-            <h2><Link to={`/project/post/${id}`}>{title}</Link></h2>
+            <h2><Link to={`/project/post/${_id}`}>{title}</Link></h2>
             <div className={cx('writeDate')}>
-              {`등록일 ${writeYear}년 ${writeMonth}월 ${writeDay}일`}
+              {`등록일 ${_writeDate}`}
             </div>
           </div>
 
@@ -78,7 +75,7 @@ const Lists = ({ projectList }) => {
             </div>
             <div className={cx('bottom-wrapper')}>
               <div className={cx('dueDate')}>
-                {`마감일 ${dueYear}년 ${dueMonth}월 ${dueDay}일`}
+                {`마감일 ${_dueDate}`}
               </div>
             </div>
           </div>

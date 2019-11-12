@@ -30,9 +30,9 @@ export default handleActions({
     ...pender({
         type: GETLIST,
         onSuccess:(state,action)=>{
-            const {project} = action.payload.data;
+            const {project,lastPage} = action.payload.data;
             return state.set('projectList', project)
-                        .set('lastPage',1)
+                        .set('lastPage',lastPage)
         }
     })
 },initialState)

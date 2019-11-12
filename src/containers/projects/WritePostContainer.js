@@ -5,29 +5,74 @@ import { withRouter } from 'react-router-dom'
 import WritePost from 'components/projects/WritePost'
 import * as writeActions from 'store/modules/writePost.js'
 import axios from 'axios'
-import {postProject} from 'lib/api.js'
+import { fromJS } from 'immutable'
+import { postProject, getPost, ModifyPost } from 'lib/api.js'
 class WritePostContainer extends Component {
+    state = {
+        modify: false
+    }
     constructor(props) {
         super(props)
+
     }
     componentDidMount() {
-        const { history, logged ,WriteActions} = this.props;
-        const {id} = this.props.match.params;
-        if(id !== undefined)
-            WriteActions.getContaint({id:id})
+        const { history, logged, project } = this.props;
+        const { id } = this.props.match.params;
+        if (id !== undefined) {
+            this.init(id, project)
+        }
         /* if (!logged) {
             alert('로그인 후 이용하실 수 있습니다.')
             history.goBack();
         } */
     }
-    componentDidUpdate(prevProp){
-        const {id} = this.props.match.params;
+
+    /**
+     * 수정클릭 했을 때 데이터 셋팅
+     */
+    init = async (id, project) => {
+        const { WriteActions } = this.props;
+        const { modify } = this.state;
+        let arr;
+        if (project === "") {
+            let data = await getPost(id)
+            arr = data.data.project
+        }
+        else 
+            arr = project;
+
+        arr.catList = [];
+        arr = this.initUnit(arr);
+        WriteActions.getContaint({ project: arr })
+        if (!modify)
+            this.setState({ modify: true })
+    }
+
+    initUnit=(arr)=>{
+        const categorys = ["디자인", "영상", '번역', '코딩', '음악', '공학', '스터디', '기타'];
+        const yello = 'rgb(255, 215, 79)'
+        const black = 'rgb(52, 58, 64)'
+        let  styles = document.getElementsByClassName('category-item')
+
+        arr.categoryList.map(i => {
+            let index = categorys.findIndex(it => {
+                return it == i
+            })
+            arr.catList.push(`${index + 1}`)
+            styles[index].style.background = yello;
+            styles[index].style.color = black;
+        })
+        arr.catList = fromJS(arr.catList);
+        return arr
+    }
+    componentDidUpdate(prevProp) {
+        const { id } = this.props.match.params;
         const { WriteActions } = this.props;
         /*  if(id === undefined)    
             WriteActions.reset(); */
     }
-    componentWillUnmount(){
-        const {WriteActions} =this.props;
+    componentWillUnmount() {
+        const { WriteActions } = this.props;
         WriteActions.reset();
     }
     /**
@@ -84,9 +129,9 @@ class WritePostContainer extends Component {
         const yello = 'rgb(255, 215, 79)'
         const black = 'rgb(52, 58, 64)'
         const styles = document.getElementsByClassName('category-item');
-        for(let i = 0 ; i < styles.length ; i ++){
-            styles[i].style.background=black;
-            styles[i].style.color=yello;
+        for (let i = 0; i < styles.length; i++) {
+            styles[i].style.background = black;
+            styles[i].style.color = yello;
         }
         /* styles.map(item =>{
             item.style.background=black;
@@ -98,9 +143,10 @@ class WritePostContainer extends Component {
      * 글 저장 버튼액션
      * 카테고리가 번호로 지정되어 있어 배열에서 String 검색
      */
-    onSubmit = async()=>{
-        const categorys = ["디자인","영상",'번역','코딩','음악','공학','스터디','기타'];
-        
+    onSubmit = async () => {
+        const categorys = ["디자인", "영상", '번역', '코딩', '음악', '공학', '스터디', '기타'];
+        const { id } = this.props.match.params;
+        const { modify } = this.state;
         const {
             title,
             price,
@@ -111,31 +157,43 @@ class WritePostContainer extends Component {
             catList,
             history,
         } = this.props;
-        let list = catList.map(i=>{
-            return(
-                categorys[i-1]
+
+        let list = catList.map(i => {
+            return (
+                categorys[i - 1]
             )
         })
 
-        const res = await postProject({
-            title: title,
-            description:description,
-            period: period,
-            maxPeople:maxPeople,
-            dueDate:dueDate,
-            price:price,
-            categoryList : list
-        })
-        alert(res.data.flag)
+        if (modify) {
+            const post = {
+                title: title,
+                description: description,
+                period: period,
+                maxPeople: maxPeople,
+                dueDate: dueDate,
+                price: price,
+                categoryList: list
+            }
+            const res = await ModifyPost(id, post)
+            console.log(res);
+            alert('수정')
+
+        }
+        else {
+            const res = await postProject({
+                title: title,
+                description: description,
+                period: period,
+                maxPeople: maxPeople,
+                dueDate: dueDate,
+                price: price,
+                categoryList: list
+            })
+            alert(res.data.flag)
+        }
         history.push('/')
     }
-    // title: state.writePost.get('title'),
-    // price: state.writePost.get('price'),
-    // dueDate: state.writePost.get('dueDate'),
-    // catList: state.writePost.get('catList'),
-    // period: state.writePost.get('period'),
-    // maxPeople: state.writePost.get('maxPeople'),
-    // description: state.writePost.get('description'),
+
     render() {
         const {
             handleDatePicker,
@@ -153,7 +211,7 @@ class WritePostContainer extends Component {
             maxPeople,
             description,
         } = this.props
-//        const { id } = this.props.match.params
+
         return (
             <WritePost
                 title={title}
@@ -181,7 +239,9 @@ export default connect(
         period: state.writePost.get('period'),
         maxPeople: state.writePost.get('maxPeople'),
         description: state.writePost.get('description'),
-        logged: state.base.get('logged')
+        logged: state.base.get('logged'),
+        project: state.ProjectPost.get('project'),
+
     }),
     (dispatch) => ({
         WriteActions: bindActionCreators(writeActions, dispatch)

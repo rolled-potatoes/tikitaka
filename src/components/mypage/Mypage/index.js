@@ -8,8 +8,8 @@ const cx = classnames.bind(styles)
 
 const Mypage = ({myInfo,visibles,onClickMenuitem }) => {
   const { 
-    nickName, organization, careerList, 
-    userId, location, Intro, licenseList, grade,
+    nickname, organization, careerList, 
+    userId, location, intro, lisenceList,
     educationList ,categoryList,proList,follow
   } = myInfo
   if(myInfo ==""){
@@ -26,11 +26,10 @@ const Mypage = ({myInfo,visibles,onClickMenuitem }) => {
         </div>
         <div className={cx('FreeLenserDetail-wrapper')}>
           <MypageSide
-            nickName={nickName}
+            nickName={nickname}
             organization={organization}
             location={location}
-            Intro={Intro}
-            grade={grade}
+            Intro={intro}
             proList={proList}
           />
           <MypageContent
@@ -39,7 +38,7 @@ const Mypage = ({myInfo,visibles,onClickMenuitem }) => {
             categoryList={categoryList}
             educationList={educationList}
             careerList={careerList}
-            licenseList={licenseList}
+            lisenceList={lisenceList}
           />
         </div>
       </div>

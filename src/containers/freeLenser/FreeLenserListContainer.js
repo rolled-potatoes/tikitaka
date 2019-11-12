@@ -12,6 +12,7 @@ import FreeLenserListComponent from 'components/freeLenser/FreeLenserList/index.
  * 12개의 데이터를 보여줌
  * 이후 스크롤이 다 되면 12개를 추가로 가져옴
  */
+//! 최적화 필요
 class FreeLenserListContainer extends Component {
     constructor(props) {
         super(props)
@@ -21,12 +22,12 @@ class FreeLenserListContainer extends Component {
             showcat: false,
         }
     }
-
     //페이지 들어올때 스크롤 이벤트 생성
     componentDidMount() {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0)        
         window.addEventListener("scroll", this.handleScroll);
-        this.props.FLActions.getList();
+        if(!this.props.isLast)
+            this.props.FLActions.getListFirst({page:1,size:12});
     }
     //페이지 나갈때 스크롤 이벤트 제거
     componentWillUnmount() {
@@ -35,19 +36,33 @@ class FreeLenserListContainer extends Component {
     handleScroll = async () => {
         const { innerHeight } = window;
         const { scrollHeight } = document.body;
+        const { searchString } = this.state
+        const cat = this._getCat()
+
         const { FLActions, loadding, isLast,page} = this.props;
         const scrollTop =
             (document.documentElement && document.documentElement.scrollTop) ||
             document.body.scrollTop;
-
         if ((scrollHeight - innerHeight - scrollTop < 100) && loadding && !isLast) {
             FLActions.able_loadding({ bol: false })
-
             setTimeout(() => {
-                FLActions.getList();
+                FLActions.getList({
+                    pageId: page+1,
+                    size:12,
+                    cat :cat,
+                    text:searchString,
+                });
             }, 500)
             
         }
+    }
+    _getCat=()=>{
+        const {
+            catName
+        } = this.state
+        
+        const cat = catName === '이름'? 'nickname':'categoryList';
+        return cat
     }
     _testAtion = async () => {
         const id = "egoing7777@gmail.com";
@@ -67,6 +82,16 @@ class FreeLenserListContainer extends Component {
             this.onClickSearch();
         }
     }
+    onClickSearch = () => {
+        const {FLActions} = this.props;
+        const cat = this._getCat();
+        FLActions.getListFirst({
+            pageId: 1,
+            size:12,
+            cat :cat,
+            text:this.state.searchString,
+        });        
+    }
     _ontoggle = () => {
         const { showcat } = this.state;
         this.setState({
@@ -78,11 +103,7 @@ class FreeLenserListContainer extends Component {
             catName: e.target.value
         })
     }
-    onClickSearch = () => {
-        const { history } = this.props;
-        const { searchString } = this.state;
-        history.push(`/freeLenser?search=${searchString}`)
-    }
+    
     render() {
         const {
             searchString,
@@ -102,6 +123,7 @@ class FreeLenserListContainer extends Component {
             FreeList,
             loadding
         } = this.props
+        
         return (
             <FreeLenserListComponent
                 _ontoggle={_ontoggle}

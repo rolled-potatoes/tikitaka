@@ -16,13 +16,12 @@ class FreeLenserDetailContainer extends Component {
     componentDidMount(){
         this.initial();
         window.scrollTo(0, 0)
-
     }   
     
     initial=async()=>{
         const {id} = this.props.match.params
         const {FreeActions} = this.props
-        FreeActions.getFree({id:id})
+        FreeActions.getFree(id)
     }
     onClickMenuitem=(e)=>{
         const {id} =e.target;
@@ -52,7 +51,7 @@ class FreeLenserDetailContainer extends Component {
 
         let follow_check = false;
         if(myInfo !="")
-            follow_check=  myInfo.follow.find(item=>{
+            follow_check=  myInfo.followUserList.find(item=>{
             return item == info.email
         }) ===undefined? false :true
         return (

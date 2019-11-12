@@ -6,8 +6,8 @@ import Followercontent from './Followercontent'
 const cx = classnames.bind(styles)
 const index = ({ myInfo, followerInfo }) => {
     const {
-        nickName, organization,
-        userId, location, Intro, grade,
+        nickname, organization,
+        userId, location, intro, grade,
         proList, follow
     } = myInfo
     return (
@@ -17,11 +17,10 @@ const index = ({ myInfo, followerInfo }) => {
             </div>
             <div className={cx("FreeLenserDetail-wrapper")}>
                 <MypageSide
-                    nickName={nickName}
+                    nickName={nickname}
                     organization={organization}
                     location={location}
-                    Intro={Intro}
-                    grade={grade}
+                    Intro={intro}
                     proList={proList}
                 />
                 <div className='follower-wrapper'>

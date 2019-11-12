@@ -3,22 +3,22 @@ import styles from './styles.scss'
 import classnames from 'classnames'
 
 const cx =classnames.bind(styles);
-const List = ({data})=>{
+const List = ({data,agreeApplyAction,DenyApplyAction})=>{
   
   let list = data.map(item=>{
-    const {nickName,email} = item;
+    const {nickname,email,_id} = item;
     return(
       <div className='candidate-content-item'>
         <div>{email}</div>
-        <div>{nickName}</div>
-        <button>수락</button>
-        <button>거부</button>
+        <div>{nickname}</div>
+        <button value ={_id} onClick={agreeApplyAction}>수락</button>
+        <button value ={_id} onClick={DenyApplyAction}>거부</button>
       </div>
     )
   })
   return list
 }
-const ProjectCandidate = ({visible,onModals,data}) => {
+const ProjectCandidate = ({visible,onModals,data,agreeApplyAction,DenyApplyAction}) => {
   return(
     <div className={cx('candidate-Wrapper',{"candidate-close":!visible})}>
       <div className='candidate-container'>
@@ -31,7 +31,7 @@ const ProjectCandidate = ({visible,onModals,data}) => {
             <div>닉네임</div>
           </div>
           <div className='candidate-content'>
-            <List data={data}/>
+            <List data={data} agreeApplyAction={agreeApplyAction} DenyApplyAction={DenyApplyAction}/>
           </div>
         </div>
 

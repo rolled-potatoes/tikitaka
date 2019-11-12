@@ -1,21 +1,22 @@
 import React from 'react';
-const List =({LinkToPost})=>{
+import {format} from 'lib/functions.js'
+const List =({LinkToPost,projects})=>{
     let temp=[];
-    for(let  i = 1 ; i < 20 ; i++){
+    for(let item of projects){
         temp.push(
-            <li value={i} onClick={LinkToPost} className='myList-bottom-item'>
+            <li value={item._id} onClick={LinkToPost} className='myList-bottom-item'>
                 <div className='myList-bottom-item-date'>
-                    2019-09-07
+                    {format(new Date(item.writeDate))}
                 </div>
                 <div className='myList-bottom-item-title'>
-                    행사 중개 플랫폼 웹서비스 제작
+                    {item.title}
                 </div>
             </li>
         )
     }
     return temp;
 }
-const Listcontents = ({LinkToPost}) => {
+const Listcontents = ({LinkToPost,projects}) => {
     return (
         <div className='myList-bottom'>
             <div className='myList-bottom-title'>
@@ -25,6 +26,7 @@ const Listcontents = ({LinkToPost}) => {
             <ul>
                 <List 
                     LinkToPost={LinkToPost}
+                    projects={projects}
                 />
             </ul>
         </div>

@@ -3,22 +3,19 @@ import React from 'react'
 import styles from './styles.scss'
 import classNames from 'classnames'
 import {Link} from 'react-router-dom'
+import {format} from 'lib/functions.js'
+import {removePost} from 'lib/api.js'
 
 const cx = classNames.bind('styles')
 
-const ProjectPost = ({ post,id,mycontent,onModals }) => {
+const ProjectPost = ({ post,id,mycontent,onModals ,applyProject}) => {
+  
   if (post !== "") {
     {
       const { writeDate, dueDate, title, price, categoryList, description, period
         , nickName, organization, candiList, maxPeople } = post
-      const writeDates = writeDate.split('-')
-      const dueDates = dueDate.split('-')
-      const writeYear = writeDates[0]
-      const writeDay = writeDates[2]
-      const writeMonth = writeDate[1]
-      const dueYear = dueDates[0]
-      const dueDay = dueDates[2]
-      const dueMonth = dueDates[1]
+      let _writeDate = format(new Date(writeDate))
+      let _dueDate =format(new Date(dueDate))
       return (
 
         <div className={cx('postwrapper')}>
@@ -29,17 +26,17 @@ const ProjectPost = ({ post,id,mycontent,onModals }) => {
               <div className={cx('post-title')}>
                 {title}
                 
-                {mycontent && <div className={cx('post-btn')}>삭제</div>}
+                {mycontent && <div className={cx('post-btn')} onClick = {(e)=>{removePost(id);window.location.href ='/project/1'}}>삭제</div>}
                 {mycontent && <div className={cx('post-btn')}><Link  to={`/write/${id}`}>수정</Link></div>}
               </div>
 
               <div className={cx('post-dates')}>
 
                 <div className={cx('post-writeDate', 'dates')}>
-                  {`등록일 ${writeYear}년 ${writeMonth}월 ${writeDay}일`}
+                  {`등록일 ${_writeDate}`}
                 </div>
                 <div className={cx('post-dueDate', 'dates')}>
-                  {`마감일 ${dueYear}년 ${dueMonth}월 ${dueDay}일`}
+                  {`마감일 ${_dueDate}`}
                 </div>
 
               </div>
@@ -70,9 +67,9 @@ const ProjectPost = ({ post,id,mycontent,onModals }) => {
                 필요기술
               </div>
               <div className={cx('item-contents')}>
-                {categoryList.map(cat => {
+                {categoryList.map((cat,index) => {
                   return (
-                    `${cat}, `
+                    `${cat} ${index+1 === categoryList.length?'':','}`
                   )
                 })}
               </div>
@@ -100,9 +97,9 @@ const ProjectPost = ({ post,id,mycontent,onModals }) => {
             <div className={cx('writer-organization')}>
               {organization}
             </div>
-            <div className={cx('chat-btn')}>지원하기</div>
-            <div className={cx('chat-btn')} onClick={onModals}>지원자보기</div>
-            <div className={cx('chat-btn')}>완료하기</div>
+            <div className={cx('chat-btn')} onClick={applyProject}>지원하기</div>
+            {mycontent && <div className={cx('chat-btn')} onClick={onModals}>지원자보기</div>}
+            {/* {mycontent && <div className={cx('chat-btn')}>완료하기</div>} */}
           </div>
         </div>
       )

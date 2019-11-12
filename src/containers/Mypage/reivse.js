@@ -3,11 +3,15 @@ import { connect } from 'react-redux'
 import { bindCreateAction } from 'redux'
 import { Map, fromJS, List } from 'immutable'
 import ReviseComponent from 'components/revise/Revise/index.js'
+import Axios from 'axios';
 class reivse extends Component {
 
     state = {
         info:Map(),
         flag:false,
+        password:'',
+        rePassword:'',
+        pre_password:'',
     }
     /**
      * 경력, 학력 수정
@@ -74,7 +78,72 @@ class reivse extends Component {
             }
         }
     }
+    onToogleFreeFlag=(e)=>{
+        const {info} =this.state;
+        this.setState({
+            info: info.set('freeflag',info.get('freeflag') === 0? 1 :0)
+        })
 
+    }
+    /**
+     * 비밀번호, 소속, 지역, 자기소개 변경이벤트
+     */
+    onChangeInput=(e)=>{
+        const {name,value} = e.target;
+        const {info} =this.state;
+        if(name === 'organization' || name ==='location' || name ==='intro' || name ==='nickname'){
+            this.setState({
+                info : info.set(name,value)
+            })
+            console.log('asd');
+            
+        }
+        else if(name ==='password'){
+            this.setState({
+                password:value
+            })
+        }
+        else if(name==='pre_password'){
+            this.setState({
+                pre_password:value
+            })
+        }
+        else if(name ==='rePassword'){
+            this.setState({
+                rePassword:value
+            })
+        }
+    }
+
+    onSubmit=async ()=>{
+        // var post = new Object();
+        const {info} = this.state;
+        const {
+            password,
+            pre_password
+        } = this.state
+        if(password !== pre_password){
+            alert('변경할 비밀번호가 일치하지 않습니다.')
+        }
+        else{
+            
+        /* 
+            !! 비밀번호 변경 - test 중 주석처리함
+            post.password=password
+            post.pre_password= pre_password
+            let res = await Axios.put('/user/update_pass',post)
+            alert(res.data.message)
+            window.location.reload(); 
+        */
+            let post = info.toJS();
+            console.log(post);
+            
+            let res =await Axios.put(`/user/${post._id}?freeflag=1`,post);
+
+            //window.location.reload(); 
+        }
+        
+    }
     render() {
         const {
             myInfo
@@ -87,11 +156,22 @@ class reivse extends Component {
             onChangeDay,
             onChangeList,
             AddListInput,
+            onChangeInput,
+            onSubmit,
+            onToogleFreeFlag
         }= this
+        const {
+            password,
+            pre_password,
+            rePassword,
+            info
+        } = this.state
+        
         if (myInfo != "") {
+            console.log(info.toJS());
             return (
                 <ReviseComponent
-                    inputdata ={this.state.info}
+                    inputdata ={info}
                     info={myInfo}
                     inputChange={onChangeThings}
                     onDelete={onDelete}
@@ -99,6 +179,12 @@ class reivse extends Component {
                     inputListChange={onChangeList}
                     onChangeDay={onChangeDay}
                     AddListInput={AddListInput}
+                    onChangeInput={onChangeInput}
+                    password={password}
+                    pre_password={pre_password}
+                    rePassword={rePassword}
+                    onSubmit={onSubmit}
+                    onToogleFreeFlag={onToogleFreeFlag}
                 />
             )
         }

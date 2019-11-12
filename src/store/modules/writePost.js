@@ -27,15 +27,15 @@ const initialState=Map({
 
 export default handleActions({
     [GET_CONTAINT] : (state,action) =>{
-        const {id} = action.payload;
-        let data = api.getPost(id);
-        return state.set('title', data.title)
-                    .set('price',data.price)
-                    .set('dueDate',new Date(data.dueDate))
-                    .set('catList',data.catList)
-                    .set('period',data.period)
-                    .set('maxPeople',data.maxPeople)
-                    .set('description',data.description)
+        const {project} = action.payload;
+        
+        return state.set('title', project.title)
+                    .set('price',project.price)
+                    .set('dueDate',new Date(project.dueDate))
+                    .set('catList',project.catList)
+                    .set('period',project.period)
+                    .set('maxPeople',project.maxPeople)
+                    .set('description',project.description)
     },
     [CHANGE_INPUT]: (state,action) =>{
         const {id,data} = action.payload;

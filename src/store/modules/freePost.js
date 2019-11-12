@@ -5,14 +5,18 @@ import * as api from 'lib/api.js'
 
 const GET_FREE = 'freePost/GET_FREE'
 
-export const getFree = createAction(GET_FREE)
+export const getFree = createAction(GET_FREE,api.getFreeInfo)
 
 const initialState=Map({
     info : "",
 })
 export default handleActions({
-    [GET_FREE] : (state,action)=>{
-        const {id} = action.payload;
-        return state.set('info',api.getFreeInfo(id))
-    }
+    ...pender({
+        type:GET_FREE,
+        onSuccess:(state,action)=>{
+            const {user} = action.payload.data
+            return state.set('info',user)
+
+        }
+    })
 },initialState)

@@ -4,7 +4,6 @@ import styles from './styles.scss'
 import classnames from 'classnames'
 import DetailRow from './DetailRow'
 import DetailColum from './DetailColum'
-import StarRatings from 'react-star-ratings';
 import Button from 'components/common/Button/index.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -18,21 +17,9 @@ const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check })
       <div className={cx('FreeLenserDetail-wrapper')}>
         <div className={cx('FreeLenserDetail-profile')}>
           <img src={imgSrc} className={cx('profile-img')} />
-          <div className={cx('profile-nickname')}>{freeInfo.nickName}</div>
+          <div className={cx('profile-nickname')}>{freeInfo.nickname}</div>
           <div className={cx('profile-table')}>
-            <div>
-              <div className={cx('profile-tr')}>평점</div>
-              <div className={cx('profile-td')}>
-                <StarRatings
-                  rating={freeInfo.grade}
-                  starRatedColor='rgb(252, 234,33)'
-                  numberOfStars={5}
-                  starDimension='20px'
-                  starSpacing='1px'
-                  name='rating'
-                />
-              </div>
-            </div>
+            
             <div>
               <div className={cx('profile-tr')}>소속</div>
               <div className={cx('profile-td')}>{freeInfo.organization}</div>

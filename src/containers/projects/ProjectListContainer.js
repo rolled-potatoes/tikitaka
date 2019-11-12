@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
 import * as projectAction from 'store/modules/ProjectList.js'
 import Pagenation from 'containers/common/Pagenation.js'
-import { timingSafeEqual } from 'crypto';
 /**
  * 넘겨줄 값 : 페이지 번호 , 필터, 검색어
  * 받을 값 : 페이지 마지막 번호, 프로젝트 리스트 10개
@@ -29,14 +28,15 @@ class ProjectListContainer extends Component {
     onRouteChanged = () => {
         const { page } = this.props.match.params
         const { ProjectAction } = this.props
-        ProjectAction.getList({ page: page });
+        this.onClickSearch(0,page)
+        //ProjectAction.getList({ pageId: page,size:10 });
         window.scrollTo(0, 0)
     }
     componentDidMount() {
         window.scrollTo(0, 0)
         const { page } = this.props.match.params
         const { ProjectAction } = this.props
-        ProjectAction.getList({pageId:1,size:10});
+        ProjectAction.getList({pageId:page,size:10});
     }
     changeSearchString = (e) => {
         const { value } = e.target;
@@ -83,13 +83,11 @@ class ProjectListContainer extends Component {
             this.onClickSearch(elem.dataset.value)
         }
     }
-    onClickSearch = (order) => {
+    onClickSearch = (order,page) => {
         const {ProjectAction,searchText,searchCategory} = this.props;
         const cat = searchCategory === '제목'? 'title':'categoryList';
-        console.log(order);
-        
         ProjectAction.getList({
-            pageId: 1,
+            pageId: page? page:1,
             size:10,
             cat :cat,
             text:searchText,

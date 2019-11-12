@@ -80,12 +80,12 @@ export default handleActions ({
     ...pender({
         type : CHECK_LOGIN,
         onSuccess:(state,action) =>{
-            const {logged} = action.payload.data
-            const myinfo = api.getMyInfo();
+            const {logged,user} = action.payload.data
+            /* const myinfo = api.getMyInfo();
+            const {data} =action.payload */
             const timeline = api.getNewFeed();
-            const {data} =action.payload
             return state.set('logged',logged)
-                        .set('myInfo',data.user)
+                        .set('myInfo',user)
                         .set('timeline',timeline)
 
         }

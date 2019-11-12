@@ -19,7 +19,8 @@ const imgSrc = "https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/4213564
 const cx = classnames.bind(styles)
 const FreeLenserContent = ({ list }) => {
   const doms = list.map(item => {
-    const { nickName, organization, grade, intro, categoryList, proList, id } = item;
+    const { nickname, organization, intro, categoryList, proList, _id } = item;
+    
     const cat = categoryList.map(item => {
       return (
         <div className={cx('category-item')}>
@@ -30,29 +31,19 @@ const FreeLenserContent = ({ list }) => {
     return (
       <div className={cx('FreeLenserList-post')}>
         <div className={cx('post-img', 'post-item')}>
-          <Link to={`/freeLenser/detail/${id}`}>
+          <Link to={`/freeLenser/detail/${_id}`}>
             <img src={imgSrc} />
           </Link>
         </div>
         <div className={cx('post-nickname', 'post-item')}>
-          <Link to={`/freeLenser/detail/${id}`}>
-            {nickName}
+          <Link to={`/freeLenser/detail/${_id}`}>
+            {nickname}
           </Link>
         </div>
         <div className={cx('post-organization', 'post-item')}>
           {organization}
         </div>
-        <div className={cx('post-grade', 'post-item')}>
-          <StarRatings
-            rating={grade}
-            starRatedColor='rgb(252, 234,33)'
-            numberOfStars={5}
-            starDimension='30px'
-            starSpacing='2px'
-            name='rating'
-          />
-        </div>
-        <div className={cx('post-item', 'post-intro')}>
+        <div className={cx('post-item', 'post-intro')} title={intro}>
           {intro}
         </div>
         <div className={cx('post-skill', 'post-item')}>
@@ -96,9 +87,6 @@ const FreeLenserList = ({ showcat, _ontoggle, list, onChange,
       </div>
     </div>
     <div className={cx('FreeLenserList-filter')}>
-      <Button>전체보기</Button>
-      <Button>프로젝트 수</Button>
-      <Button>평점순</Button>
     </div>
     <div className={cx('FreeLenserList-contents')}>
       <FreeLenserContent list={list} />

@@ -10,14 +10,14 @@ import Button from '../../common/Button'
 const cx = classnames.bind(styles)
 const proImg = require('imgs/프로필.png')
 
-const Input_date = ({ arr, inputChange, name, onDelete, onChangeDay,flag }) => {
+const Input_date = ({ arr, inputChange, name, onDelete, onChangeDay, flag }) => {
   let temp = arr.map((item, index) => {
     const { getDate, things } = item
 
     return (
-      <div className={cx('Revise-input-wrapper',{'Revise-input-wrapper2':!flag})}>
+      <div className={cx('Revise-input-wrapper', { 'Revise-input-wrapper2': !flag })}>
         {flag &&
-            <div className={cx('Revise-input-dayPicker')}>
+          <div className={cx('Revise-input-dayPicker')}>
             <DayPickerInput
               value={new Date(getDate)}
               id={`${name}_${index}`}
@@ -31,10 +31,10 @@ const Input_date = ({ arr, inputChange, name, onDelete, onChangeDay,flag }) => {
 
           </div>
         }
-        
+
 
         <div className={cx('Revise-input-input')}>
-          <input className={cx('Revise-inputs', `${name}`)} id={index} value={things ===undefined? item:things} onChange={inputChange} />
+          <input className={cx('Revise-inputs', `${name}`)} id={index} value={things === undefined ? item : things} onChange={inputChange} />
         </div>
 
         <div className={cx('Revise-input-removeBtn')} >
@@ -60,23 +60,33 @@ const Revise = ({
   onChangeDay,
   inputListChange,
   AddListInput,
+  onChangeInput,
+  password,
+  pre_password,
+  rePassword,
+  onSubmit,
+  onToogleFreeFlag,
 }) => {
 
   const {
     name, organization, email,
-    userId, grade,
-    location, Intro,
+    userId, grade,nickname,
+    location, intro,
     proList, follow
   } = info
+
   const {
-    nickname,
+    nickname:nickname_input,
     careerList,
+    freeflag,
     educationList,
     categoryList,
-    licenseList,
+    lisenceList,
+    organization: organization_input,
+    location: location_input,
+    intro: intro_input,
   } = inputdata.toJS()
-
-
+  
   return (
     <div className={cx('mypage-page')}>
       <div className={cx('mypageTxt')}>
@@ -84,26 +94,35 @@ const Revise = ({
       </div>
       <div className={cx('FreeLenserDetail-wrapper')}>
         <MypageSide
-              nickName={nickname}
-              organization={organization}
-              location={location}
-              Intro={Intro}
-              grade={grade}
-              proList={proList}
+          nickName={nickname}
+          organization={organization}
+          location={location}
+          Intro={intro}
+          grade={grade}
+          proList={proList}
         />
         <div className={cx('revise-box')}>
           <div className={cx('info-box')}>
-            
-              <div className={cx('info-top')}>
-                <div className={cx('info-txt')}>  
-                
-                기본정보
+
+            <div className={cx('info-top')}>
+              <div className={cx('info-txt')}>
+                <div>
+                  기본정보
+                </div>
+              </div>
+              <div className='toogle'>
+                <label class="switch">
+                  <input type="checkbox" onClick={onToogleFreeFlag} checked={freeflag ===1}/>
+                  <span class="slider round"></span>
+                </label>
+                <p className={cx({'displaynone':freeflag===1})}>일반사용자</p>
+                <p className={cx({'displaynone':freeflag===0})}>프리랜서</p>
               </div>
 
-          </div>
+            </div>
             <div className={cx('container')}>
               <tr className={cx('info')}>
-                <th className={cx('Id')}>이메일</th><tr className={cx('compo')}>{email}</tr>
+                <th className={cx('Id')}>이메일</th><tr className={cx('compo')}>{userId}</tr>
               </tr>
               <tr className={cx('info')}>
                 <th>이름</th>
@@ -112,38 +131,46 @@ const Revise = ({
               <tr className={cx('info')}>
                 <th>닉네임</th>
                 <tr className={cx('inpassword')}>
-                  <input value={nickname} />
+                  <input value={nickname} name="nickname" value={nickname_input} onChange={onChangeInput}/>
                 </tr>
               </tr>
               <tr className={cx('info')}>
                 <th className={cx('password')}>기존 비밀번호         </th>
                 <td className={cx('inpassword')}>
-                  <input type="password" name="password" />
+                  <input type="password" name="pre_password" value={pre_password} onChange={onChangeInput} />
                 </td>
               </tr>
               <tr className={cx('info')}>
                 <th className={cx('password')}>변경할 비밀번호     </th>
                 <td className={cx('inpassword')}>
-                  <input type="password" name="newpassword" />
+                  <input type="password" name="password" value={password} onChange={onChangeInput} />
                 </td>
               </tr>
               <tr className={cx('info')}>
                 <th className={cx('password')}>비밀번호 확인        </th>
                 <td className={cx('inpassword')}>
-                  <input type="password" name="password2" />
+                  <input type="password" name="rePassword" value={rePassword} onChange={onChangeInput} />
                 </td>
               </tr>
               <tr className={cx('info')}>
-                <th className={cx('phonenumber')}>전화번호        </th>
+                <th className={cx('phonenumber')}>소속        </th>
                 <td className={cx('inpassword')}>
-                  <input type="number" name="password2" />
+                  <input type="text" name="organization" value={organization_input} onChange={onChangeInput} />
                 </td>
               </tr>
               <tr className={cx('info')}>
                 <th>지역</th>
                 <tr className={cx('compo')}>
                   <td className={cx('inpassword')}>
-                    <input type="text" name="password2" value={location}/>
+                    <input type="text" name="location" value={location_input} onChange={onChangeInput} />
+                  </td>
+                </tr>
+              </tr>
+              <tr className={cx('info')}>
+                <th>자기소개</th>
+                <tr className={cx('compo')}>
+                  <td className={cx('inpassword')}>
+                    <input type="text" name="intro" value={intro_input} onChange={onChangeInput} />
                   </td>
                 </tr>
               </tr>
@@ -162,7 +189,7 @@ const Revise = ({
               inputChange={inputChange}
               onDelete={onDelete}
               onChangeDay={onChangeDay}
-              flag = {true}
+              flag={true}
             />
 
           </div>
@@ -179,10 +206,10 @@ const Revise = ({
               inputChange={inputChange}
               onChangeDay={onChangeDay}
               onDelete={onDelete}
-              flag = {true}
+              flag={true}
             />
           </div>
-          
+
           <div className={cx('info-box')}>
             <div className={cx('info-top')}>
               <div className={cx('info-txt')}>
@@ -190,12 +217,13 @@ const Revise = ({
               </div>
               <button value='categoryList' onClick={AddListInput} className='info-insert'>추가</button>
             </div>
-              <Input_date
-                arr={categoryList}
-                name='categoryList'
-                inputChange={inputListChange}
-                flag ={false}
-              />
+            <Input_date
+              arr={categoryList}
+              name='categoryList'
+              inputChange={inputListChange}
+              flag={false}
+              onDelete={onDelete}
+            />
           </div>
 
           <div className={cx('info-box')}>
@@ -203,19 +231,20 @@ const Revise = ({
               <div className={cx('info-txt')}>
                 자격증
               </div>
-              <button value='licenseList' onClick={AddListInput} className='info-insert'>추가</button>
+              <button value='lisenceList' onClick={AddListInput} className='info-insert'>추가</button>
             </div>
             <Input_date
-                arr={licenseList}
-                name='licenseList'
-                inputChange={inputListChange}
-                flag ={false}
-              />
+              arr={lisenceList}
+              name='lisenceList'
+              inputChange={inputListChange}
+              flag={false}
+              onDelete={onDelete}
+            />
           </div>
 
           <div className={(cx('end'))}>
             <div className={cx('end-button')}>
-              <Button>수정완료</Button>
+              <Button onClick={onSubmit}> 수정완료</Button>
             </div>
           </div>
         </div>

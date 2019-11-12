@@ -47,23 +47,13 @@ const Login = ({onChangeEmail, onChangePassword, onClickLogin,email,password,onK
                 <img src={naverImg} onClick={onNaver}/>
               </Button>
             </div>
-            <div className={cx('api-naver')}>
-              <Button theme={'apibtn'}>
-                <a href="http://119.18.120.225:4000/auth/naver">hihi</a>
-                <img src={googleImg} />
-              </Button>
-
-            </div>
+            
             <div className={cx('api-naver')}>
               <Button theme={'apibtn'}>
                 <img src={kakaoImg} />
               </Button>
             </div>
-            <div className={cx('api-naver')}>
-              <Button theme={'apibtn'}>
-                <img src={facebookImg} />
-              </Button>
-            </div>
+            
 
           </div>
         </div>
