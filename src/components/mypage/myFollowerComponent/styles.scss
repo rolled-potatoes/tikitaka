@@ -39,9 +39,13 @@
                         }
                 }
                 .follower-li{
-                        display: grid;
-                        grid-template-columns: 2fr 5fr 1fr;
-                        padding: 20px 0;
+                        a{
+
+                                display: grid;
+                                grid-template-columns: 2fr 5fr 1fr;
+                                padding: 20px 0;
+                        }
+                        
                         .follower-li-div1{
                                 cursor: pointer;
                                 text-align: center;

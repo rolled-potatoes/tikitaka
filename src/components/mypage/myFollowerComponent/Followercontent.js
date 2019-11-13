@@ -3,12 +3,14 @@ import React from 'react';
 const List =({follower}) =>{
     let temp  = [];
     for(let i = 0 ; i< follower.length; i++){
-        const {nickName, email,id} = follower[i];
+        const {nickname, userId,_id} = follower[i];
         temp.push(
-            <li className='follower-li'>
-                <div className='follower-li-div1'>{nickName}</div>
-                <div className='follower-li-div2'>{email}</div>
+            <li className='follower-li' >
+                <a href={`/freeLenser/detail/${_id}`}>
+                <div className='follower-li-div1'>{nickname}</div>
+                <div className='follower-li-div2'>{userId}</div>
                 <button>취소</button>
+                </a>
             </li>
         )
     }

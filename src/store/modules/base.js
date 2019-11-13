@@ -25,6 +25,7 @@ export const changePassword = createAction(CHANGE_PASSWORD)
 export const checkLogin = createAction(CHECK_LOGIN,api.checkLogin)
 export const tempLogin = createAction(TEMP_LOGIN)
 export const notFound = createAction(NORFOUND)
+
 const initialState = Map({
     email : '',
     password:'',
@@ -60,15 +61,12 @@ export default handleActions ({
     ...pender({
         type: LOGIN,
         onSuccess:(state,action) =>{
-        const myinfo = api.getMyInfo();
-        const timeline = api.getNewFeed();
         const {data} =action.payload
-        
             return state.set('logged',true)
                         .set('myInfo',data.user)
-                        .set('timeline',timeline)
                         .set('email','')
                         .set('password','')
+
         },
         onError:(state,action)=>{
             return state.set('email','')
@@ -80,21 +78,19 @@ export default handleActions ({
     ...pender({
         type : CHECK_LOGIN,
         onSuccess:(state,action) =>{
-            const {logged,user} = action.payload.data
-            /* const myinfo = api.getMyInfo();
-            const {data} =action.payload */
-            const timeline = api.getNewFeed();
-            return state.set('logged',logged)
-                        .set('myInfo',user)
-                        .set('timeline',timeline)
-
-        }
+            const {data} =action.payload 
+            console.log(data);
+            return state.set('logged',data.logged)
+                        .set('myInfo',data.user?data.user:"")
+                        .set('timeline',data.timeline?data.timeline:"")
+        },
+        
     }),
     ...pender({
         type:LOGOUT,
         onSuccess:(state,action)=>{
             console.log('logout');
-            return state.set('logged',false)
+            return initialState
         },
         onError:(state,action)=>{
             console.log('logout fales');

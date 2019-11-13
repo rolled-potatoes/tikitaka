@@ -5,6 +5,7 @@ import Newfeed from 'components/common/Newfeed'
 import * as baseActions from 'store/modules/base.js'
 import classnames from 'classnames'
 import styles from './Base.scss'
+
 const cx = classnames.bind(styles)
 
 class Base extends Component {
@@ -24,8 +25,8 @@ class Base extends Component {
         if(localStorage.logged === 'true'){
             BaseActions.tempLogin()
         }
-        BaseActions.checkLogin();
-        //BaseActions.test();
+        await BaseActions.checkLogin();
+        
     }
     componentDidMount(){
         this.initialize();
@@ -52,7 +53,10 @@ class Base extends Component {
                 {!pageNot && logged === true &&
                 <Fragment>
                     <span style={{"fontSize": "30px","color":"#FFD74F"}} className={cx({"noneDisplay":visibleNewFeed})}>
-                        <i className="fas fa-bell" onClick={onClickBell}></i>
+                        <div className='timeline-background'>
+
+                            <i className="fas fa-bell" onClick={onClickBell}></i>
+                        </div>
                     </span>
                     
                     <Newfeed timeline={timeline} visible={visibleNewFeed} onCloseClick={onClickBell}/>
