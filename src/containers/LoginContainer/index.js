@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import * as baseActions from 'store/modules/base.js'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import {checkLogin} from 'store/modules/base.js'
 
 class LoginContainer extends React.Component {
   constructor(props) {
@@ -37,13 +38,14 @@ class LoginContainer extends React.Component {
    * 로그인 버튼 클릭 함수
    */
   onLogin = async () => {
-    const { BaseActions, email, password, history } = this.props
+    const { BaseActions, email, password, history ,CheckLogin} = this.props
     if (email === '' || password === '') {
       alert('이메일 또는 비밀번호를 입력하십시오')
     }
     else {
       try {
         await BaseActions.login(email, password)
+        await CheckLogin();
         localStorage.logged = 'true'
         history.push('/')
       }
@@ -105,5 +107,6 @@ export default connect(
   }),
   (dispatch) => ({
     BaseActions: bindActionCreators(baseActions, dispatch),
+    CheckLogin: bindActionCreators(checkLogin,dispatch)
   })
 )(withRouter(LoginContainer))

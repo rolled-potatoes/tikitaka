@@ -58,9 +58,9 @@ const Lists = ({ projectList }) => {
           </div>
 
           <div className={cx('item-right')}>
-            <div className={cx('categoryList')}>{categoryList.map(item => {
+            <div className={cx('categoryList')}>{categoryList.map((item,index) => {
               return (
-                `${item}, `
+                `${item}${index+1 === categoryList.length? '':','} `
               )
             })}</div>
             <div className={cx('description')}>

@@ -126,7 +126,6 @@ class reivse extends Component {
             alert('변경할 비밀번호가 일치하지 않습니다.')
         }
         else{
-            
         /* 
             !! 비밀번호 변경 - test 중 주석처리함
             post.password=password
@@ -138,7 +137,7 @@ class reivse extends Component {
             let post = info.toJS();
             console.log(post);
             
-            let res =await Axios.put(`/user/${post._id}?freeflag=1`,post);
+            let res =await Axios.put(`/user/${post._id}?freeflag=${post.freeflag}`,post);
 
             //window.location.reload(); 
         }

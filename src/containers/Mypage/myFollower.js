@@ -9,21 +9,40 @@ class myFoller extends Component {
         followerInfo :[],
         flag: false
     }
-
+    componentDidMount(){
+        if(this.props.myInfo !== ''){
+            console.log('asd');
+            
+            this.getFollow();
+        }
+    }
+    componentDidUpdate(preProps,prevState){
+        if(preProps.myInfo.followUserList != this.props.myInfo.followUserList){
+            this.getFollow();
+        }
+    }
     getFollow=async()=>{
         const {followUserList} = this.props.myInfo
         let follows = [];
         if(followUserList){
-            for(let item of followUserList){
-                let result = await Axios.get(`/user/${item}`)
-                follows.push(result.data.user);
-            }
+            
+            follows = await this.getUnit(followUserList)
+            
             this.setState({
                 followerInfo:follows,
                 flag :true
             })
         }
         
+    }
+    getUnit=async(followUserList)=>{
+        let follows=[];
+        for(let item of followUserList){
+            let result = await Axios.get(`/user/${item}`)
+            follows.push(result.data.user);
+        }
+
+        return new Promise(resolve=>resolve(follows))
     }
     render() {
         const {
@@ -34,8 +53,7 @@ class myFoller extends Component {
             followerInfo,
             flag
         } = this.state;
-        if(myInfo !=="" && !flag)
-            this.getFollow();
+        
         return (
             <Fragment>
                 {myInfo !== "" && followerInfo !==[] &&

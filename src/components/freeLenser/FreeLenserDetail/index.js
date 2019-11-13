@@ -11,7 +11,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 const cx = classnames.bind(styles)
 const imgSrc = "https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/42135641_1894679573979032_7136233916314157056_n.jpg?_nc_cat=108&_nc_oc=AQlwd9nh7sPfN1VZJ75panQPdTySUMTdtP51y1RFleHYHAFS92s2yZlM4qDzHG5I8Wk&_nc_ht=scontent.ficn3-1.fna&oh=4a6b9e8645545cc0b5190f5e1c9b3a3a&oe=5DD275CF"
 
-const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check }) => {
+const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check,onFollowClick }) => {
   if (freeInfo != "") {
     return (
       <div className={cx('FreeLenserDetail-wrapper')}>
@@ -33,9 +33,9 @@ const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check })
           <div className={cx('profile-intro')}>
             {freeInfo.intro}
           </div>
-          <div className={cx('profil-follow', { 'following': follow_check })}>
+          <div className={cx('profil-follow', { 'following': follow_check })} data-value={follow_check?0:1} onClick={onFollowClick}>
             {follow_check ? (
-              <div className='follow-div'>
+              <div className='follow-div' >
                 <div className='follow-text'>팔로우 취소</div>
                 < i  className={cx("fas fa-heart")} />
               </div>

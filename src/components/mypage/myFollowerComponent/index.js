@@ -10,6 +10,8 @@ const index = ({ myInfo, followerInfo }) => {
         userId, location, intro, grade,
         proList, follow
     } = myInfo
+    console.log(followerInfo);
+    
     return (
         <div className={cx('mypage-page')}>
             <div className={cx('mypage-title')}>
