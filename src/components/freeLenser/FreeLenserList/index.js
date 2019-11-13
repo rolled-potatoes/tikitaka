@@ -19,7 +19,7 @@ const imgSrc = "https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/4213564
 const cx = classnames.bind(styles)
 const FreeLenserContent = ({ list }) => {
   const doms = list.map(item => {
-    const { nickname, organization, intro, categoryList, proList, _id } = item;
+    const { nickname, organization, intro, categoryList, proList, _id,userId } = item;
     
     const cat = categoryList.map(item => {
       return (
@@ -32,7 +32,7 @@ const FreeLenserContent = ({ list }) => {
       <div className={cx('FreeLenserList-post')}>
         <div className={cx('post-img', 'post-item')}>
           <Link to={`/freeLenser/detail/${_id}`}>
-            <img src={imgSrc} />
+            <img src={`/public/images/${userId}.PNG`} />
           </Link>
         </div>
         <div className={cx('post-nickname', 'post-item')}>

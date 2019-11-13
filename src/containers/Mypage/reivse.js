@@ -12,6 +12,7 @@ class reivse extends Component {
         password:'',
         rePassword:'',
         pre_password:'',
+        imgCheck : false,
     }
     /**
      * 경력, 학력 수정
@@ -114,13 +115,22 @@ class reivse extends Component {
             })
         }
     }
-
+    componentDidMount(){
+        this.testtt();
+    }
+    testtt = async()=>{
+        //let res = await Axios.get('/public/images/test.PNG')
+        // console.log(res);
+        
+        // document.querySelector('#testss').src = '/public/images/test.PNG'
+    }
     onSubmit=async ()=>{
         // var post = new Object();
         const {info} = this.state;
         const {
             password,
-            pre_password
+            pre_password,
+            imgCheck,
         } = this.state
         if(password !== pre_password){
             alert('변경할 비밀번호가 일치하지 않습니다.')
@@ -137,12 +147,38 @@ class reivse extends Component {
         */
             let post = info.toJS();
             console.log(post);
-            
-            let res =await Axios.put(`/user/${post._id}?freeflag=1`,post);
+            if(imgCheck){
+                let fd = new FormData();
+                let img = document.querySelector('#imgInput').files[0]
+                console.log(img);
+                fd.append('img',img)
+                let res = await Axios.post('/images',fd,{
+                    header:{
+                        'Content-Type':'nultipart/form-data'
+                    }
+                })
+                console.log(res);
+                
+            }
+            //let res =await Axios.put(`/user/${post._id}?freeflag=1`,post);
 
             //window.location.reload(); 
         }
         
+    }
+    onChangeImg=(e)=>{
+        let reader = new FileReader();
+        reader.onload = function(e){
+            document.querySelector('#myimg').src = e.target.result
+        }
+        if(e.target.files.length == 1){
+            if(e.target.files[0].type ==='image/png'){
+                reader.readAsDataURL(e.target.files[0]);
+                this.setState({
+                    imgCheck:true
+                })
+            }
+        }
     }
     render() {
         const {
@@ -158,7 +194,8 @@ class reivse extends Component {
             AddListInput,
             onChangeInput,
             onSubmit,
-            onToogleFreeFlag
+            onToogleFreeFlag,
+            onChangeImg
         }= this
         const {
             password,
@@ -185,6 +222,7 @@ class reivse extends Component {
                     rePassword={rePassword}
                     onSubmit={onSubmit}
                     onToogleFreeFlag={onToogleFreeFlag}
+                    onChangeImg={onChangeImg}
                 />
             )
         }

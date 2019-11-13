@@ -7,8 +7,8 @@ const cx = classnames.bind(styles)
 const index = ({ myInfo, followerInfo }) => {
     const {
         nickname, organization,
-        userId, location, intro, grade,
-        proList, follow
+        userId, location, intro,
+        proList,
     } = myInfo
     return (
         <div className={cx('mypage-page')}>
@@ -22,6 +22,7 @@ const index = ({ myInfo, followerInfo }) => {
                     location={location}
                     Intro={intro}
                     proList={proList}
+                    userId={userId}
                 />
                 <div className='follower-wrapper'>
                     <div className='follower-top'>

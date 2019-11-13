@@ -16,16 +16,17 @@ const cx = classnames.bind(styles)
 
 const Lists = ({ projectList }) => {
   let list = projectList.map(item => {
-    const { title, price, dueDate, categoryList, writeDate, _id,
+    const { title, price, dueDate, categoryList, writeDate, _id,userId,
       description, period, nickName, candiList, freeList, maxPeople, organization } = item
     let _writeDate = format(new Date(writeDate))
     let _dueDate =format(new Date(dueDate))
+    console.log(item);
     
     return (
       <div className={cx('project')}>
         <div className={cx('writer-content')}>
           <div className={cx('writer')}>
-            <img src="https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/42135641_1894679573979032_7136233916314157056_n.jpg?_nc_cat=108&_nc_oc=AQlwd9nh7sPfN1VZJ75panQPdTySUMTdtP51y1RFleHYHAFS92s2yZlM4qDzHG5I8Wk&_nc_ht=scontent.ficn3-1.fna&oh=4a6b9e8645545cc0b5190f5e1c9b3a3a&oe=5DD275CF" className={cx('writer-profile')}></img>
+            <img src={`/public/images/${userId}.PNG`} className={cx('writer-profile')}></img>
             <h3 className={cx('writer-nickName')}>{nickName}</h3>
           </div>
 
@@ -58,9 +59,9 @@ const Lists = ({ projectList }) => {
           </div>
 
           <div className={cx('item-right')}>
-            <div className={cx('categoryList')}>{categoryList.map(item => {
+            <div className={cx('categoryList')}>{categoryList.map((item,index) => {
               return (
-                `${item}, `
+                `${item}${categoryList.length === index +1 ? '':','}`
               )
             })}</div>
             <div className={cx('description')}>

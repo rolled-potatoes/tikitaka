@@ -24,11 +24,13 @@ class HeaderContainer extends Component {
         const {
             handleLogout
         } = this
+        const userId = myInfo? myInfo.userId:"";
         const nickName = myInfo? myInfo.nickname : "";
         return (
             <Header
                 onClickLogout= {handleLogout}
                 logged= {logged}
+                userId={userId}
                 nickName={nickName}
             />
         );

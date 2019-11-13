@@ -1,5 +1,21 @@
+@import 'src/styles/utils.scss';
 
-        .mypageSide-container {
+.imgInput-wrapper {
+        margin: 10px 0px;
+        background: $tikitaka-yello;
+        cursor: pointer;
+        width: 80%;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+        #imgInput {
+                width: 100%;
+                display: none;
         }
-    
+}
+
+#myimg {
+        border-radius: 50%;
+}

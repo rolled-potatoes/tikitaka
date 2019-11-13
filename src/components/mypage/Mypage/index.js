@@ -30,6 +30,7 @@ const Mypage = ({myInfo,visibles,onClickMenuitem }) => {
             organization={organization}
             location={location}
             Intro={intro}
+            userId={userId}
             proList={proList}
           />
           <MypageContent
