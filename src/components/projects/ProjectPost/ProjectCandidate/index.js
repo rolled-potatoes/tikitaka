@@ -6,19 +6,26 @@ const cx =classnames.bind(styles);
 const List = ({data,agreeApplyAction,DenyApplyAction})=>{
   
   let list = data.map(item=>{
-    const {nickname,email,_id} = item;
+    const {nickname,email,_id,organization} = item;
     return(
-      <div className='candidate-content-item'>
-        <div>{email}</div>
-        <div>{nickname}</div>
+      <div className='candidate-content-item' >
+        <label for ={email}>{email}</label>
+        <label for ={email}>{nickname}</label>
         <button value ={_id} onClick={agreeApplyAction}>수락</button>
         <button value ={_id} onClick={DenyApplyAction}>거부</button>
+        <input type='checkbox' id = {email} className='checkboxs'/>
+        <ul className ='hi'>
+          <li>
+            소속 : {organization}
+          </li>
+        </ul>
       </div>
     )
   })
   return list
 }
 const ProjectCandidate = ({visible,onModals,data,agreeApplyAction,DenyApplyAction}) => {
+  console.log(data)
   return(
     <div className={cx('candidate-Wrapper',{"candidate-close":!visible})}>
       <div className='candidate-container'>

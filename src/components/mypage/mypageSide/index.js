@@ -20,10 +20,12 @@ const mypageSide = ({
     <div className={cx('FreeLenserDetail-profile')}>
       <img className={cx('profile-img')} id='myimg'  src={`/public/images/${userId}.PNG`}/>
       <div className={cx('profile-nickname')}>{nickName}</div>
+      {onChangeImg&&
       <label className='imgInput-wrapper' for='imgInput'>
         <input  type="file" onChange={onChangeImg} id = 'imgInput' accept=".png"/>
         <div>사진 변경</div>
       </label>
+      }
       <div className={cx('profile-table')}>
         
         <div>
