@@ -38,16 +38,23 @@ class LoginContainer extends React.Component {
    * 로그인 버튼 클릭 함수
    */
   onLogin = async () => {
-    const { BaseActions, email, password, history ,CheckLogin} = this.props
+    const { BaseActions, email, password, history ,CheckLogin,logged} = this.props
     if (email === '' || password === '') {
       alert('이메일 또는 비밀번호를 입력하십시오')
     }
     else {
       try {
-        await BaseActions.login(email, password)
-        await CheckLogin();
-        localStorage.logged = 'true'
-        history.push('/')
+        let res = await BaseActions.login(email, password)
+        console.log(res.data.message);
+        
+        if(res.data.message == -1){
+          alert('없는 계정이거나 이메일 인증이 되지않은 계정입니다.')
+        }
+        else{
+          await CheckLogin();
+          localStorage.logged = 'true'
+          history.push('/')
+        }
       }
       catch (e) {
         console.log(e);
@@ -59,9 +66,14 @@ class LoginContainer extends React.Component {
     alert('로그인 되었습니다.')
   }
   onNaver =async ()=>{
-    let a = window.open("http://119.18.120.225:4000/auth/naver","hihi","width=600,height=500")
+    const {history} = this.props;
+    //history.push("http://119.18.120.225:4000/auth/naver")
+    window.location = "http://119.18.120.225:4000/auth/naver";
+    //let a = window.open("http://119.18.120.225:4000/auth/naver","hihi","width=600,height=500")
   }
-  
+  onKakao = async()=>{
+    window.location = "http://119.18.120.225:4000/auth/kakao";
+  }
   render() {
     const {
       inputEmail,
@@ -70,6 +82,7 @@ class LoginContainer extends React.Component {
       onLogin,
       onKeyPressEnter,
       onNaver,
+      onKakao,
     } = this
     const {
       email,
@@ -93,6 +106,7 @@ class LoginContainer extends React.Component {
           onClickLogin={onLogin}
           onKeyPressEnter={onKeyPressEnter}
           onNaver={onNaver}
+          onKakao={onKakao}
         />
     );
   }

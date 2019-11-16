@@ -2,9 +2,12 @@ import React from 'react';
 import {format} from 'lib/functions.js'
 const List =({LinkToPost,projects})=>{
     let temp=[];
+
     for(let item of projects){
+        console.log(item._id);
+        
         temp.push(
-            <li value={item._id} onClick={LinkToPost} className='myList-bottom-item'>
+            <li data-value={item._id} onClick={LinkToPost} className='myList-bottom-item'>
                 <div className='myList-bottom-item-date'>
                     {format(new Date(item.writeDate))}
                 </div>

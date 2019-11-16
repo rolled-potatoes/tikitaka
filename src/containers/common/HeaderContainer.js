@@ -25,6 +25,8 @@ class HeaderContainer extends Component {
             handleLogout
         } = this
         const nickName = myInfo? myInfo.nickname : "";
+        console.log(myInfo);
+        
         return (
             <Header
                 onClickLogout= {handleLogout}

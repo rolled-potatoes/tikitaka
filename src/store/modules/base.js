@@ -62,6 +62,10 @@ export default handleActions ({
         type: LOGIN,
         onSuccess:(state,action) =>{
         const {data} =action.payload
+        console.log(action.payload);
+        if(action.payload.data.message == -1){
+            return state.set('logged',false)
+        }
             return state.set('logged',true)
                         .set('myInfo',data.user)
                         .set('email','')
@@ -69,6 +73,8 @@ export default handleActions ({
 
         },
         onError:(state,action)=>{
+            console.log(action);
+            
             return state.set('email','')
                         .set('password','')
                         .set('loginError',true)

@@ -72,8 +72,6 @@ class SignUp extends Component {
         const { 
             email, 
             password, 
-            SingupActions,
-            duplicate_check,
             agree,
             nickname,
             location_,
@@ -90,9 +88,13 @@ class SignUp extends Component {
          * 모든 항목 입력여부 확인, 닉네임 중복확인, 비밀번호 일치확인, 개인정보동의체크
          */
         // if(organization!=="" && name !== "" && email !== "" && password !== "" && duplicate_check &&agree &&password_check){
-        //     SingupActions.submit(email, password,name,nickname,location,organization);
+        //     SingupActions.submit(email, password,name,nickname,location_,organization);
         // }
-        if(location_!==""&& organization!=="" && name !== "" && email !== "" && password !== ""){
+        if(!password_check){
+            return alert('비밀번호가 일치하지 않습니다.')
+        }
+        else if(agree && location_!==""&& organization!=="" && name !== "" && email !== "" && password !== ""){
+            
             try{
                 const ret = await api.singup(email, password,name,nickname,location_,organization);
                 if(ret === 'success'){
@@ -106,9 +108,10 @@ class SignUp extends Component {
             // const a = await SingupActions.submit(email, password,name,nickname,location,organization);
             
         }
-        if(!password_check){
-            return alert('비밀번호가 일치하지 않습니다.')
+        else{
+            return alert('입력되지 않은 값이 있습니다.')
         }
+        
         
     }
     

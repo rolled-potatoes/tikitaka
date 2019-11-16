@@ -20,7 +20,6 @@ const initialState = Map({
     organization :"",
     location_:"",
     agree :false,
-    duplicate_check: false,
 })
 
 

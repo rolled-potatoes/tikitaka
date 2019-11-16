@@ -37,7 +37,8 @@ class myList extends Component {
         return new Promise(resolve => resolve(projects))
     }
     LinkToPost=(e)=>{
-        const {value} =e.currentTarget;
+        
+        const {value} =e.currentTarget.dataset;
         const {history} = this.props;
         history.push(`/project/post/${value}`)
     }
