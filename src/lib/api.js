@@ -57,9 +57,13 @@ export const getCandidateInfo = async(list)=>{
     let results = []
     for(let _id of list){
         let data = await axios.get(`/user/${_id}`).then(res => res = res.data.user)
+        console.log(data);
+        
         results.push({
             nickname: data.nickname,
             email : data.userId,
+            organization:data.organization,
+            categoryList:data.categoryList,
             _id : _id
         })
     }

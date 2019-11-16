@@ -9,7 +9,7 @@ const cx = classnames.bind(styles)
 const myList = ({myInfo,LinkToPost,projects}) =>{
   const { 
     nickname, organization, 
-    userId, location, intro,  grade,
+    userId, location, intro, 
     proList,follow
   } = myInfo
   if(myInfo ==""){
@@ -30,6 +30,7 @@ const myList = ({myInfo,LinkToPost,projects}) =>{
             location={location}
             Intro={intro}
             proList={proList}
+            userId={userId}
           />
           <div className='myList-wrapper'>
             <div className='myList-top'>

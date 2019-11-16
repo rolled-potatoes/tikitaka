@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MainComponent from 'components/Main/main/index.js'
 import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 class main extends Component {
     LinkToProject=()=>{
@@ -29,8 +30,12 @@ class main extends Component {
             LinkToLogin,
             LinkToSign,
         } = this;
+        const {
+            logged
+        } = this.props;
         return (
             <MainComponent
+                logged={logged}
                 LinkToProject={LinkToProject}
                 LinkToFree={LinkToFree}
                 LinkToLogin={LinkToLogin}
@@ -40,4 +45,11 @@ class main extends Component {
     }
 }
 
-export default withRouter(main);
+export default connect(
+    (state)=>({
+        logged : state.base.get('logged'),
+    }),
+    ()=>({
+
+    })
+)(withRouter(main));

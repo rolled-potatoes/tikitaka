@@ -66,6 +66,7 @@ const Revise = ({
   rePassword,
   onSubmit,
   onToogleFreeFlag,
+  onChangeImg,
 }) => {
 
   const {
@@ -100,6 +101,8 @@ const Revise = ({
           Intro={intro}
           grade={grade}
           proList={proList}
+          onChangeImg={onChangeImg}
+          userId={userId}
         />
         <div className={cx('revise-box')}>
           <div className={cx('info-box')}>

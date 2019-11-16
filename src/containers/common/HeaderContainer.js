@@ -24,6 +24,7 @@ class HeaderContainer extends Component {
         const {
             handleLogout
         } = this
+        const userId = myInfo? myInfo.userId:"";
         const nickName = myInfo? myInfo.nickname : "";
         console.log(myInfo);
         
@@ -31,6 +32,7 @@ class HeaderContainer extends Component {
             <Header
                 onClickLogout= {handleLogout}
                 logged= {logged}
+                userId={userId}
                 nickName={nickName}
             />
         );

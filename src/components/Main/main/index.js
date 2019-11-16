@@ -26,18 +26,20 @@ const Category =()=>{
   })
   return doms;
 }
-const Main = ({LinkToProject,LinkToFree,LinkToSign,LinkToLogin}) => {
-
-  return (
+const Main = ({LinkToProject,LinkToFree,LinkToSign,LinkToLogin,logged}) => {
+  console.log(logged);
+  
+  return (  
     <div className='main-wrapper'>
       <section className='main-background'>
         <h1 className='main-intro'>
           대학생을 위한 아웃소싱 플랫폼
         </h1>
+        {!logged &&
         <div className='main-intro-under'>
           <button onClick={LinkToLogin}>로그인</button>
           <button onClick={LinkToSign}>회원가입</button>
-        </div>
+        </div>}
         
       </section>
 

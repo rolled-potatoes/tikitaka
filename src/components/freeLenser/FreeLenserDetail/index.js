@@ -16,7 +16,7 @@ const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check,on
     return (
       <div className={cx('FreeLenserDetail-wrapper')}>
         <div className={cx('FreeLenserDetail-profile')}>
-          <img src={imgSrc} className={cx('profile-img')} />
+          <img src={`/public/images/${freeInfo.userId}.PNG`} className={cx('profile-img')} />
           <div className={cx('profile-nickname')}>{freeInfo.nickname}</div>
           <div className={cx('profile-table')}>
             

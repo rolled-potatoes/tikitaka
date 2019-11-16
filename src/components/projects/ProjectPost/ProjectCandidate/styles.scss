@@ -54,6 +54,15 @@
                                                         width: 84px;
                                                 }
                                         }
+                                        .hi{
+                                                display: none;
+                                        }
+                                        .checkboxs{
+                                                display: none;
+                                        }
+                                        .checkboxs:checked +.hi{
+                                                display: block;
+                                        }
                                 }
                                 .candidate-content-item+.candidate-content-item{
                                         margin-top:10px;
@@ -62,8 +71,8 @@
                         }
                 }
         }
-
 }
 .candidate-close{
         display: none;
 }
+
