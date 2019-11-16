@@ -15,7 +15,7 @@ export const getProjectList = ({pageId,size,order,text,cat})=>{
 export const checkLogin = () =>axios.get('/main')
 export const getPost = (id) => axios.get(`/project/${id}`)
 export const logout= ()=> axios.get('/auth/logout')
-export const getFreeInfo = (id)=> axios.get(`/user/${id}`)
+export const getFreeInfo = (id)=> axios.get(`/user/${id}?freeflag=1`)
 export const ModifyPost= (id,post)=> axios.put(`/project/${id}?flag=4`,{post})
 export const removePost =(id) => axios.delete(`/project/${id}`)
 export const applyProject = async (id) => {
@@ -55,8 +55,11 @@ export const getFollowerInfo = ({follow})=>{
 }
 export const getCandidateInfo = async(list)=>{
     let results = []
+    console.log(list);
     for(let _id of list){
-        let data = await axios.get(`/user/${_id}`).then(res => res = res.data.user)
+        console.log(_id);
+        
+        let data = await axios.get(`/user/${_id}?freeflag=1`).then(res => res = res.data.user)
         console.log(data);
         
         results.push({
@@ -64,7 +67,7 @@ export const getCandidateInfo = async(list)=>{
             email : data.userId,
             organization:data.organization,
             categoryList:data.categoryList,
-            _id : _id
+            _id : _id,
         })
     }
 

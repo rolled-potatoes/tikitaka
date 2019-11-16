@@ -96,6 +96,7 @@ export default handleActions ({
         type:LOGOUT,
         onSuccess:(state,action)=>{
             console.log('logout');
+            localStorage.logged= 'false'
             return initialState
         },
         onError:(state,action)=>{

@@ -38,7 +38,7 @@ class myFoller extends Component {
     getUnit=async(followUserList)=>{
         let follows=[];
         for(let item of followUserList){
-            let result = await Axios.get(`/user/${item}`)
+            let result = await Axios.get(`/user/${item}?freeflag=1`)
             follows.push(result.data.user);
         }
 

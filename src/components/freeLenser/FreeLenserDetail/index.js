@@ -13,6 +13,8 @@ const imgSrc = "https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/4213564
 
 const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check,onFollowClick }) => {
   if (freeInfo != "") {
+    console.log(freeInfo);
+    
     return (
       <div className={cx('FreeLenserDetail-wrapper')}>
         <div className={cx('FreeLenserDetail-profile')}>

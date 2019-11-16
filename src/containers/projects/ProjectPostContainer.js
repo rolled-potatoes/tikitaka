@@ -95,6 +95,7 @@ class ProjectPostContainer extends Component {
                     post ={project}
                     applyProject={applyProjectAction}
                     onModals={onModals}
+                    logged={logged}
                     />
                 {mycontent&&
                     <ProjectCandidate

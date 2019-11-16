@@ -21,10 +21,11 @@ class WritePostContainer extends Component {
         if (id !== undefined) {
             this.init(id, project)
         }
-        /* if (!logged) {
+        if (localStorage.logged === 'false') {
+
             alert('로그인 후 이용하실 수 있습니다.')
             history.goBack();
-        } */
+        }
     }
 
     /**
@@ -83,7 +84,10 @@ class WritePostContainer extends Component {
     handleDatePicker = (selectedDay, modifiers, dayPickerInput) => {
         const { WriteActions } = this.props;
         const today = new Date();
-        if (today > selectedDay) {
+        let dif=selectedDay - today;
+        let cDay = 24 * 60 * 60 * 1000;
+        let flag = parseInt(dif/cDay) 
+        if (flag <0 && flag !=-0) {
             alert('올바른 기간이 아닙니다.')
             WriteActions.changeInput({ id: 'dueDate', data: today })
             return;
@@ -163,35 +167,40 @@ class WritePostContainer extends Component {
                 categorys[i - 1]
             )
         })
-
-        if (modify) {
-            const post = {
-                title: title,
-                description: description,
-                period: period,
-                maxPeople: maxPeople,
-                dueDate: dueDate,
-                price: price,
-                categoryList: list
+        
+        if(title !== "" && price !=="" && period !=='' && description !=='' && maxPeople !='' && list.size !=0){
+            if (modify) {
+                const post = {
+                    title: title,
+                    description: description,
+                    period: period,
+                    maxPeople: maxPeople,
+                    dueDate: dueDate,
+                    price: price,
+                    categoryList: list
+                }
+                const res = await ModifyPost(id, post)
+                console.log(res);
+                alert('수정')
+                
             }
-            const res = await ModifyPost(id, post)
-            console.log(res);
-            alert('수정')
+            else {
+                const res = await postProject({
+                    title: title,
+                    description: description,
+                    period: period,
+                    maxPeople: maxPeople,
+                    dueDate: dueDate,
+                    price: price,
+                    categoryList: list
+                })
+                alert(res.data.flag)
+            }
+            history.push('/')
+        }else{
+            return alert('값을 입력하십시오.')
 
         }
-        else {
-            const res = await postProject({
-                title: title,
-                description: description,
-                period: period,
-                maxPeople: maxPeople,
-                dueDate: dueDate,
-                price: price,
-                categoryList: list
-            })
-            alert(res.data.flag)
-        }
-        history.push('/')
     }
 
     render() {

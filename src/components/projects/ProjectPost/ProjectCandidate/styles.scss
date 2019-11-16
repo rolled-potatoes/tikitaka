@@ -56,6 +56,19 @@
                                         }
                                         .hi{
                                                 display: none;
+                                                grid-column: 1/5;
+                                                background: $oc-gray-4;
+                                                padding: 5px;
+                                                margin-top:5px;
+                                                li{
+                                                        padding :10px 5px;
+                                                }
+                                                li+li{
+                                                        border-top: 1px solid $oc-gray-2;
+                                                }
+                                                div{
+                                                        display: contents;
+                                                }
                                         }
                                         .checkboxs{
                                                 display: none;

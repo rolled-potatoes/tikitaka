@@ -2,11 +2,26 @@ import React from 'react'
 import styles from './styles.scss'
 import classnames from 'classnames'
 
+//const categorys = ["디자인", "영상", '번역', '코딩', '음악', '공학', '스터디', '기타'];
 const cx =classnames.bind(styles);
 const List = ({data,agreeApplyAction,DenyApplyAction})=>{
   
   let list = data.map(item=>{
-    const {nickname,email,_id,organization} = item;
+    console.log(item);
+    
+    const {nickname,email,_id,organization,categoryList} = item;
+    let data =' ';
+    let i =0  ;
+    console.log(categoryList==null);
+    if(categoryList!=null){
+
+      for(let item of categoryList){
+        console.log(item);
+        
+        data = data +' '+ item + (categoryList.length-1 === i? '':', ')
+        i ++;
+      }
+    }
     return(
       <div className='candidate-content-item' >
         <label for ={email}>{email}</label>
@@ -16,7 +31,13 @@ const List = ({data,agreeApplyAction,DenyApplyAction})=>{
         <input type='checkbox' id = {email} className='checkboxs'/>
         <ul className ='hi'>
           <li>
-            소속 : {organization}
+            <div>소속 : </div>
+            <div>{organization} </div>
+            
+            
+          </li>
+          <li>
+            <div>분야 : </div><div>{data}</div>
           </li>
         </ul>
       </div>
