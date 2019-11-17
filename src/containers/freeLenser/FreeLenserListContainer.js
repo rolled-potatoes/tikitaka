@@ -24,10 +24,9 @@ class FreeLenserListContainer extends Component {
     }
     //페이지 들어올때 스크롤 이벤트 생성
     componentDidMount() {
-        window.scrollTo(0, 0)        
+        window.scrollTo(0, 0)
         window.addEventListener("scroll", this.handleScroll);
-        if(!this.props.isLast)
-            this.props.FLActions.getListFirst({page:1,size:12});
+        this.props.FLActions.getListFirst({ page: 1, size: 12 });
     }
     //페이지 나갈때 스크롤 이벤트 제거
     componentWillUnmount() {
@@ -39,29 +38,31 @@ class FreeLenserListContainer extends Component {
         const { searchString } = this.state
         const cat = this._getCat()
 
-        const { FLActions, loadding, isLast,page} = this.props;
+        const { FLActions, loadding, isLast, page } = this.props;
         const scrollTop =
             (document.documentElement && document.documentElement.scrollTop) ||
             document.body.scrollTop;
         if ((scrollHeight - innerHeight - scrollTop < 100) && loadding && !isLast) {
             FLActions.able_loadding({ bol: false })
             setTimeout(() => {
+                console.log('scroll');
+
                 FLActions.getList({
-                    pageId: page+1,
-                    size:12,
-                    cat :cat,
-                    text:searchString,
+                    pageId: page + 1,
+                    size: 12,
+                    cat: cat,
+                    text: searchString,
                 });
             }, 500)
-            
+
         }
     }
-    _getCat=()=>{
+    _getCat = () => {
         const {
             catName
         } = this.state
-        
-        const cat = catName === '이름'? 'nickname':'categoryList';
+
+        const cat = catName === '이름' ? 'nickname' : 'categoryList';
         return cat
     }
     _testAtion = async () => {
@@ -83,14 +84,14 @@ class FreeLenserListContainer extends Component {
         }
     }
     onClickSearch = () => {
-        const {FLActions} = this.props;
+        const { FLActions } = this.props;
         const cat = this._getCat();
         FLActions.getListFirst({
             pageId: 1,
-            size:12,
-            cat :cat,
-            text:this.state.searchString,
-        });        
+            size: 12,
+            cat: cat,
+            text: this.state.searchString,
+        });
     }
     _ontoggle = () => {
         const { showcat } = this.state;
@@ -103,7 +104,7 @@ class FreeLenserListContainer extends Component {
             catName: e.target.value
         })
     }
-    
+
     render() {
         const {
             searchString,
@@ -123,7 +124,7 @@ class FreeLenserListContainer extends Component {
             FreeList,
             loadding
         } = this.props
-        
+
         return (
             <FreeLenserListComponent
                 _ontoggle={_ontoggle}
@@ -147,7 +148,7 @@ export default connect(
         FreeList: state.FreeLenserList.get('FreeList'),
         loadding: state.FreeLenserList.get('loadding'),
         isLast: state.FreeLenserList.get('isLast'),
-        page : state.FreeLenserList.get('page'),
+        page: state.FreeLenserList.get('page'),
     }),
     (dispatch) => ({
         FLActions: bindActionCreators(flActions, dispatch)

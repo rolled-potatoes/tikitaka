@@ -15,6 +15,11 @@ export default handleActions({
         type:GET_FREE,
         onSuccess:(state,action)=>{
             const {user} = action.payload.data
+            if(user == null){
+                alert('존재하지않는 프리랜서 입니다.')
+                window.location='/'
+                return initialState
+            }
             return state.set('info',user)
 
         }

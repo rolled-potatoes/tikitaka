@@ -46,9 +46,8 @@ class LoginContainer extends React.Component {
       try {
         let res = await BaseActions.login(email, password)
         console.log(res.data.message);
-        
-        if(res.data.message == -1){
-          alert('없는 계정이거나 이메일 인증이 되지않은 계정입니다.')
+        if(res.data.message){
+          alert(res.data.message)
         }
         else{
           await CheckLogin();

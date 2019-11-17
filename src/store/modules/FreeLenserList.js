@@ -15,7 +15,7 @@ const initialState = Map({
     FreeList: List([
     ]),
     loadding: true,
-    isLast:false,
+    isLast:true,
     page: 1,
 })
 
@@ -28,7 +28,6 @@ export default handleActions({
         type:GET_LIST_FIRST,
         onSuccess:(state,action) =>{
             const {user,lastPage} = action.payload.data
-            
             return state.set("FreeList", List(user))
                         .set('loadding',true)
                         .set('page',1)

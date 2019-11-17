@@ -26,7 +26,7 @@ class HeaderContainer extends Component {
         } = this
         const userId = myInfo? myInfo.userId:"";
         const nickName = myInfo? myInfo.nickname : "";
-        console.log(myInfo);
+
         
         return (
             <Header

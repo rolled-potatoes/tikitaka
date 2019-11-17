@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import WritePost from 'components/projects/WritePost'
 import * as writeActions from 'store/modules/writePost.js'
 import axios from 'axios'
+import {checkLogin} from 'store/modules/base.js'
 import { fromJS } from 'immutable'
 import { postProject, getPost, ModifyPost } from 'lib/api.js'
 class WritePostContainer extends Component {
@@ -150,6 +151,7 @@ class WritePostContainer extends Component {
     onSubmit = async () => {
         const categorys = ["디자인", "영상", '번역', '코딩', '음악', '공학', '스터디', '기타'];
         const { id } = this.props.match.params;
+        const {CheckLogin} = this.props;
         const { modify } = this.state;
         const {
             title,
@@ -196,6 +198,7 @@ class WritePostContainer extends Component {
                 })
                 alert(res.data.flag)
             }
+            await CheckLogin()
             history.push('/')
         }else{
             return alert('값을 입력하십시오.')
@@ -253,6 +256,8 @@ export default connect(
 
     }),
     (dispatch) => ({
-        WriteActions: bindActionCreators(writeActions, dispatch)
+        WriteActions: bindActionCreators(writeActions, dispatch),
+       CheckLogin : bindActionCreators(checkLogin,dispatch),
+
     })
 )(withRouter(WritePostContainer));

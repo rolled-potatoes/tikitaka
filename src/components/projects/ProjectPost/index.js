@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React,{Fragment} from 'react'
 import styles from './styles.scss'
 import classNames from 'classnames'
 import {Link} from 'react-router-dom'
@@ -14,6 +14,11 @@ const ProjectPost = ({ post,id,mycontent,onModals ,applyProject,logged}) => {
     {
       const { writeDate, dueDate, title, price, categoryList, description, period,userId
         , nickname, organization, candiList, maxPeople } = post
+
+        let ch_description = description.split('\n').map(line=>{
+          return (<Fragment>{line}<br/></Fragment>)
+        })
+        
       let _writeDate = format(new Date(writeDate))
       let _dueDate =format(new Date(dueDate))
       return (
@@ -81,14 +86,15 @@ const ProjectPost = ({ post,id,mycontent,onModals ,applyProject,logged}) => {
               </div>
               <div className={cx('description-blank')}></div>
               <div className={cx('description-contents')}>
-                {description}
+                {ch_description}
               </div>
+              
             </div>
           </div>
           <div className={cx('writer-content')}>
             <div className={cx('writer')}>
               <div className={cx('writer-profile')}>
-                <img className={cx('writer-img')} src={`/public/images/${userId}`} className={cx('writer-profile')}></img>
+                <img className={cx('writer-img')} src={`/public/images/${userId}.PNG`} className={cx('writer-profile')}></img>
                 <div className={cx('writer-nickname')}>
                   {nickname}
                 </div>

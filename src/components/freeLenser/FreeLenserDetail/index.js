@@ -9,9 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 //5a7aa85a42
 const cx = classnames.bind(styles)
-const imgSrc = "https://scontent.ficn3-1.fna.fbcdn.net/v/t1.0-1/p200x200/42135641_1894679573979032_7136233916314157056_n.jpg?_nc_cat=108&_nc_oc=AQlwd9nh7sPfN1VZJ75panQPdTySUMTdtP51y1RFleHYHAFS92s2yZlM4qDzHG5I8Wk&_nc_ht=scontent.ficn3-1.fna&oh=4a6b9e8645545cc0b5190f5e1c9b3a3a&oe=5DD275CF"
 
-const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check,onFollowClick }) => {
+const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check,onFollowClick,logged,isme }) => {
   if (freeInfo != "") {
     console.log(freeInfo);
     
@@ -35,6 +34,7 @@ const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check,on
           <div className={cx('profile-intro')}>
             {freeInfo.intro}
           </div>
+          {logged && !isme&&
           <div className={cx('profil-follow', { 'following': follow_check })} data-value={follow_check?0:1} onClick={onFollowClick}>
             {follow_check ? (
               <div className='follow-div' >
@@ -50,7 +50,7 @@ const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check,on
               )
             }
 
-          </div>
+          </div>}
         </div>
 
         <div className={cx('FreeLenserDetail-info')}>
@@ -63,8 +63,8 @@ const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check,on
           <div className={cx('FreeLenserDetail-content')}>
             <DetailRow data={freeInfo.categoryList} visible={`visible-${visibles[0]}`} />
             <DetailRow data={freeInfo.lisenceList} visible={`visible-${visibles[1]}`} />
-            <DetailColum list={freeInfo.careerList} visible={`visible-${visibles[2]}`} />
-            <DetailColum list={freeInfo.educationList} visible={`visible-${visibles[3]}`} />
+            <DetailColum list={freeInfo.educationList} visible={`visible-${visibles[2]}`} />
+            <DetailColum list={freeInfo.careerList} visible={`visible-${visibles[3]}`} />
           </div>
         </div>
       </div>

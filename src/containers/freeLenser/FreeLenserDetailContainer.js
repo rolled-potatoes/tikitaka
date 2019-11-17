@@ -76,6 +76,8 @@ class FreeLenserDetailContainer extends Component {
 
         const {
             info,
+            logged,
+            myInfo
         }= this.props
 
         const {
@@ -83,7 +85,10 @@ class FreeLenserDetailContainer extends Component {
             onFollowClick,
 
         } =  this
-
+        let isme= false;
+        if(myInfo !==""){
+            isme = myInfo.userId === info.userId
+        }
         return (
             <FreeLenserDetailComponent
                 freeInfo={info}
@@ -91,6 +96,8 @@ class FreeLenserDetailContainer extends Component {
                 follow_check={follow_check}
                 visibles={visibles}
                 onClickMenuitem={onClickMenuitem}
+                logged={logged}
+                isme={isme}
             />
         );
     }
@@ -100,6 +107,7 @@ export default connect(
     (state)=>({
         myInfo : state.base.get('myInfo'),
         info : state.freePost.get('info'),
+        logged : state.base.get('logged'),
     }),
     (dispatch)=>({
         FreeActions : bindActionCreators(freeActions,dispatch),

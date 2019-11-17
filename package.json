@@ -154,6 +154,7 @@
     ]
   },
   "proxy": "http://119.18.120.225:4000",
+  
   "babel": {
     "presets": [
       "react-app"

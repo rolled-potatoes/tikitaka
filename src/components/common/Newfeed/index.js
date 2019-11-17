@@ -19,13 +19,12 @@ const cx = classnames.bind(styles)
 
 const Lines =({timeline})=>{
   let line = timeline.map(item =>{
-    const {writer,projectOID, userOID,writeDate} = item
-    
+    const {writer,projectOID, userOID,writeDate,userId} = item
     return (
       <div className='newfeed-line'>
         <div className='newfeed-line-writer'>
           <Link to={`/freeLenser/detail/${userOID}`}  title={writer}>
-            <div className='newfeed-line-writer-img'> <img src ={imgSrc}/> </div>
+            <div className='newfeed-line-writer-img'> <img src ={`/public/images/${userId}.PNG`}/> </div>
             <div className='newfeed-line-writer-name'> {writer} </div>
           </Link>
         </div>

@@ -6,7 +6,6 @@ import {getCandidateInfo,applyProject,agreeApply,DenyApply} from 'lib/api.js'
 import * as projectPostActions from 'store/modules/ProjectPost.js'
 import ProjectPost from 'components/projects/ProjectPost/index.js'
 import ProjectCandidate from 'components/projects/ProjectPost/ProjectCandidate'
-
 // 디자인 영상 번역 코딩 음악 공학 스터디 기타
 class ProjectPostContainer extends Component {
     constructor(props){
@@ -14,6 +13,7 @@ class ProjectPostContainer extends Component {
         this.state={
             post:null,
             candiList:[{}],
+            id:null
         }
     }
     componentDidMount(){
@@ -21,6 +21,23 @@ class ProjectPostContainer extends Component {
         const {id} =this.props.match.params  
         const {ProjectPostActions} = this.props;  
         ProjectPostActions.getPost(id);
+        this.setState({
+            id:id
+        })
+    }
+    componentDidUpdate(preProps,preState){
+        
+//        console.log(preState.id);
+        const {id} =this.props.match.params  
+        const {ProjectPostActions} = this.props;  
+        if(preState.id != id){
+            ProjectPostActions.getPost(id);
+            this.setState({
+                id:id
+            })
+        }
+        
+        
     }
     onModals=async()=>{
         const {ProjectPostActions,project,modalVisible} = this.props;
@@ -120,7 +137,8 @@ export default connect(
         logged : state.base.get('logged')
     }),
     (dispath)=>({
-        ProjectPostActions : bindActionCreators(projectPostActions,dispath)
+        ProjectPostActions : bindActionCreators(projectPostActions,dispath),
+
     })
 )(withRouter(ProjectPostContainer));
 

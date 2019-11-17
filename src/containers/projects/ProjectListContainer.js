@@ -85,8 +85,6 @@ class ProjectListContainer extends Component {
     }
     onClickSearch = (order,page) => {
         const {ProjectAction,searchText,searchCategory} = this.props;
-        console.log(searchText);
-        
         const cat = searchCategory === '제목'? 'title':'categoryList';
         ProjectAction.getList({
             pageId: page? page:1,

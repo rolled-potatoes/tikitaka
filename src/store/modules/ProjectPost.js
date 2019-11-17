@@ -24,7 +24,11 @@ export default handleActions({
         type: GET_POST,
         onSuccess:(state,action)=>{
             const {project} = action.payload.data
-            
+            if(project == null){
+                alert('존재하지않는 프로젝트 입니다.')
+                window.location='/'
+                return initialState
+            }
             return state.set('project',project)
         }
     })

@@ -70,7 +70,7 @@ const Sign = ({
           </h3>
           <span>
             <input value={nickname}  id ="nickname" onChange={onChange}/>
-            <button>중복확인</button>
+            
           </span>
         </div>
 

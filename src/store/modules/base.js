@@ -63,7 +63,7 @@ export default handleActions ({
         onSuccess:(state,action) =>{
         const {data} =action.payload
         console.log(action.payload);
-        if(action.payload.data.message == -1){
+        if(action.payload.data.message){
             return state.set('logged',false)
         }
             return state.set('logged',true)

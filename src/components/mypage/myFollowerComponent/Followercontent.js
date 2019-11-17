@@ -9,7 +9,6 @@ const List =({follower}) =>{
                 <a href={`/freeLenser/detail/${_id}`}>
                 <div className='follower-li-div1'>{nickname}</div>
                 <div className='follower-li-div2'>{userId}</div>
-                <button>취소</button>
                 </a>
             </li>
         )
