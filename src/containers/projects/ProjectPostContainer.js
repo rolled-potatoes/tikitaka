@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom'
 import {getCandidateInfo,applyProject,agreeApply,DenyApply} from 'lib/api.js'
 import * as projectPostActions from 'store/modules/ProjectPost.js'
 import ProjectPost from 'components/projects/ProjectPost/index.js'
+import ProjectFreeLencer from 'components/projects/ProjectPost/ProjectFreeLencer'
 import ProjectCandidate from 'components/projects/ProjectPost/ProjectCandidate'
 // 디자인 영상 번역 코딩 음악 공학 스터디 기타
 class ProjectPostContainer extends Component {
@@ -13,7 +14,9 @@ class ProjectPostContainer extends Component {
         this.state={
             post:null,
             candiList:[{}],
-            id:null
+            freeModal : false,
+            id:null,
+            freeList:[{}],
         }
     }
     componentDidMount(){
@@ -84,6 +87,41 @@ class ProjectPostContainer extends Component {
             })
         })
     }
+    FreeListModal=async()=>{
+        const {ProjectPostActions} = this.props;
+        const {id} =this.props.match.params  
+
+        const{
+            freeModal
+        } = this.state;
+        if(freeModal){
+            this.setState({
+                freeModal: false
+            })
+        }
+        else{
+            ProjectPostActions.getPost(id).then(async ()=>{
+                let res = await getCandidateInfo(this.props.project.freeList)
+                this.setState({
+                    freeModal: true,
+                    freeList : res
+                })
+            })
+        }
+    }
+    onFreeRemove=async(e)=>{
+        const {id} =this.props.match.params  
+        const {value} = e.target;
+        const {ProjectPostActions} = this.props;
+
+        await DenyApply(id,value)
+        ProjectPostActions.getPost(id).then(async ()=>{
+            let res = await getCandidateInfo(this.props.project.freeList)
+            this.setState({
+                freeList : res
+            })
+        })
+    }
     render() {
         const {
             project,
@@ -96,14 +134,19 @@ class ProjectPostContainer extends Component {
             applyProjectAction,
             agreeApplyAction,
             DenyApplyAction,
+            FreeListModal,
+            onFreeRemove,
         } = this;
         const {
-            candiList
+            candiList,
+            freeList,
+            freeModal
         } = this.state
         const {id} =this.props.match.params 
         let mycontent = false
         if(logged)
             mycontent = (myInfo.userId === project.userId) ? true : false
+            
         return (
             <Fragment>
                 <ProjectPost
@@ -113,6 +156,7 @@ class ProjectPostContainer extends Component {
                     applyProject={applyProjectAction}
                     onModals={onModals}
                     logged={logged}
+                    FreeListModal={FreeListModal}
                     />
                 {mycontent&&
                     <ProjectCandidate
@@ -121,6 +165,15 @@ class ProjectPostContainer extends Component {
                         data={candiList}
                         onModals={onModals}
                         visible ={modalVisible}
+                    />
+                }
+                
+                {freeModal&&
+                <ProjectFreeLencer 
+                    onModal ={FreeListModal}
+                    freeList = {freeList}
+                    mycontent={mycontent}
+                    onClickRemove={onFreeRemove}
                     />
                 }
             </Fragment>

@@ -20,7 +20,6 @@ const Lists = ({ projectList }) => {
       description, period, nickName, candiList, freeList, maxPeople, organization } = item
     let _writeDate = format(new Date(writeDate))
     let _dueDate =format(new Date(dueDate))
-    console.log(item);
     
     return (
       <div className={cx('project')}>

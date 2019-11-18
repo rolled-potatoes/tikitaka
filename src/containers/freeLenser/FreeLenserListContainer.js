@@ -45,7 +45,6 @@ class FreeLenserListContainer extends Component {
         if ((scrollHeight - innerHeight - scrollTop < 100) && loadding && !isLast) {
             FLActions.able_loadding({ bol: false })
             setTimeout(() => {
-                console.log('scroll');
 
                 FLActions.getList({
                     pageId: page + 1,

@@ -12,7 +12,6 @@ const cx = classnames.bind(styles)
 
 const FreeLenserDetail = ({ freeInfo, visibles, onClickMenuitem, follow_check,onFollowClick,logged,isme }) => {
   if (freeInfo != "") {
-    console.log(freeInfo);
     
     return (
       <div className={cx('FreeLenserDetail-wrapper')}>

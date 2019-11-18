@@ -96,7 +96,6 @@ class WritePostContainer extends Component {
         else {
             WriteActions.changeInput({ id: 'dueDate', data: selectedDay })
         }
-        console.log(selectedDay);
         
     }
     /**
@@ -184,7 +183,6 @@ class WritePostContainer extends Component {
                     categoryList: list
                 }
                 const res = await ModifyPost(id, post)
-                console.log(res);
                 alert('수정')
                 
             }

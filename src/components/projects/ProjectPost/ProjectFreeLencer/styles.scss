@@ -1,0 +1,46 @@
+@import 'styles/utils.scss';
+
+.prjectFree-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(80, 80, 80, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        left: 0;
+
+        ul {
+                padding: 0px 20px;
+                width: 400px;
+                height: 400px;
+                background: white;
+                
+                li {
+                        display: grid;
+                        margin-bottom: 10px;
+                        padding-top:10px;
+                        grid-template-columns: 1fr 3fr 1fr;
+                        div:nth-child(2){
+                                border-left: 1px solid black;
+                                text-indent: 12px;
+                        }
+                }
+                li+li{
+                        border-top: solid 1px black;
+                }
+        }
+
+        .projectFree-top {
+                width: 400px;
+                height: 30px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                .close-btn{
+                        margin-right: 10px;
+                }
+                background: $oc-gray-5;
+        }
+}

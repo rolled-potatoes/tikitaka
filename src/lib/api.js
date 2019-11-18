@@ -31,7 +31,7 @@ export const getFreeList=({page,size,order,text,cat})=>axios.get(`/user/?pageId=
 
 export const singup = async (userId, password,name,nickname,location,organization) => {
     const a = await axios.post('/user',{userId,password,name,nickname,location,organization})   
-    return a.data.flag
+    return a.data
 }
 
 export const test =()=> axios.get('/zz'); 
@@ -53,15 +53,11 @@ export const getFollowerInfo = ({follow})=>{
     })
     return follower;
 }
+
 export const getCandidateInfo = async(list)=>{
     let results = []
-    console.log(list);
-    for(let _id of list){
-        console.log(_id);
-        
+    for(let _id of list){        
         let data = await axios.get(`/user/${_id}?freeflag=1`).then(res => res = res.data.user)
-        console.log(data);
-        
         results.push({
             nickname: data.nickname,
             email : data.userId,

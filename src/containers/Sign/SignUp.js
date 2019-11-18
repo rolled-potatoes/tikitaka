@@ -97,8 +97,14 @@ class SignUp extends Component {
             
             try{
                 const ret = await api.singup(email, password,name,nickname,location_,organization);
-                if(ret === 'success'){
-                    history.push(`/sign/success/${name}`)
+                if(ret.message){
+                    alert(ret.message);
+                }
+                else{
+                    if(ret.falg === 'success'){
+                        history.push(`/sign/success/${name}`)
+                    }
+                    
                 }
             }
             catch(e){

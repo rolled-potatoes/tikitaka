@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import MainComponent from 'components/Main/main/index.js'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
+import Axios from 'axios';
 
 class main extends Component {
+    state={
+        count:{
+
+        }
+    }
     LinkToProject=()=>{
         const {history} = this.props;
         history.push('/project/1')
@@ -22,6 +28,13 @@ class main extends Component {
     }
     componentDidMount(){
         window.scrollTo(0, 0)
+        this.init();
+    }
+    init=async()=>{
+        let res = await Axios.get('/project').then( data=> data = data.data)
+        this.setState({
+            count : res
+        })
     }
     render() {
         const {
@@ -33,9 +46,14 @@ class main extends Component {
         const {
             logged
         } = this.props;
+        const {
+            count
+        } = this.state;
+        
         return (
             <MainComponent
                 logged={logged}
+                count={count}
                 LinkToProject={LinkToProject}
                 LinkToFree={LinkToFree}
                 LinkToLogin={LinkToLogin}

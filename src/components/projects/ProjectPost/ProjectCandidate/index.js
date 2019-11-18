@@ -7,16 +7,13 @@ const cx =classnames.bind(styles);
 const List = ({data,agreeApplyAction,DenyApplyAction})=>{
   
   let list = data.map(item=>{
-    console.log(item);
     
     const {nickname,email,_id,organization,categoryList} = item;
     let data =' ';
     let i =0  ;
-    console.log(categoryList==null);
     if(categoryList!=null){
 
       for(let item of categoryList){
-        console.log(item);
         
         data = data +' '+ item + (categoryList.length-1 === i? '':', ')
         i ++;
@@ -46,7 +43,6 @@ const List = ({data,agreeApplyAction,DenyApplyAction})=>{
   return list
 }
 const ProjectCandidate = ({visible,onModals,data,agreeApplyAction,DenyApplyAction}) => {
-  console.log(data)
   return(
     <div className={cx('candidate-Wrapper',{"candidate-close":!visible})}>
       <div className='candidate-container'>

@@ -11,7 +11,6 @@ class myFoller extends Component {
     }
     componentDidMount(){
         if(this.props.myInfo !== ''){
-            console.log('asd');
             
             this.getFollow();
         }

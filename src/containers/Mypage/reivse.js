@@ -96,7 +96,6 @@ class reivse extends Component {
             this.setState({
                 info: info.set(name, value)
             })
-            console.log('asd');
 
         }
         else if (name === 'password') {
@@ -150,11 +149,9 @@ class reivse extends Component {
                 return ;
             }
                 post = info.toJS();
-                console.log(post);
                 if (imgCheck) {
                     let fd = new FormData();
                     let img = document.querySelector('#imgInput').files[0]
-                    console.log(img);
                     fd.append('img', img)
                     let res = await Axios.post('/images', fd, {
                         header: {
@@ -210,7 +207,6 @@ class reivse extends Component {
 
 
         if (myInfo != "") {
-            console.log(info.toJS());
             return (
                 <ReviseComponent
                     inputdata={info}

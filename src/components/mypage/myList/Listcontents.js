@@ -4,7 +4,6 @@ const List =({LinkToPost,projects})=>{
     let temp=[];
 
     for(let item of projects){
-        console.log(item._id);
         
         temp.push(
             <li data-value={item._id} onClick={LinkToPost} className='myList-bottom-item'>

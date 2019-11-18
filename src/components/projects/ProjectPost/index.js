@@ -8,7 +8,7 @@ import {removePost} from 'lib/api.js'
 
 const cx = classNames.bind('styles')
 
-const ProjectPost = ({ post,id,mycontent,onModals ,applyProject,logged}) => {
+const ProjectPost = ({ post,id,mycontent,onModals ,applyProject,logged,FreeListModal}) => {
   
   if (post !== "") {
     {
@@ -103,9 +103,9 @@ const ProjectPost = ({ post,id,mycontent,onModals ,applyProject,logged}) => {
             <div className={cx('writer-organization')}>
               {organization}
             </div>
-            {logged&&<div className={cx('chat-btn')} onClick={applyProject}>지원하기</div>}
+            {!mycontent && logged&&<div className={cx('chat-btn')} onClick={applyProject}>지원하기</div>}
             {mycontent && <div className={cx('chat-btn')} onClick={onModals}>지원자보기</div>}
-            {/* {mycontent && <div className={cx('chat-btn')}>완료하기</div>} */}
+            {mycontent && <div className={cx('chat-btn')} onClick={FreeListModal}>프리랜서 보기</div>}
           </div>
         </div>
       )

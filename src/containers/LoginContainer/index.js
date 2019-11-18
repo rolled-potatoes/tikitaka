@@ -45,7 +45,6 @@ class LoginContainer extends React.Component {
     else {
       try {
         let res = await BaseActions.login(email, password)
-        console.log(res.data.message);
         if(res.data.message){
           alert(res.data.message)
         }

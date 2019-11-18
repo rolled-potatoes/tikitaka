@@ -62,7 +62,6 @@ export default handleActions ({
         type: LOGIN,
         onSuccess:(state,action) =>{
         const {data} =action.payload
-        console.log(action.payload);
         if(action.payload.data.message){
             return state.set('logged',false)
         }
@@ -73,7 +72,6 @@ export default handleActions ({
 
         },
         onError:(state,action)=>{
-            console.log(action);
             
             return state.set('email','')
                         .set('password','')
@@ -85,7 +83,6 @@ export default handleActions ({
         type : CHECK_LOGIN,
         onSuccess:(state,action) =>{
             const {data} =action.payload 
-            console.log(data);
             return state.set('logged',data.logged)
                         .set('myInfo',data.user?data.user:"")
                         .set('timeline',data.timeline?data.timeline:"")

@@ -26,9 +26,7 @@ const Category =()=>{
   })
   return doms;
 }
-const Main = ({LinkToProject,LinkToFree,LinkToSign,LinkToLogin,logged}) => {
-  console.log(logged);
-  
+const Main = ({LinkToProject,LinkToFree,LinkToSign,LinkToLogin,logged,count}) => {
   return (  
     <div className='main-wrapper'>
       <section className='main-background'>
@@ -51,17 +49,17 @@ const Main = ({LinkToProject,LinkToFree,LinkToSign,LinkToLogin,logged}) => {
       <div className='main-currentnumber'>
           <div className='main-currentnumber-project'>
             <span>현재 등록된 프로젝트 수</span>
-            <div>7</div>
+            <div>{count.ingCount}</div>
           </div>
 
           <div className='main-currentnumber-resister'>
             <span>현재 등록된 프리랜서 수</span>
-            <div>5</div>
+            <div>{count.freeCount}</div>
           </div>
 
           <div className='main-currentnumber-done'>
             <span>현재 완료된 프로젝트 수</span>
-            <div>1</div>
+            <div>{count.doneCount}</div>
           </div>
         </div>
         
