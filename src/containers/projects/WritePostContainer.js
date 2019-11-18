@@ -96,6 +96,8 @@ class WritePostContainer extends Component {
         else {
             WriteActions.changeInput({ id: 'dueDate', data: selectedDay })
         }
+        console.log(selectedDay);
+        
     }
     /**
      * 카테고리 선택했을 때 
