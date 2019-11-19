@@ -161,5 +161,8 @@
       "react-app"
     ]
   },
-  "homepage": "http://rolled-potatoes.github.io/tikitaka"
+  "homepage": "http://rolled-potatoes.github.io/tikitaka",
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  }
 }
