@@ -145,8 +145,8 @@ class reivse extends Component {
                 let res = await Axios.put('/user/update_pass', post)
                 if (res.data.message == '기존비밀번호가 알맞지 않습니다.') {
                     alert(res.data.message)
+                    return ;
                 }
-                return ;
             }
                 post = info.toJS();
                 if (imgCheck) {
@@ -160,7 +160,8 @@ class reivse extends Component {
                     })
                 }
     
-                await Axios.put(`/user/${post._id}?freeflag=${post.freeflag}`, post);
+                let data = await Axios.put(`/user/${post._id}?freeflag=${post.freeflag}`, post);
+                alert('수정되었습니다.')
                 window.location.reload();
             }
 

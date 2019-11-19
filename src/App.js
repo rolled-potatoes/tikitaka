@@ -26,6 +26,7 @@ const App = () => {
       <Switch>
         <Route exact path ='/' component={MainPage}/>
         <Route exact path='/login' component={LoginPage}/>
+        <Route exact path ='/login/password' component={FindIdPage}/>
         <Route exact path='/sign' component={SignPage}/>
         <Route exact path = '/sign/success/:name' component={AftersignPage}/>
         <Route exact path='/mypage' component={MyPagePage}/>
@@ -40,7 +41,7 @@ const App = () => {
         <Route exact path ='/freeLenser' component={FreeLenserListPage}/>
         <Route exact path ='/freeLenser/detail/:id' component={FreeLenserDetailPage}/>
         
-        <Route exact path ='/FindID' component={FindIdPage}/>
+        
         
         {/* <Route exact path ='/exit' component={TT}/> */}
         <Route component = {PageNotFound}/>

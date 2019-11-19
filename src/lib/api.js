@@ -11,7 +11,12 @@ export const getProjectList = ({pageId,size,order,text,cat})=>{
  export const login = (userId, password) => axios.post('/auth/login_process',{userId,password})
 
 //export const checkLogin = () =>axios.get('/api/auth/check')
-
+export const findPassword = async (userId)=>{
+    let data = await axios.put('/user/find_pass',{
+        userId:userId
+    }).then(res=>res=res.data)
+    return new Promise(resolve => resolve(data))
+}
 export const checkLogin = () =>axios.get('/main')
 export const getPost = (id) => axios.get(`/project/${id}`)
 export const logout= ()=> axios.get('/auth/logout')

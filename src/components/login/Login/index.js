@@ -34,7 +34,7 @@ const Login = ({onChangeEmail, onChangePassword, onClickLogin,email,password,onK
               onChange={onChangePassword} 
               value={password}
             />
-            <Button to="/FindID" theme={'find'}>아이디 | 비밀번호 찾기</Button>
+            <Button to="/login/password" theme={'find'}>비밀번호 찾기</Button>
             <Button theme={'login colorbtn'}  onClick={onClickLogin}>로그인</Button>
             <Button to="/sign" theme={'login colorbtn'}>회원가입</Button>
           </div>

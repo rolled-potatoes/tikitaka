@@ -1,10 +1,10 @@
 import React from 'react';
 import PageTemplate from '../components/common/PageTemplate'
-import FindID from '../components/FindId/FindID/index.js';
+import PasswordContainer from 'containers/LoginContainer/password.js'
 const FindIdPage = () => {
     return (
         <PageTemplate>
-            <FindID/>
+            <PasswordContainer/>
         </PageTemplate>
     );
 };
