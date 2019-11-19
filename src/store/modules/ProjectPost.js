@@ -26,7 +26,7 @@ export default handleActions({
             const {project} = action.payload.data
             if(project == null){
                 alert('존재하지않는 프로젝트 입니다.')
-                window.location='/'
+                window.location.href='/'
                 return initialState
             }
             return state.set('project',project)
