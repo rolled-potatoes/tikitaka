@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "23568d8bfc2670246b533dc07c08c404",
+    "revision": "e961b8c16cdc258a148651e896c78bca",
     "url": "/tikitaka/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tikitaka/static/css/2.c6231af7.chunk.css"
   },
   {
-    "revision": "e1878d8066196da8f8d3",
+    "revision": "ce9c0bfb9c11c2f6ede8",
     "url": "/tikitaka/static/css/main.2b7464ec.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tikitaka/static/js/2.75c36556.chunk.js"
   },
   {
-    "revision": "e1878d8066196da8f8d3",
-    "url": "/tikitaka/static/js/main.8097d9bf.chunk.js"
+    "revision": "ce9c0bfb9c11c2f6ede8",
+    "url": "/tikitaka/static/js/main.14566de0.chunk.js"
   },
   {
     "revision": "3480141336430431d835",
