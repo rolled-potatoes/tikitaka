@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/tikitaka/static/css/main.2b7464ec.chunk.css",
+    "main.js": "/tikitaka/static/js/main.8097d9bf.chunk.js",
+    "main.js.map": "/tikitaka/static/js/main.8097d9bf.chunk.js.map",
+    "runtime~main.js": "/tikitaka/static/js/runtime~main.c8e897fd.js",
+    "runtime~main.js.map": "/tikitaka/static/js/runtime~main.c8e897fd.js.map",
+    "static/css/2.c6231af7.chunk.css": "/tikitaka/static/css/2.c6231af7.chunk.css",
+    "static/js/2.75c36556.chunk.js": "/tikitaka/static/js/2.75c36556.chunk.js",
+    "static/js/2.75c36556.chunk.js.map": "/tikitaka/static/js/2.75c36556.chunk.js.map",
+    "index.html": "/tikitaka/index.html",
+    "precache-manifest.edd00aa902800b534faa59d2708de27d.js": "/tikitaka/precache-manifest.edd00aa902800b534faa59d2708de27d.js",
+    "service-worker.js": "/tikitaka/service-worker.js",
+    "static/css/2.c6231af7.chunk.css.map": "/tikitaka/static/css/2.c6231af7.chunk.css.map",
+    "static/css/main.2b7464ec.chunk.css.map": "/tikitaka/static/css/main.2b7464ec.chunk.css.map",
+    "static/media/styles.scss": "/tikitaka/static/media/main1.036bf95c.jpg",
+    "static/media/logo.png": "/tikitaka/static/media/logo.e92ab2f4.png",
+    "static/media/페이스북.png": "/tikitaka/static/media/페이스북.cbb6f3e8.png"
+  }
+}
