@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tikitaka/precache-manifest.921031da4fefea836935c5356e6fced7.js"
+  "/tikitaka/precache-manifest.5efb9a50aa32bf33386d20e8c8ca2e38.js"
 );
 
 self.addEventListener('message', (event) => {
