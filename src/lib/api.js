@@ -28,6 +28,7 @@ export const applyProject = async (id) => {
     return res;
 }
 export const DenyApply = (id,value ) => axios.put(`/project/${id}?flag=3&userOId=${value}`)
+
 export const agreeApply = async (id,value) => {
     let res = await axios.put(`/project/${id}?flag=2&userOId=${value}`).then(res=> res= res.data)
     return res;
@@ -62,7 +63,9 @@ export const getFollowerInfo = ({follow})=>{
 export const getCandidateInfo = async(list)=>{
     let results = []
     for(let _id of list){        
-        let data = await axios.get(`/user/${_id}?freeflag=1`).then(res => res = res.data.user)
+        let data = await axios.get(`/user/${_id}`).then(res => res = res.data.user)
+        console.log(data);
+        
         results.push({
             nickname: data.nickname,
             email : data.userId,

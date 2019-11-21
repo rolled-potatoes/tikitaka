@@ -34,6 +34,7 @@ const initialState = Map({
     myInfo:"",
     timeline: "",
     pageNot: false,
+    isAPI:false
 })
 
 export default handleActions ({
@@ -82,10 +83,11 @@ export default handleActions ({
     ...pender({
         type : CHECK_LOGIN,
         onSuccess:(state,action) =>{
-            const {data} =action.payload 
+            const {data} =action.payload    
             return state.set('logged',data.logged)
                         .set('myInfo',data.user?data.user:"")
                         .set('timeline',data.timeline?data.timeline:"")
+                        .set('isAPI',data.isAPI? data.isAPI : false)
         },
         
     }),

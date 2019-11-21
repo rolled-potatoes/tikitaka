@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 import styles from './styles.scss'
 import classnames from 'classnames'
 import StarRatings from 'react-star-ratings';
@@ -66,6 +66,7 @@ const Revise = ({
   rePassword,
   onSubmit,
   onToogleFreeFlag,
+  isAPI,
   onChangeImg,
 }) => {
 
@@ -137,24 +138,28 @@ const Revise = ({
                   <input value={nickname} name="nickname" value={nickname_input} onChange={onChangeInput}/>
                 </tr>
               </tr>
-              <tr className={cx('info')}>
-                <th className={cx('password')}>기존 비밀번호         </th>
-                <td className={cx('inpassword')}>
-                  <input type="password" name="pre_password" value={pre_password} onChange={onChangeInput} />
-                </td>
-              </tr>
-              <tr className={cx('info')}>
-                <th className={cx('password')}>변경할 비밀번호     </th>
-                <td className={cx('inpassword')}>
-                  <input type="password" name="password" value={password} onChange={onChangeInput} />
-                </td>
-              </tr>
-              <tr className={cx('info')}>
-                <th className={cx('password')}>비밀번호 확인        </th>
-                <td className={cx('inpassword')}>
-                  <input type="password" name="rePassword" value={rePassword} onChange={onChangeInput} />
-                </td>
-              </tr>
+              {!isAPI&& 
+              <Fragment>
+                <tr className={cx('info')}>
+                  <th className={cx('password')}>기존 비밀번호         </th>
+                  <td className={cx('inpassword')}>
+                    <input type="password" name="pre_password" value={pre_password} onChange={onChangeInput} />
+                  </td>
+                </tr>
+                <tr className={cx('info')}>
+                  <th className={cx('password')}>변경할 비밀번호     </th>
+                  <td className={cx('inpassword')}>
+                    <input type="password" name="password" value={password} onChange={onChangeInput} />
+                  </td>
+                </tr>
+                <tr className={cx('info')}>
+                  <th className={cx('password')}>비밀번호 확인        </th>
+                  <td className={cx('inpassword')}>
+                    <input type="password" name="rePassword" value={rePassword} onChange={onChangeInput} />
+                  </td>
+                </tr>
+              </Fragment>
+              }
               <tr className={cx('info')}>
                 <th className={cx('phonenumber')}>소속        </th>
                 <td className={cx('inpassword')}>

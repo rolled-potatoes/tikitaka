@@ -183,10 +183,12 @@ class WritePostContainer extends Component {
                     categoryList: list
                 }
                 const res = await ModifyPost(id, post)
-                alert('수정')
+                alert('수정완료')
                 
             }
             else {
+                console.log('dueDate',dueDate);
+                
                 const res = await postProject({
                     title: title,
                     description: description,

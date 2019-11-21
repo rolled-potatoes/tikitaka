@@ -2,14 +2,14 @@
 import React from 'react'
 import './styles.scss'
 
-const List = ({ freeList,onClickRemove,mycontent }) => {
+const List = ({ freeList,onClickRemove,mycontent,myId }) => {
   let a = freeList.map(item => {
     const { _id, nickname, email } = item;
     return (
       <li>
         <div>{nickname}</div>
         <div>{email}</div>
-        {!mycontent&&
+        {!mycontent&& !(myId==_id) &&
           <button value={_id} onClick={onClickRemove}>제거</button>
         }
       </li>
@@ -17,7 +17,7 @@ const List = ({ freeList,onClickRemove,mycontent }) => {
   })
   return a;
 }
-const ProjectFreeLencer = ({ freeList,onModal,onClickRemove ,mycontent}) => {
+const ProjectFreeLencer = ({ freeList,onModal,onClickRemove ,mycontent,myId}) => {
   
   return (
     <div className='prjectFree-wrapper'>
@@ -32,7 +32,7 @@ const ProjectFreeLencer = ({ freeList,onModal,onClickRemove ,mycontent}) => {
           <div>닉네임</div>
           <div>메일</div>
         </li>
-        <List freeList={freeList} onClickRemove={onClickRemove} mycontent={mycontent}/>
+        <List freeList={freeList} onClickRemove={onClickRemove} mycontent={mycontent} myId={myId}/>
       </ul>
     </div>
   )

@@ -184,7 +184,8 @@ class reivse extends Component {
     }
     render() {
         const {
-            myInfo
+            myInfo,
+            isAPI
         } = this.props;
 
         const {
@@ -210,6 +211,7 @@ class reivse extends Component {
         if (myInfo != "") {
             return (
                 <ReviseComponent
+                    isAPI={isAPI}
                     inputdata={info}
                     info={myInfo}
                     inputChange={onChangeThings}
@@ -241,6 +243,7 @@ class reivse extends Component {
 export default connect(
     (state) => ({
         myInfo: state.base.get('myInfo'),
+        isAPI : state.base.get('isAPI')
     }),
     (dispatch) => ({
 

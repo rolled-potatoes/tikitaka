@@ -26,7 +26,6 @@ class Base extends Component {
             BaseActions.tempLogin()
         }
         await BaseActions.checkLogin();
-        
     }
     componentDidMount(){
         this.initialize();

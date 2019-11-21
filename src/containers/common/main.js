@@ -8,7 +8,8 @@ class main extends Component {
     state={
         count:{
 
-        }
+        },
+
     }
     LinkToProject=()=>{
         const {history} = this.props;
@@ -32,11 +33,16 @@ class main extends Component {
     }
     init=async()=>{
         let res = await Axios.get('/project').then( data=> data = data.data)
+        if(res.message){
+            alert(res.message)
+        }
         this.setState({
             count : res
         })
     }
     render() {
+        console.log(this.state.count);
+        
         const {
             LinkToProject,
             LinkToFree,

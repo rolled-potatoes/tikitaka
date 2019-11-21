@@ -45,6 +45,7 @@ class ProjectPostContainer extends Component {
     onModals=async()=>{
         const {ProjectPostActions,project,modalVisible} = this.props;
         
+        
         if(!modalVisible){
             
             let res = await getCandidateInfo(project.candiList)
@@ -90,6 +91,7 @@ class ProjectPostContainer extends Component {
     FreeListModal=async()=>{
         const {ProjectPostActions} = this.props;
         const {id} =this.props.match.params  
+        console.log(this.props.project.freeList);
 
         const{
             freeModal
@@ -99,14 +101,19 @@ class ProjectPostContainer extends Component {
                 freeModal: false
             })
         }
+        
         else{
             ProjectPostActions.getPost(id).then(async ()=>{
                 let res = await getCandidateInfo(this.props.project.freeList)
+                console.log(res);
+                
                 this.setState({
                     freeModal: true,
                     freeList : res
                 })
+                
             })
+            
         }
     }
     onFreeRemove=async(e)=>{
@@ -172,7 +179,8 @@ class ProjectPostContainer extends Component {
                 <ProjectFreeLencer 
                     onModal ={FreeListModal}
                     freeList = {freeList}
-                    mycontent={mycontent}
+                    myId = {myInfo._id}
+                    mycontent={!mycontent}
                     onClickRemove={onFreeRemove}
                     />
                 }
