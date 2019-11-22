@@ -41,7 +41,6 @@ class main extends Component {
         })
     }
     render() {
-        console.log(this.state.count);
         
         const {
             LinkToProject,

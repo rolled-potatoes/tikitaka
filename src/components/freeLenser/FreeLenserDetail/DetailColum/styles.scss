@@ -13,7 +13,8 @@
         grid-template-columns: 1.5fr 5fr;
         border-radius: 15px;
         font-size : 1.3rem;
-        grid-auto-rows: 60px;
+        // grid-auto-rows: 60px;
+        grid-auto-rows: minmax(60px,auto);
         background: white;
         align-items: center;
         margin-bottom: 20px;
@@ -31,7 +32,8 @@
 
         }
         .content{
-                text-indent: 3rem;
+                padding:1rem 0;
+                padding-left: 3rem;
                 color:$oc-gray-7;
                 font-weight: 700;
         }

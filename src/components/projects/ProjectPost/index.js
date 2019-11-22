@@ -20,6 +20,7 @@ const ProjectPost = ({ post,id,mycontent,onModals ,applyProject,logged,FreeListM
         })
         
       let _writeDate = format(new Date(writeDate))
+      
       let _dueDate =format(new Date(dueDate))
       return (
 

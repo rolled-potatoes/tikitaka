@@ -51,7 +51,6 @@ class password extends Component {
             email,loading
 
         } =this.state
-        console.log(loading);
         
         return (
             <Fragment>

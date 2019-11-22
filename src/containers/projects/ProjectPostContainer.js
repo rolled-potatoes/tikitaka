@@ -91,8 +91,6 @@ class ProjectPostContainer extends Component {
     FreeListModal=async()=>{
         const {ProjectPostActions} = this.props;
         const {id} =this.props.match.params  
-        console.log(this.props.project.freeList);
-
         const{
             freeModal
         } = this.state;
@@ -105,8 +103,6 @@ class ProjectPostContainer extends Component {
         else{
             ProjectPostActions.getPost(id).then(async ()=>{
                 let res = await getCandidateInfo(this.props.project.freeList)
-                console.log(res);
-                
                 this.setState({
                     freeModal: true,
                     freeList : res

@@ -187,7 +187,6 @@ class WritePostContainer extends Component {
                 
             }
             else {
-                console.log('dueDate',dueDate);
                 
                 const res = await postProject({
                     title: title,

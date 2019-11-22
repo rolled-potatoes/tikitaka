@@ -8,7 +8,7 @@ const cx = classnames.bind(styles)
 const DetailRow = ({ data ,visible='visible-false' }) => {
   let temp = data==null? <div></div>:data.map(cat => {
     return (
-      <div className={cx('item')}>
+      <div className={cx('item')} title={cat}>
         {cat}
       </div>
     )

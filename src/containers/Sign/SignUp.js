@@ -2,17 +2,19 @@
  * 회원가입 컨테이너
  * 이메일, 비밀번호, 비밀번호 확인, 닉네님, 소속, 개인정보동의 입력 받음.
  */
-import React, { Component } from 'react';
+import React, { Component ,Fragment} from 'react';
 import SignComponent from 'components/sign/Sign'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as singupActions from 'store/modules/signup.js'
 import * as api from 'lib/api.js'
 import {withRouter} from 'react-router-dom'
+import Loading from '../../components/FindId/FindID/loading'
 class SignUp extends Component {
     state={
         passwordStr : "", // 비밀번호 일치 여부 text
         password_check: false, // 비밀번호 일치 여부 flag
+        modal : false,
     }
     /**
      * input에서 입력 할 때 onChange이벤트 처리
@@ -78,9 +80,10 @@ class SignUp extends Component {
             organization,
             name,
             history,
+            SingupActions
         } = this.props;
         const {
-            password_check
+            password_check,
         } = this.state;
         
         /**
@@ -96,14 +99,19 @@ class SignUp extends Component {
         else if(agree && location_!==""&& organization!=="" && name !== "" && email !== "" && password !== ""){
             
             try{
+                this.setState({
+                    modal: true
+                })
                 const ret = await api.singup(email, password,name,nickname,location_,organization);
-                console.log(ret);
-                
                 if(ret.message){
                     alert(ret.message);
+                    this.setState({
+                        modal: false
+                    })
                     return;
                 }
                 if(ret.flag === 'success'){
+                        SingupActions.reset();
                         history.push(`/sign/success/${name}`)
                 }
             }
@@ -115,6 +123,9 @@ class SignUp extends Component {
             
         }
         else{
+            this.setState({
+                modal: false
+            })
             return alert('입력되지 않은 값이 있습니다.')
         }
         
@@ -151,27 +162,34 @@ class SignUp extends Component {
         } = this
         const {
             passwordStr,
-            password_check
+            password_check,
+            modal,
         } = this.state;
         return (
-            <SignComponent
-                passwordStr={passwordStr}
-                onkeyPressInput={onkeyPressInput}
-                password_check={password_check}
-                email={email}
-                password={password}
-                passwordR={passwordR}
-                location={location_}
-                name={name}
-                phone={phone}
-                nickname={nickname}
-                organization={organization}
-                agree={agree}
-                duplicate_check={duplicate_check}
-                onChange={onChange_things}
-                onSingUp={onSingUp}
-                onCheck={onChange_agree}
-            />
+            <Fragment>
+                <SignComponent
+                    passwordStr={passwordStr}
+                    onkeyPressInput={onkeyPressInput}
+                    password_check={password_check}
+                    email={email}
+                    password={password}
+                    passwordR={passwordR}
+                    location={location_}
+                    name={name}
+                    phone={phone}
+                    nickname={nickname}
+                    organization={organization}
+                    agree={agree}
+                    duplicate_check={duplicate_check}
+                    onChange={onChange_things}
+                    onSingUp={onSingUp}
+                    onCheck={onChange_agree}
+                />
+                {modal&&
+                    <Loading/>
+                }
+
+            </Fragment>
         );
     }
 }
@@ -188,6 +206,7 @@ export default connect(
         organization: state.signup.get('organization'),
         agree: state.signup.get('agree'),
         duplicate_check: state.signup.get('duplicate_check'),
+        
     }),
     (dispatch) => ({
         SingupActions: bindActionCreators(singupActions, dispatch)
