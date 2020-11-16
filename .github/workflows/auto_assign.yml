@@ -6,8 +6,6 @@ addAssignees: true
 
 # A list of reviewers to be added to pull requests (GitHub user name)
 reviewers: 
-  - reviewerA
-  - reviewerB
   - JSS-hub
 
 # A number of reviewers added to the pull request
