@@ -1,8 +1,8 @@
-name : 'Auth assign'
-on : pull_request
+name: 'Auto Assign'
+on: pull_request
 
-jobs : 
-  add-reviews :
+jobs:
+  add-reviews:
     runs-on: ubuntu-latest
-    steps : 
-      - uses : kentaro-m/auth-assign-action@v1.1.2
+    steps:
+      - uses: kentaro-m/auto-assign-action@v1.1.2
