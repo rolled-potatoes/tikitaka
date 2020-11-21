@@ -1,10 +1,10 @@
 # 티키타카 웹 서비스.
 
-<center>
+<p align="center">
 
-<img width =500 src='./readmeImgs/logo.png'/>
+<img width =300 src='./readmeImgs/logo.png'/>
 
-</center>
+</p>
 
 ## 개요
 
@@ -16,8 +16,18 @@
 
 ## UI
 
+<p align="center">
+  
 ![1](./readmeImgs/1.png)
 
+</p>
+<p align="center">
+  
 ![2](./readmeImgs/2.png)
 
+</p>
+<p align="center">
+  
 ![3](./readmeImgs/3.png)
+
+</p>
